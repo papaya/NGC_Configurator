@@ -1,4 +1,5 @@
 import { planNgcEvents } from "./ngc-events.js";
+import { assessPhysicalConnection } from "./physical-connectors.js";
 
 const midiRanges = {
   channel: [1, 16],
@@ -32,7 +33,15 @@ export function validateProject(project, catalog) {
   const controls = project.controls ?? [];
   const banks = project.banks ?? [];
   const orderedBanks = [...banks].sort((a, b) => a.order - b.order);
-  const connections = project.connections ?? [];
+  const connections = (project.connections ?? []).map(connection => connection.fromModuleId ? ({
+    ...connection,
+    from: connection.fromModuleId,
+    to: connection.toModuleId,
+    fromPort: connection.fromConnectorId,
+    toPort: connection.toConnectorId,
+    bus: connection.interface,
+    physical: true
+  }) : connection);
   const assignments = project.assignments ?? {};
   const definitions = new Map(catalog.map(definition => [definition.id, definition]));
   const advancedNgc = project.advanced?.ngc ?? "";
@@ -52,6 +61,14 @@ export function validateProject(project, catalog) {
   for (const module of modules) {
     if (instances.has(module.id)) add("error", `Identifiant d'instance dupliqué : ${module.id}.`, module.name);
     instances.set(module.id, module);
+    if (module.rotation != null && ![0, 90, 180, 270].includes(module.rotation)) {
+      add("error", "L'orientation du plan de câblage doit être 0, 90, 180 ou 270 degrés.", module.name);
+    }
+    if (module.wiringLayout &&
+        (![module.wiringLayout.x, module.wiringLayout.y].every(Number.isFinite) ||
+         module.wiringLayout.x < 0 || module.wiringLayout.y < 0)) {
+      add("error", "La position de la carte dans le plan de câblage doit utiliser des coordonnées finies et positives.", module.name);
+    }
     const definition = definitions.get(module.definitionId);
     if (!definition) add("error", `Définition matérielle introuvable : ${module.definitionId}.`, module.name);
     else if (definition.status !== "Documenté") {
@@ -250,6 +267,10 @@ export function validateProject(project, catalog) {
 
   const seenConnections = new Set();
   for (const connection of connections) {
+    if (connection.needsReconfiguration) {
+      add("warning", `Ancienne liaison à reconfigurer : ${connection.reconfigurationReason ?? "ses extrémités physiques ne sont pas identifiables."}`, `${connection.from ?? "?"} → ${connection.to ?? "?"}`);
+      continue;
+    }
     const from = instances.get(connection.from);
     const to = instances.get(connection.to);
     const key = `${connection.from}:${connection.fromPort ?? ""}:${connection.to}:${connection.toPort ?? ""}:${connection.bus}`;
@@ -261,6 +282,25 @@ export function validateProject(project, catalog) {
     }
     const fromDefinition = definitions.get(from.definitionId);
     const toDefinition = definitions.get(to.definitionId);
+    if (connection.physical) {
+      const result = assessPhysicalConnection(
+        project,
+        catalog,
+        { moduleId: connection.fromModuleId, connectorId: connection.fromConnectorId },
+        { moduleId: connection.toModuleId, connectorId: connection.toConnectorId },
+        connection.interface,
+        connection.id
+      );
+      if (!result.allowed) {
+        add("error", `Liaison physique refusée (${result.status}) : ${result.reason}`, `${from.name} ${connection.fromConnectorId} → ${to.name} ${connection.toConnectorId}`);
+      } else if (result.connection.fromModuleId !== connection.fromModuleId ||
+                 result.connection.fromConnectorId !== connection.fromConnectorId ||
+                 result.connection.toModuleId !== connection.toModuleId ||
+                 result.connection.toConnectorId !== connection.toConnectorId) {
+        add("error", "Les extrémités ne respectent pas le sens de liaison documenté.", `${from.name} → ${to.name}`);
+      }
+      continue;
+    }
     if (!fromDefinition?.buses?.includes(connection.bus) || !toDefinition?.buses?.includes(connection.bus)) {
       add("error", `Le bus ${connection.bus} n'est pas déclaré aux deux extrémités.`, `${from.name} → ${to.name}`);
     }

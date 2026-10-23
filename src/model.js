@@ -20,7 +20,15 @@ export function cloneProject(project) {
 
 export function appendAdvancedText(existing, imported) {
   if (!existing) return imported;
-  if (!imported || existing === imported) return existing;
+  if (!imported) return existing;
+  const importedAt = existing.indexOf(imported);
+  if (importedAt >= 0 &&
+      (importedAt === 0 || existing[importedAt - 1] === "\n") &&
+      (importedAt + imported.length === existing.length ||
+       existing[importedAt + imported.length] === "\n" ||
+       imported.endsWith("\n"))) {
+    return existing;
+  }
   return `${existing}${existing.endsWith("\n") ? "" : "\n"}${imported}`;
 }
 
@@ -45,6 +53,8 @@ export function addModule(project, definition) {
     definitionId: definition.id,
     name: `${definition.name} ${ordinal}`,
     layout: { x: 80 + (count % 3) * 220, y: 80 + Math.floor(count / 3) * 150 },
+    wiringLayout: { x: 80 + project.modules.length * 280, y: 80 },
+    rotation: 0,
     chainOrder: Math.max(0, ...project.modules.map(item => item.chainOrder ?? 0)) + 1
   };
   project.modules.push(module);
@@ -88,6 +98,7 @@ export function duplicateModule(project, definition, sourceId) {
   const duplicate = addModule(project, definition);
   duplicate.name = `${source.name} (copie)`;
   duplicate.layout = { x: (Number(source.layout?.x) || 0) + 30, y: (Number(source.layout?.y) || 0) + 30 };
+  duplicate.wiringLayout = { x: (Number(source.wiringLayout?.x) || 0) + 280, y: Number(source.wiringLayout?.y) || 0 };
 
   const sourceControls = project.controls.filter(control => control.moduleId === sourceId);
   const duplicateControls = project.controls.filter(control => control.moduleId === duplicate.id);
@@ -110,7 +121,10 @@ export function removeModule(project, instanceId) {
   project.modules = project.modules.filter(module => module.id !== instanceId);
   const removedControls = project.controls.filter(control => control.moduleId === instanceId).map(control => control.id);
   project.controls = project.controls.filter(control => control.moduleId !== instanceId);
-  project.connections = project.connections.filter(connection => connection.from !== instanceId && connection.to !== instanceId);
+  project.connections = project.connections.filter(connection =>
+    connection.from !== instanceId && connection.to !== instanceId &&
+    connection.fromModuleId !== instanceId && connection.toModuleId !== instanceId
+  );
   for (const bank of Object.values(project.assignments)) {
     for (const controlId of removedControls) delete bank[controlId];
   }

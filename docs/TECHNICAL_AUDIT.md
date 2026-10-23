@@ -55,16 +55,17 @@ L'import de directives avancées les conserve en texte brut. Il ne signifie pas 
 
 ## Matériel : confirmé et inconnu
 
-- Les README locaux documentent le bus partagé `J8J9` du Core, avec chemin DIN via J9 et DOUT via J8; DIN4 J1/J2 et DOUT J1/J2 sont présentés comme entrée/sortie de chaîne. Le validateur vérifie les ports et la direction déclarés, la topologie linéaire et au plus huit cartes DIN ou DOUT par chaîne.
+- Les README locaux documentent le bus partagé `J8J9` du Core, avec fonction DIN via J9 et DOUT via J8; DIN4 J1/J2 et DOUT J1/J2 sont présentés comme entrée/sortie de chaîne. Le nouveau modèle enregistre les deux références de connecteurs et autorise seulement les couples sourcés indiqués dans [PHYSICAL_WIRING.md](./PHYSICAL_WIRING.md). Les modules non positionnés ou sans règle restent non raccordables.
 - Le manuel MIDIbox NG décrit les IDs de boutons jusqu'à 256, d'encodeurs jusqu'à 128, d'AIN jusqu'à 6 et d'AINSER jusqu'à 128. Les plages d'`hw_id` du modèle sont resserrées par famille; les `hw_id` restent saisis manuellement.
 - Les README locaux décrivent quatre registres par carte DIN4/DOUT; le DOUT README annonce jusqu'à huit cartes en chaîne pour 32 registres. Le test couvre la limite de huit cartes par chaîne, mais le configurateur ne certifie pas aujourd'hui le budget total de shift registers consommé par toutes les cartes/ressources simultanées.
 - Les contrôles analogiques déclarés sont émis comme AINSER, mais le mapping concret du contrôle physique vers module, puce CS, voie, shift-register ou broche n'est pas résolu depuis les seules liaisons de modules.
 - Les quatre lignes WS2812 du Core sont documentées matériellement, mais l'événement/ID RGBLED n'est pas un ID de chaîne ni une preuve du routage à la bonne ligne. SK6812 et alimentations restent à vérifier.
-- Les contrôles physiques affichés, les connexions d'un diagramme et les IDs MIDI ne partagent pas encore une affectation registre complète. Aucun `hw_id` n'est calculé depuis l'ordre graphique.
+- Les contrôles physiques affichés, les connexions du plan et les IDs MIDI ne partagent pas encore une affectation registre complète. Aucun `hw_id` n'est calculé depuis l'ordre graphique. Les images de cartes ne fournissent pas de dimensions ni de coordonnées cotées : les hotspots de la vue sont schématiques.
 
 ## Préservation, aperçu et tests
 
 - Importer un fichier dans un bloc avancé l'ajoute au texte existant au lieu de l'écraser. Les blocs identiques ne sont pas doublés.
 - Avant téléchargement, la génération reste affichée; la génération suivante expose un diff ligne à ligne avec la précédente. Le premier résultat est prévisualisé intégralement avant tout téléchargement. Les directives avancées inconnues ne sont pas normalisées.
 - La validation ne prétend pas comprendre les conditions, maps et paramètres manuels arbitraires. Les tests mesurent les sorties structurées prises en charge et caractérisent les originaux KSBOX sans les modifier.
+- Le modèle physique bloque les interfaces sans règle explicite et conserve les connexions anciennes non résolues comme « à reconfigurer ». Voir l'inventaire documenté et les règles limitées dans [PHYSICAL_WIRING.md](./PHYSICAL_WIRING.md); cette mise à jour ne certifie pas les cartes ni l'installation.
 - La compatibilité syntaxique testée reste un test du générateur local, pas l'exécution d'un chargement NGC sur firmware. Tester le fichier sur la version MIDIbox NG cible reste requis.

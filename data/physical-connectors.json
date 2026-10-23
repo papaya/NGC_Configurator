@@ -1,0 +1,215 @@
+{
+  "core32f4": {
+    "boardView": "reference/MB_ModulBox_NG/standard-modules/Core/assets/Core-Core32F4.png",
+    "viewStatus": "schematic",
+    "evidence": "reference/MB_ModulBox_NG/standard-modules/Core/README.md",
+    "connectors": [
+      {"id":"J8J9","silkscreen":"J8J9","type":"IDC 2x05","pins":10,"function":"Bus partagé DIN/DOUT vers les chaînes de registres","interfaces":["DIN","DOUT"],"position":{"x":0.84,"y":0.37},"positionStatus":"approximate","direction":"bus"},
+      {"id":"J19","silkscreen":"J19","type":"IDC 2x05","pins":10,"function":"Interface SPI 5 V pour modules AINSER64/AINSER8","interfaces":["SPI/AIN"],"position":{"x":0.78,"y":0.37},"positionStatus":"approximate","direction":"bus"},
+      {"id":"J4A","silkscreen":"J4A","type":"IDC 2x05","pins":10,"function":"Deux lignes WS2812","interfaces":["WS2812"],"position":null,"positionStatus":"unknown","direction":"output"},
+      {"id":"J4B","silkscreen":"J4B","type":"IDC 2x05","pins":10,"function":"Deux lignes WS2812, dont PB6 ligne MIOS32 de référence","interfaces":["WS2812"],"position":null,"positionStatus":"unknown","direction":"output"},
+      {"id":"J5A","silkscreen":"J5A","type":"IDC 2x05","pins":10,"function":"GPIO 3,3 V généralistes","interfaces":["GPIO"],"position":null,"positionStatus":"unknown","direction":"bidirectional"},
+      {"id":"J5B","silkscreen":"J5B","type":"IDC 2x05","pins":10,"function":"GPIO 3,3 V généralistes","interfaces":["GPIO"],"position":null,"positionStatus":"unknown","direction":"bidirectional"},
+      {"id":"J10A","silkscreen":"J10A","type":"IDC 2x05","pins":10,"function":"GPIO 3,3 V / Standard Control Surface","interfaces":["SCS"],"position":null,"positionStatus":"unknown","direction":"bidirectional"},
+      {"id":"J10B","silkscreen":"J10B","type":"IDC 2x05","pins":10,"function":"GPIO 3,3 V / Standard Control Surface","interfaces":["SCS"],"position":null,"positionStatus":"unknown","direction":"bidirectional"},
+      {"id":"J15A","silkscreen":"J15A","type":"IDC 2x08","pins":16,"function":"Interface LCD","interfaces":["LCD"],"position":null,"positionStatus":"unknown","direction":"bidirectional"},
+      {"id":"J15B","silkscreen":"J15B","type":"IDC 2x08","pins":16,"function":"Interface LCD","interfaces":["LCD"],"position":null,"positionStatus":"unknown","direction":"bidirectional"},
+      {"id":"J16","silkscreen":"J16","type":"IDC 2x05","pins":10,"function":"SPI 3,3 V","interfaces":["SPI"],"position":null,"positionStatus":"unknown","direction":"bidirectional"},
+      {"id":"J11E","silkscreen":"J11E","type":"IDC 2x05","pins":10,"function":"Entrées MIDI supplémentaires","interfaces":["MIDI"],"position":null,"positionStatus":"unknown","direction":"input"},
+      {"id":"J18","silkscreen":"J18","type":"Pin header 1x02","pins":2,"function":"CAN TTL / MBNet","interfaces":["CAN"],"position":null,"positionStatus":"unknown","direction":"bidirectional"},
+      {"id":"J17","silkscreen":"J17","type":"Pin header 1x02","pins":2,"function":"USB PWR","interfaces":["Power"],"position":null,"positionStatus":"unknown","direction":"input"},
+      {"id":"J2","silkscreen":"J2","type":"Pin header 1x02","pins":2,"function":"USB PWR","interfaces":["Power"],"position":null,"positionStatus":"unknown","direction":"input"},
+      {"id":"J1","silkscreen":"J1","type":"Slot carte SD","pins":null,"function":"Lecteur de carte SD","interfaces":["SD"],"position":null,"positionStatus":"unknown","direction":"input"},
+      {"id":"J15S","silkscreen":"J15S","type":"Pin header 1x03","pins":3,"function":"Sélection de tension LCD 5 V / 3,3 V","interfaces":["LCD-power"],"position":null,"positionStatus":"unknown","direction":"input"}
+    ]
+  },
+  "din4": {
+    "boardView": "reference/MB_ModulBox_NG/standard-modules/DIN/assets/DIN-DIN4_R5_KS.png",
+    "viewStatus": "schematic",
+    "evidence": "reference/MB_ModulBox_NG/standard-modules/DIN/README.md",
+    "connectors": [
+      {"id":"J1","silkscreen":"J1","type":"IDC 2x05","pins":10,"function":"Entrée du Core J9 ou de J2 DIN précédent","interfaces":["DIN"],"position":{"x":0.07,"y":0.58},"positionStatus":"approximate","direction":"input","role":"chain-input"},
+      {"id":"J2","silkscreen":"J2","type":"IDC 2x05","pins":10,"function":"Sortie de chaîne vers J1 DIN suivant","interfaces":["DIN"],"position":{"x":0.93,"y":0.58},"positionStatus":"approximate","direction":"output","role":"chain-output"},
+      {"id":"J3","silkscreen":"J3","type":"IDC 2x05","pins":10,"function":"8 entrées numériques","interfaces":["DIN-control"],"position":{"x":0.26,"y":0.39},"positionStatus":"approximate","direction":"input","role":"control-input"},
+      {"id":"J4","silkscreen":"J4","type":"IDC 2x05","pins":10,"function":"8 entrées numériques","interfaces":["DIN-control"],"position":{"x":0.44,"y":0.39},"positionStatus":"approximate","direction":"input","role":"control-input"},
+      {"id":"J5","silkscreen":"J5","type":"IDC 2x05","pins":10,"function":"8 entrées numériques","interfaces":["DIN-control"],"position":{"x":0.62,"y":0.39},"positionStatus":"approximate","direction":"input","role":"control-input"},
+      {"id":"J6","silkscreen":"J6","type":"IDC 2x05","pins":10,"function":"8 entrées numériques","interfaces":["DIN-control"],"position":{"x":0.80,"y":0.39},"positionStatus":"approximate","direction":"input","role":"control-input"}
+    ]
+  },
+  "dout": {
+    "boardView": "reference/MB_ModulBox_NG/standard-modules/DOUT/assets/DOUT-DOUT.png",
+    "viewStatus": "schematic",
+    "evidence": "reference/MB_ModulBox_NG/standard-modules/DOUT/README.md",
+    "connectors": [
+      {"id":"J1","silkscreen":"J1","type":"IDC 2x05","pins":10,"function":"Entrée du Core J8 ou de J2 DOUT précédent","interfaces":["DOUT"],"position":{"x":0.07,"y":0.59},"positionStatus":"approximate","direction":"input","role":"chain-input"},
+      {"id":"J2","silkscreen":"J2","type":"IDC 2x05","pins":10,"function":"Sortie de chaîne vers J1 DOUT suivant","interfaces":["DOUT"],"position":{"x":0.93,"y":0.59},"positionStatus":"approximate","direction":"output","role":"chain-output"},
+      {"id":"J3","silkscreen":"J3","type":"IDC 2x05","pins":10,"function":"8 sorties numériques","interfaces":["DOUT-control"],"position":{"x":0.26,"y":0.25},"positionStatus":"approximate","direction":"output","role":"control-output"},
+      {"id":"J4","silkscreen":"J4","type":"IDC 2x05","pins":10,"function":"8 sorties numériques","interfaces":["DOUT-control"],"position":{"x":0.44,"y":0.25},"positionStatus":"approximate","direction":"output","role":"control-output"},
+      {"id":"J5","silkscreen":"J5","type":"IDC 2x05","pins":10,"function":"8 sorties numériques","interfaces":["DOUT-control"],"position":{"x":0.62,"y":0.25},"positionStatus":"approximate","direction":"output","role":"control-output"},
+      {"id":"J6","silkscreen":"J6","type":"IDC 2x05","pins":10,"function":"8 sorties numériques","interfaces":["DOUT-control"],"position":{"x":0.80,"y":0.25},"positionStatus":"approximate","direction":"output","role":"control-output"}
+    ]
+  },
+  "8x-buttons": {
+    "boardView": "reference/MB_ModulBox_NG/custom-frontends/8x-buttons/assets/BP.png",
+    "viewStatus": "schematic",
+    "evidence": "reference/MB_ModulBox_NG/custom-frontends/8x-buttons/README.md",
+    "connectors": [
+      {"id":"J1","silkscreen":"J1","type":"IDC 2x05","pins":10,"function":"8 contacts boutons vers entrées DIN","interfaces":["DIN-control"],"position":{"x":0.30,"y":0.50},"positionStatus":"approximate","direction":"passive","role":"button-input"},
+      {"id":"J2","silkscreen":"J2","type":"IDC 2x05","pins":10,"function":"8 anodes LED vers sorties DOUT","interfaces":["DOUT-control"],"position":{"x":0.69,"y":0.50},"positionStatus":"approximate","direction":"passive","role":"led-input"}
+    ]
+  },
+  "ainser64": {
+    "viewStatus": "inventory-only",
+    "evidence": "reference/MB_ModulBox_NG/standard-modules/AIN/README.md",
+    "connectors": [
+      {"id":"J1","silkscreen":"J1","type":"2-pin connector","pins":2,"function":"Alimentation externe optionnelle 7–10 V","interfaces":["Power"],"position":null,"positionStatus":"unknown","direction":"input"},
+      {"id":"J2","silkscreen":"J2","type":"IDC 2x05","pins":10,"function":"Interface série vers J19 Core","interfaces":["SPI/AIN"],"position":null,"positionStatus":"unknown","direction":"bidirectional"},
+      {"id":"J3","silkscreen":"J3","type":"2-pin connector","pins":2,"function":"Alimentation du module","interfaces":["Power"],"position":null,"positionStatus":"unknown","direction":"input"},
+      {"id":"J4","silkscreen":"J4","type":"2-pin jumper","pins":2,"function":"Sélection chip-select n°1","interfaces":["configuration"],"position":null,"positionStatus":"unknown","direction":"input"},
+      {"id":"J5","silkscreen":"J5","type":"3-pin jumper","pins":3,"function":"Sélection alimentation analogique Dig./Ext.","interfaces":["configuration"],"position":null,"positionStatus":"unknown","direction":"input"},
+      {"id":"J6","silkscreen":"J6","type":"connector (type/pin count to verify)","pins":null,"function":"Groupe d'entrées analogiques A0–A7, Vd et Vs","interfaces":["AIN-control"],"position":null,"positionStatus":"unknown","direction":"input"},
+      {"id":"J7","silkscreen":"J7","type":"connector (type/pin count to verify)","pins":null,"function":"Groupe d'entrées analogiques A0–A7, Vd et Vs","interfaces":["AIN-control"],"position":null,"positionStatus":"unknown","direction":"input"},
+      {"id":"J8","silkscreen":"J8","type":"connector (type/pin count to verify)","pins":null,"function":"Groupe d'entrées analogiques A0–A7, Vd et Vs","interfaces":["AIN-control"],"position":null,"positionStatus":"unknown","direction":"input"},
+      {"id":"J9","silkscreen":"J9","type":"connector (type/pin count to verify)","pins":null,"function":"Groupe d'entrées analogiques A0–A7, Vd et Vs","interfaces":["AIN-control"],"position":null,"positionStatus":"unknown","direction":"input"},
+      {"id":"J10","silkscreen":"J10","type":"connector (type/pin count to verify)","pins":null,"function":"Groupe d'entrées analogiques A0–A7, Vd et Vs","interfaces":["AIN-control"],"position":null,"positionStatus":"unknown","direction":"input"},
+      {"id":"J11","silkscreen":"J11","type":"connector (type/pin count to verify)","pins":null,"function":"Groupe d'entrées analogiques A0–A7, Vd et Vs","interfaces":["AIN-control"],"position":null,"positionStatus":"unknown","direction":"input"},
+      {"id":"J12","silkscreen":"J12","type":"connector (type/pin count to verify)","pins":null,"function":"Groupe d'entrées analogiques A0–A7, Vd et Vs","interfaces":["AIN-control"],"position":null,"positionStatus":"unknown","direction":"input"},
+      {"id":"J13","silkscreen":"J13","type":"connector (type/pin count to verify)","pins":null,"function":"Groupe d'entrées analogiques A0–A7, Vd et Vs","interfaces":["AIN-control"],"position":null,"positionStatus":"unknown","direction":"input"}
+    ]
+  },
+  "8x-pots": {
+    "boardView": "reference/MB_ModulBox_NG/custom-frontends/8x-pots/assets/Pot.png",
+    "viewStatus": "inventory-only",
+    "evidence": "reference/MB_ModulBox_NG/custom-frontends/8x-pots/README.md",
+    "connectors": [
+      {"id":"J1","silkscreen":"J1","type":"IDC 2x05","pins":10,"function":"8 curseurs, GND et +3V0 vers AINSER64","interfaces":["AIN-control"],"position":null,"positionStatus":"unknown","direction":"output"}
+    ]
+  },
+  "4x-faders": {
+    "boardView": "reference/MB_ModulBox_NG/custom-frontends/4x-faders/assets/Fad_1.png",
+    "viewStatus": "inventory-only",
+    "evidence": "reference/MB_ModulBox_NG/custom-frontends/4x-faders/README.md",
+    "connectors": [
+      {"id":"J3","silkscreen":"J3","type":"IDC 2x05","pins":10,"function":"Fad_1 : sorties curseurs, GND et +3V0","interfaces":["AIN-control"],"position":null,"positionStatus":"unknown","direction":"output"},
+      {"id":"J4","silkscreen":"J4","type":"IDC 2x05","pins":10,"function":"Fad_1 : connecteur de passage","interfaces":["AIN-control"],"position":null,"positionStatus":"unknown","direction":"bidirectional"},
+      {"id":"J5","silkscreen":"J5","type":"IDC 2x05","pins":10,"function":"Fad_2 : sorties curseurs, GND et +3V0 (variante de carte séparée)","interfaces":["AIN-control"],"position":null,"positionStatus":"unknown","direction":"output"}
+    ]
+  },
+  "keysw-4x2": {
+    "boardView": "reference/MB_ModulBox_NG/custom-frontends/keysw-4x2/assets/MB-KeySW_4x2_V0.3.png",
+    "viewStatus": "inventory-only",
+    "evidence": "reference/MB_ModulBox_NG/custom-frontends/keysw-4x2/README.md",
+    "connectors": [
+      {"id":"J1","silkscreen":"J1","type":"IDC 2x05","pins":10,"function":"8 contacts de touches vers entrées DIN","interfaces":["DIN-control"],"position":null,"positionStatus":"unknown","direction":"output"},
+      {"id":"J2","silkscreen":"J2","type":"IDC 2x05","pins":10,"function":"Entrée de cascade LED SK6812, data sur broche 6, +5V sur broche 10","interfaces":["SK6812"],"position":null,"positionStatus":"unknown","direction":"input"},
+      {"id":"J3","silkscreen":"J3","type":"IDC 2x05","pins":10,"function":"Sortie de cascade LED SK6812","interfaces":["SK6812"],"position":null,"positionStatus":"unknown","direction":"output"},
+      {"id":"J4","silkscreen":"J4","type":"Pin header 1x02","pins":2,"function":"Masse supplémentaire","interfaces":["Power"],"position":null,"positionStatus":"unknown","direction":"passive"}
+    ]
+  },
+  "pad-rgb": {
+    "boardView": "reference/MB_ModulBox_NG/custom-frontends/pad-rgb/assets/Pad.png",
+    "viewStatus": "inventory-only",
+    "evidence": "reference/MB_ModulBox_NG/custom-frontends/pad-rgb/README.md",
+    "connectors": [
+      {"id":"J1","silkscreen":"J1","type":"IDC 2x05","pins":10,"function":"8 contacts de pads vers entrées DIN","interfaces":["DIN-control"],"position":null,"positionStatus":"unknown","direction":"output"},
+      {"id":"J2","silkscreen":"J2","type":"IDC 2x05","pins":10,"function":"Entrée de cascade WS2812, data sur broche 6","interfaces":["WS2812"],"position":null,"positionStatus":"unknown","direction":"input"},
+      {"id":"J3","silkscreen":"J3","type":"IDC 2x05","pins":10,"function":"Sortie de cascade WS2812","interfaces":["WS2812"],"position":null,"positionStatus":"unknown","direction":"output"}
+    ]
+  },
+  "encoders-led-rgb": {
+    "boardView": "reference/MB_ModulBox_NG/custom-frontends/encoders-led-rgb/assets/PEC_16_V0.2.png",
+    "viewStatus": "inventory-only",
+    "evidence": "reference/MB_ModulBox_NG/custom-frontends/encoders-led-rgb/README.md",
+    "connectors": [
+      {"id":"J11","silkscreen":"J11","type":"IDC 2x05","pins":10,"function":"8 poussoirs d'encodeurs vers DIN","interfaces":["DIN-control"],"position":null,"positionStatus":"unknown","direction":"output"},
+      {"id":"J12","silkscreen":"J12","type":"IDC 2x05","pins":10,"function":"Phases A/B des encodeurs 5 à 8","interfaces":["DIN-control"],"position":null,"positionStatus":"unknown","direction":"output"},
+      {"id":"J13","silkscreen":"J13","type":"IDC 2x05","pins":10,"function":"Phases A/B des encodeurs 1 à 4","interfaces":["DIN-control"],"position":null,"positionStatus":"unknown","direction":"output"},
+      {"id":"J4","silkscreen":"J4","type":"Pin header 1x03","pins":3,"function":"Entrée data cascade WS2812","interfaces":["WS2812"],"position":null,"positionStatus":"unknown","direction":"input"},
+      {"id":"J5","silkscreen":"J5","type":"Pin header 1x03","pins":3,"function":"Sortie data cascade WS2812","interfaces":["WS2812"],"position":null,"positionStatus":"unknown","direction":"output"},
+      {"id":"J44","silkscreen":"J44","type":"IDC 2x05","pins":10,"function":"Alimentation analogique +5VA","interfaces":["Power"],"position":null,"positionStatus":"unknown","direction":"input"},
+      {"id":"J45","silkscreen":"J45","type":"IDC 2x05","pins":10,"function":"Alimentation digitale +5VD","interfaces":["Power"],"position":null,"positionStatus":"unknown","direction":"input"},
+      {"id":"J14","silkscreen":"J14","type":"Pin header/socket (format à vérifier)","pins":null,"function":"Connecteur de report de signaux","interfaces":["signal"],"position":null,"positionStatus":"unknown","direction":"bidirectional"},
+      {"id":"J15","silkscreen":"J15","type":"Pin header/socket (format à vérifier)","pins":null,"function":"Connecteur de report de signaux","interfaces":["signal"],"position":null,"positionStatus":"unknown","direction":"bidirectional"},
+      {"id":"J20","silkscreen":"J20","type":"Pin header/socket (format à vérifier)","pins":null,"function":"Connecteur de report de signaux","interfaces":["signal"],"position":null,"positionStatus":"unknown","direction":"bidirectional"},
+      {"id":"J21","silkscreen":"J21","type":"Pin header/socket (format à vérifier)","pins":null,"function":"Connecteur de report de signaux","interfaces":["signal"],"position":null,"positionStatus":"unknown","direction":"bidirectional"},
+      {"id":"J22","silkscreen":"J22","type":"Pin header/socket (format à vérifier)","pins":null,"function":"Connecteur de report de signaux","interfaces":["signal"],"position":null,"positionStatus":"unknown","direction":"bidirectional"},
+      {"id":"J23","silkscreen":"J23","type":"Pin header/socket (format à vérifier)","pins":null,"function":"Connecteur de report de signaux","interfaces":["signal"],"position":null,"positionStatus":"unknown","direction":"bidirectional"},
+      {"id":"J24","silkscreen":"J24","type":"Pin header/socket (format à vérifier)","pins":null,"function":"Connecteur de report de signaux","interfaces":["signal"],"position":null,"positionStatus":"unknown","direction":"bidirectional"},
+      {"id":"J25","silkscreen":"J25","type":"Pin header/socket (format à vérifier)","pins":null,"function":"Connecteur de report de signaux","interfaces":["signal"],"position":null,"positionStatus":"unknown","direction":"bidirectional"},
+      {"id":"J30","silkscreen":"J30","type":"Pin header/socket (format à vérifier)","pins":null,"function":"Connecteur de report de signaux","interfaces":["signal"],"position":null,"positionStatus":"unknown","direction":"bidirectional"},
+      {"id":"J31","silkscreen":"J31","type":"Pin header/socket (format à vérifier)","pins":null,"function":"Connecteur de report de signaux","interfaces":["signal"],"position":null,"positionStatus":"unknown","direction":"bidirectional"},
+      {"id":"J32","silkscreen":"J32","type":"Pin header/socket (format à vérifier)","pins":null,"function":"Connecteur de report de signaux","interfaces":["signal"],"position":null,"positionStatus":"unknown","direction":"bidirectional"},
+      {"id":"J33","silkscreen":"J33","type":"Pin header/socket (format à vérifier)","pins":null,"function":"Connecteur de report de signaux","interfaces":["signal"],"position":null,"positionStatus":"unknown","direction":"bidirectional"},
+      {"id":"J34","silkscreen":"J34","type":"Pin header/socket (format à vérifier)","pins":null,"function":"Connecteur de report de signaux","interfaces":["signal"],"position":null,"positionStatus":"unknown","direction":"bidirectional"},
+      {"id":"J35","silkscreen":"J35","type":"Pin header/socket (format à vérifier)","pins":null,"function":"Connecteur de report de signaux","interfaces":["signal"],"position":null,"positionStatus":"unknown","direction":"bidirectional"}
+    ]
+  },
+  "surface-control": {
+    "boardView": "reference/MB_ModulBox_NG/custom-frontends/surface-control/assets/Surface Control V0.1.png",
+    "viewStatus": "inventory-only",
+    "evidence": "reference/MB_ModulBox_NG/custom-frontends/surface-control/README.md",
+    "connectors": [
+      {"id":"J2","silkscreen":"J2","type":"IDC 2x05","pins":10,"function":"GPIO directs vers J10A/J10B du Core; prototype non routé","interfaces":["SCS"],"position":null,"positionStatus":"unknown","direction":"bidirectional"}
+    ]
+  },
+  "io-midi": {
+    "boardView": "reference/MB_ModulBox_NG/standard-modules/IO/assets/IO-Midi_V0.1.png",
+    "viewStatus": "inventory-only",
+    "evidence": "reference/MB_ModulBox_NG/standard-modules/IO/README.md",
+    "connectors": [
+      {"id":"J1","silkscreen":"J1","type":"IDC 2x05","pins":10,"function":"Interface Core32F4, affectation de broches à confirmer","interfaces":["MIDI/GPIO"],"position":null,"positionStatus":"unknown","direction":"bidirectional"},
+      {"id":"J2","silkscreen":"J2","type":"IDC 2x05","pins":10,"function":"Interface Core32F4, affectation de broches à confirmer","interfaces":["MIDI/GPIO"],"position":null,"positionStatus":"unknown","direction":"bidirectional"},
+      {"id":"midiIN1","silkscreen":"midiIN1","type":"DIN-5 / LEMO5","pins":5,"function":"Entrée MIDI isolée","interfaces":["MIDI"],"position":null,"positionStatus":"unknown","direction":"input"},
+      {"id":"midiIN2","silkscreen":"midiIN2","type":"DIN-5 / LEMO5","pins":5,"function":"Entrée MIDI isolée","interfaces":["MIDI"],"position":null,"positionStatus":"unknown","direction":"input"},
+      {"id":"midiOUT1","silkscreen":"midiOUT1","type":"DIN-5 / LEMO5","pins":5,"function":"Sortie MIDI","interfaces":["MIDI"],"position":null,"positionStatus":"unknown","direction":"output"},
+      {"id":"midiOUT2","silkscreen":"midiOUT2","type":"DIN-5 / LEMO5","pins":5,"function":"Sortie MIDI","interfaces":["MIDI"],"position":null,"positionStatus":"unknown","direction":"output"}
+    ]
+  },
+  "oled-128x64": {
+    "boardView": "reference/MB_ModulBox_NG/custom-frontends/oled-128x64/assets/Oled_1309_x1_V0.0.png",
+    "viewStatus": "inventory-only",
+    "evidence": "reference/MB_ModulBox_NG/custom-frontends/oled-128x64/README.md",
+    "connectors": [
+      {"id":"J1","silkscreen":"J1","type":"IDC 2x08","pins":16,"function":"SPI, chip-selects, DC, alimentation +5V et GND","interfaces":["SPI/LCD"],"position":null,"positionStatus":"unknown","direction":"bidirectional"}
+    ]
+  },
+  "power": {
+    "boardView": "reference/MB_ModulBox_NG/custom-frontends/carte-puissance/assets/Carte_puissance.png",
+    "viewStatus": "inventory-only",
+    "evidence": "reference/MB_ModulBox_NG/custom-frontends/carte-puissance/README.md",
+    "connectors": [
+      {"id":"J1","silkscreen":"J1","type":"Bornier à vis ALTECH AK300-2","pins":2,"function":"Entrée principale GNDA/+5VD","interfaces":["Power"],"position":null,"positionStatus":"unknown","direction":"input"},
+      {"id":"J27","silkscreen":"J27","type":"Bornier à vis ALTECH AK300-2","pins":2,"function":"Sortie GNDA/+5VD","interfaces":["Power"],"position":null,"positionStatus":"unknown","direction":"output"},
+      {"id":"J28","silkscreen":"J28","type":"Bornier à vis ALTECH AK300-2","pins":2,"function":"Entrée GNDA/+5VD","interfaces":["Power"],"position":null,"positionStatus":"unknown","direction":"input"},
+      {"id":"J29","silkscreen":"J29","type":"Bornier à vis ALTECH AK300-2","pins":2,"function":"Entrée GNDA/+5VD","interfaces":["Power"],"position":null,"positionStatus":"unknown","direction":"input"},
+      {"id":"J2","silkscreen":"J2","type":"IDC 2x05","pins":10,"function":"Connecteur bus, +5VA sur broche 10","interfaces":["Power/bus"],"position":null,"positionStatus":"unknown","direction":"bidirectional"},
+      {"id":"J3","silkscreen":"J3","type":"IDC 2x05","pins":10,"function":"Connecteur bus en paire avec J2","interfaces":["Power/bus"],"position":null,"positionStatus":"unknown","direction":"bidirectional"},
+      {"id":"J4","silkscreen":"J4","type":"IDC 2x05","pins":10,"function":"Connecteur bus en paire avec J5","interfaces":["Power/bus"],"position":null,"positionStatus":"unknown","direction":"bidirectional"},
+      {"id":"J5","silkscreen":"J5","type":"IDC 2x05","pins":10,"function":"Connecteur bus en paire avec J4","interfaces":["Power/bus"],"position":null,"positionStatus":"unknown","direction":"bidirectional"},
+      {"id":"J6","silkscreen":"J6","type":"IDC 2x05","pins":10,"function":"Connecteur bus en paire avec J7","interfaces":["Power/bus"],"position":null,"positionStatus":"unknown","direction":"bidirectional"},
+      {"id":"J7","silkscreen":"J7","type":"IDC 2x05","pins":10,"function":"Connecteur bus en paire avec J6","interfaces":["Power/bus"],"position":null,"positionStatus":"unknown","direction":"bidirectional"},
+      {"id":"J8","silkscreen":"J8","type":"IDC 2x05","pins":10,"function":"Connecteur bus en paire avec J9","interfaces":["Power/bus"],"position":null,"positionStatus":"unknown","direction":"bidirectional"},
+      {"id":"J9","silkscreen":"J9","type":"IDC 2x05","pins":10,"function":"Connecteur bus en paire avec J8","interfaces":["Power/bus"],"position":null,"positionStatus":"unknown","direction":"bidirectional"},
+      {"id":"J10","silkscreen":"J10","type":"IDC 2x05","pins":10,"function":"Connecteur bus en paire avec J11","interfaces":["Power/bus"],"position":null,"positionStatus":"unknown","direction":"bidirectional"},
+      {"id":"J11","silkscreen":"J11","type":"IDC 2x05","pins":10,"function":"Connecteur bus en paire avec J10","interfaces":["Power/bus"],"position":null,"positionStatus":"unknown","direction":"bidirectional"},
+      {"id":"J12","silkscreen":"J12","type":"IDC 2x05","pins":10,"function":"Connecteur bus en paire avec J13","interfaces":["Power/bus"],"position":null,"positionStatus":"unknown","direction":"bidirectional"},
+      {"id":"J13","silkscreen":"J13","type":"IDC 2x05","pins":10,"function":"Connecteur bus en paire avec J12","interfaces":["Power/bus"],"position":null,"positionStatus":"unknown","direction":"bidirectional"},
+      {"id":"J14","silkscreen":"J14","type":"IDC 2x05","pins":10,"function":"Connecteur bus en paire avec J15","interfaces":["Power/bus"],"position":null,"positionStatus":"unknown","direction":"bidirectional"},
+      {"id":"J15","silkscreen":"J15","type":"IDC 2x05","pins":10,"function":"Connecteur bus en paire avec J14","interfaces":["Power/bus"],"position":null,"positionStatus":"unknown","direction":"bidirectional"},
+      {"id":"J16","silkscreen":"J16","type":"IDC 2x05","pins":10,"function":"Connecteur bus en paire avec J17","interfaces":["Power/bus"],"position":null,"positionStatus":"unknown","direction":"bidirectional"},
+      {"id":"J17","silkscreen":"J17","type":"IDC 2x05","pins":10,"function":"Connecteur bus en paire avec J16","interfaces":["Power/bus"],"position":null,"positionStatus":"unknown","direction":"bidirectional"},
+      {"id":"J18","silkscreen":"J18","type":"IDC 2x05","pins":10,"function":"Connecteur bus en paire avec J19","interfaces":["Power/bus"],"position":null,"positionStatus":"unknown","direction":"bidirectional"},
+      {"id":"J19","silkscreen":"J19","type":"IDC 2x05","pins":10,"function":"Connecteur bus en paire avec J18","interfaces":["Power/bus"],"position":null,"positionStatus":"unknown","direction":"bidirectional"},
+      {"id":"J20","silkscreen":"J20","type":"IDC 2x05","pins":10,"function":"Connecteur bus en paire avec J21","interfaces":["Power/bus"],"position":null,"positionStatus":"unknown","direction":"bidirectional"},
+      {"id":"J21","silkscreen":"J21","type":"IDC 2x05","pins":10,"function":"Connecteur bus en paire avec J20","interfaces":["Power/bus"],"position":null,"positionStatus":"unknown","direction":"bidirectional"},
+      {"id":"J22","silkscreen":"J22","type":"IDC 2x05","pins":10,"function":"Connecteur bus en paire avec J23","interfaces":["Power/bus"],"position":null,"positionStatus":"unknown","direction":"bidirectional"},
+      {"id":"J23","silkscreen":"J23","type":"IDC 2x05","pins":10,"function":"Connecteur bus en paire avec J22","interfaces":["Power/bus"],"position":null,"positionStatus":"unknown","direction":"bidirectional"},
+      {"id":"J24","silkscreen":"J24","type":"IDC 2x05","pins":10,"function":"Connecteur bus en paire avec J25","interfaces":["Power/bus"],"position":null,"positionStatus":"unknown","direction":"bidirectional"},
+      {"id":"J25","silkscreen":"J25","type":"IDC 2x05","pins":10,"function":"Connecteur bus en paire avec J24","interfaces":["Power/bus"],"position":null,"positionStatus":"unknown","direction":"bidirectional"},
+      {"id":"J26","silkscreen":"J26","type":"Pin header 1x02","pins":2,"function":"Entrée d'alimentation GNDA/+5VD","interfaces":["Power"],"position":null,"positionStatus":"unknown","direction":"input"},
+      {"id":"J30","silkscreen":"J30","type":"Pin header 1x02","pins":2,"function":"Entrée d'alimentation GNDA/+5VD","interfaces":["Power"],"position":null,"positionStatus":"unknown","direction":"input"},
+      {"id":"J31","silkscreen":"J31","type":"Pin header 1x02","pins":2,"function":"Entrée d'alimentation GNDA/+5VD","interfaces":["Power"],"position":null,"positionStatus":"unknown","direction":"input"},
+      {"id":"J32","silkscreen":"J32","type":"Jumper 1x02","pins":2,"function":"Séparation +5VA / +5VD","interfaces":["configuration"],"position":null,"positionStatus":"unknown","direction":"passive"}
+    ]
+  }
+}
