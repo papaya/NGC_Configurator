@@ -1,0 +1,837 @@
+				
+				
+	if	^section	==	0
+		log	Section is 0	
+				
+	set	^bank	16	
+	set_hsv	RGBLED:1	60:100:10	
+	set_hsv	RGBLED:2	90:100:10	
+	set_hsv	RGBLED:3	130:100:10	
+	set_hsv	RGBLED:4	210:100:10	
+	set_hsv	RGBLED:5	60:100:10	
+	set_hsv	RGBLED:6	90:100:10	
+	set_hsv	RGBLED:7	130:100:10	
+	set_hsv	RGBLED:8	210:100:10	
+				
+				
+	set_hsv	RGBLED:137	30:100:10	
+	set_hsv	RGBLED:138	0:100:10	
+	set_hsv	RGBLED:139	170:100:10	
+	set_hsv	RGBLED:140	300:100:10	
+	set_hsv	RGBLED:141	30:100:10	
+	set_hsv	RGBLED:142	0:100:10	
+	set_hsv	RGBLED:143	170:100:10	
+	set_hsv	RGBLED:144	300:100:10	
+				
+	set_hsv	RGBLED:289	350:100:10	
+	set_hsv	RGBLED:290	230:100:10	
+	set_hsv	RGBLED:291	270:100:10	
+	set_hsv	RGBLED:292	300:100:10	
+	set_hsv	RGBLED:293	120:100:10	
+	set_hsv	RGBLED:294	230:100:10	
+	set_hsv	RGBLED:295	270:100:10	
+	set_hsv	RGBLED:296	000:000:10	
+				
+	set_hsv	RGBLED:273	30:100:10	
+	set_hsv	RGBLED:274	0:100:10	
+	set_hsv	RGBLED:275	170:100:10	
+	set_hsv	RGBLED:276	300:100:10	
+	set_hsv	RGBLED:277	30:100:10	
+	set_hsv	RGBLED:278	0:100:10	
+	set_hsv	RGBLED:279	170:100:10	
+	set_hsv	RGBLED:280	300:100:10	
+				
+	set_hsv	RGBLED:281	60:100:10	
+	set_hsv	RGBLED:282	90:100:10	
+	set_hsv	RGBLED:283	130:100:10	
+	set_hsv	RGBLED:284	210:100:10	
+	set_hsv	RGBLED:285	60:100:10	
+	set_hsv	RGBLED:286	90:100:10	
+	set_hsv	RGBLED:287	130:100:10	
+	set_hsv	RGBLED:288	210:100:10	
+				
+				
+	set_hsv	RGBLED:553	350:100:0	
+	set_hsv	RGBLED:554	230:100:0	
+	set_hsv	RGBLED:555	270:100:0	
+	set_hsv	RGBLED:556	300:100:0	
+	set_hsv	RGBLED:557	120:100:0	
+	set_hsv	RGBLED:558	230:100:0	
+	set_hsv	RGBLED:559	270:100:0	
+	set_hsv	RGBLED:560	000:000:0	
+				
+	endif			
+				
+				
+	if	^section	==	1
+		log	Section is 1	
+	LCD "@(1:1:4)&b%20s			
+#	LCD "@(1:1:4)&bGrosBeat"			
+	set	^bank	1	
+	set_hsv	RGBLED:5	50:100:10	
+	set_hsv	RGBLED:6	90:100:0	
+	set_hsv	RGBLED:7	130:100:0	
+	set_hsv	RGBLED:8	220:100:0	
+				
+	set_hsv	RGBLED:141	0:100:0	
+	set_hsv	RGBLED:142	25:100:0	
+	set_hsv	RGBLED:143	180:100:0	
+	set_hsv	RGBLED:144	300:100:0	
+				
+	set_hsv	RGBLED:289	350:100:0	
+	set_hsv	RGBLED:290	230:100:0	
+	set_hsv	RGBLED:291	270:100:0	
+	set_hsv	RGBLED:292	300:100:0	
+	set_hsv	RGBLED:293	120:100:0	
+	set_hsv	RGBLED:294	230:100:0	
+	set_hsv	RGBLED:295	270:100:0	
+	set_hsv	RGBLED:296	000:000:0	
+	endif			
+				
+	if	^section	==	2
+		log	Section is 2	
+	LCD "@(1:1:4)&b%20s			
+#	LCD "@(1:1:4)&bGrosBeat"			
+	set	^bank	2	
+	set_hsv	RGBLED:5	50:100:0	
+	set_hsv	RGBLED:6	90:100:10	
+	set_hsv	RGBLED:7	130:100:0	
+	set_hsv	RGBLED:8	220:100:0	
+				
+	set_hsv	RGBLED:141	0:100:0	
+	set_hsv	RGBLED:142	25:100:0	
+	set_hsv	RGBLED:143	180:100:0	
+	set_hsv	RGBLED:144	300:100:0	
+				
+	set_hsv	RGBLED:289	350:100:0	
+	set_hsv	RGBLED:290	230:100:0	
+	set_hsv	RGBLED:291	270:100:0	
+	set_hsv	RGBLED:292	300:100:0	
+	set_hsv	RGBLED:293	120:100:0	
+	set_hsv	RGBLED:294	230:100:0	
+	set_hsv	RGBLED:295	270:100:0	
+	set_hsv	RGBLED:296	000:000:0	
+	endif			
+				
+	if	^section	==	3
+		log	Section is 3	
+	LCD "@(1:1:4)&b%20s			
+#	LCD "@(1:1:4)&bGrosBeat"			
+	set	^bank	3	
+	set_hsv	RGBLED:5	50:100:0	
+	set_hsv	RGBLED:6	90:100:0	
+	set_hsv	RGBLED:7	130:100:10	
+	set_hsv	RGBLED:8	220:100:0	
+				
+	set_hsv	RGBLED:141	0:100:0	
+	set_hsv	RGBLED:142	25:100:0	
+	set_hsv	RGBLED:143	180:100:0	
+	set_hsv	RGBLED:144	300:100:0	
+				
+	set_hsv	RGBLED:289	350:100:0	
+	set_hsv	RGBLED:290	230:100:0	
+	set_hsv	RGBLED:291	270:100:0	
+	set_hsv	RGBLED:292	300:100:0	
+	set_hsv	RGBLED:293	120:100:0	
+	set_hsv	RGBLED:294	230:100:0	
+	set_hsv	RGBLED:295	270:100:0	
+	set_hsv	RGBLED:296	000:000:0	
+	endif			
+				
+	if	^section	==	4
+		log	Section is 4	
+	LCD "@(1:1:4)&b%20s			
+#	LCD "@(1:1:4)&bGrosBeat"			
+	set	^bank	4	
+	set_hsv	RGBLED:5	50:100:0	
+	set_hsv	RGBLED:6	90:100:0	
+	set_hsv	RGBLED:7	130:100:0	
+	set_hsv	RGBLED:8	220:100:10	
+				
+	set_hsv	RGBLED:141	0:100:0	
+	set_hsv	RGBLED:142	25:100:0	
+	set_hsv	RGBLED:143	180:100:0	
+	set_hsv	RGBLED:144	300:100:0	
+				
+	set_hsv	RGBLED:289	350:100:0	
+	set_hsv	RGBLED:290	230:100:0	
+	set_hsv	RGBLED:291	270:100:0	
+	set_hsv	RGBLED:292	300:100:0	
+	set_hsv	RGBLED:293	120:100:0	
+	set_hsv	RGBLED:294	230:100:0	
+	set_hsv	RGBLED:295	270:100:0	
+	set_hsv	RGBLED:296	000:000:0	
+	endif			
+				
+	if	^section	==	5
+		log	Section is 5	
+	LCD "@(1:1:4)&b%20s			
+#	LCD "@(1:1:4)&bGrosBeat"			
+	set	^bank	5	
+	set_hsv	RGBLED:5	50:100:0	
+	set_hsv	RGBLED:6	90:100:0	
+	set_hsv	RGBLED:7	130:100:0	
+	set_hsv	RGBLED:8	220:100:0	
+				
+	set_hsv	RGBLED:141	25:100:10	
+	set_hsv	RGBLED:142	0:100:0	
+	set_hsv	RGBLED:143	180:100:0	
+	set_hsv	RGBLED:144	300:100:0	
+				
+	set_hsv	RGBLED:289	350:100:0	
+	set_hsv	RGBLED:290	230:100:0	
+	set_hsv	RGBLED:291	270:100:0	
+	set_hsv	RGBLED:292	300:100:0	
+	set_hsv	RGBLED:293	120:100:0	
+	set_hsv	RGBLED:294	230:100:0	
+	set_hsv	RGBLED:295	270:100:0	
+	set_hsv	RGBLED:296	000:000:0	
+	endif			
+				
+	if	^section	==	6
+		log	Section is 6	
+	LCD "@(1:1:4)&b%20s			
+#	LCD "@(1:1:4)&bGrosBeat"			
+	set	^bank	6	
+	set_hsv	RGBLED:5	50:100:0	
+	set_hsv	RGBLED:6	90:100:0	
+	set_hsv	RGBLED:7	130:100:0	
+	set_hsv	RGBLED:8	220:100:0	
+				
+	set_hsv	RGBLED:141	25:100:0	
+	set_hsv	RGBLED:142	0:100:10	
+	set_hsv	RGBLED:143	180:100:0	
+	set_hsv	RGBLED:144	300:100:0	
+				
+	set_hsv	RGBLED:289	350:100:0	
+	set_hsv	RGBLED:290	230:100:0	
+	set_hsv	RGBLED:291	270:100:0	
+	set_hsv	RGBLED:292	300:100:0	
+	set_hsv	RGBLED:293	120:100:0	
+	set_hsv	RGBLED:294	230:100:0	
+	set_hsv	RGBLED:295	270:100:0	
+	set_hsv	RGBLED:296	000:000:0	
+	endif			
+				
+	if	^section	==	7
+		log	Section is 7	
+	LCD "@(1:1:4)&b%20s			
+#	LCD "@(1:1:4)&bGrosBeat"			
+	set	^bank	7	
+	set_hsv	RGBLED:5	50:100:0	
+	set_hsv	RGBLED:6	90:100:0	
+	set_hsv	RGBLED:7	130:100:0	
+	set_hsv	RGBLED:8	220:100:0	
+				
+	set_hsv	RGBLED:141	0:100:0	
+	set_hsv	RGBLED:142	25:100:0	
+	set_hsv	RGBLED:143	180:100:10	
+	set_hsv	RGBLED:144	300:100:0	
+				
+	set_hsv	RGBLED:289	350:100:0	
+	set_hsv	RGBLED:290	230:100:0	
+	set_hsv	RGBLED:291	270:100:0	
+	set_hsv	RGBLED:292	300:100:0	
+	set_hsv	RGBLED:293	120:100:0	
+	set_hsv	RGBLED:294	230:100:0	
+	set_hsv	RGBLED:295	270:100:0	
+	set_hsv	RGBLED:296	000:000:0	
+	endif			
+				
+	if	^section	==	8
+		log	Section is 8	
+	LCD "@(1:1:4)&b%20s			
+#	LCD "@(1:1:4)&bGrosBeat"			
+	set	^bank	8	
+	set_hsv	RGBLED:5	50:100:0	
+	set_hsv	RGBLED:6	90:100:0	
+	set_hsv	RGBLED:7	130:100:0	
+	set_hsv	RGBLED:8	220:100:0	
+				
+	set_hsv	RGBLED:141	0:100:0	
+	set_hsv	RGBLED:142	25:100:0	
+	set_hsv	RGBLED:143	180:100:0	
+	set_hsv	RGBLED:144	300:100:10	
+				
+	set_hsv	RGBLED:289	350:100:0	
+	set_hsv	RGBLED:290	230:100:0	
+	set_hsv	RGBLED:291	270:100:0	
+	set_hsv	RGBLED:292	300:100:0	
+	set_hsv	RGBLED:293	120:100:0	
+	set_hsv	RGBLED:294	230:100:0	
+	set_hsv	RGBLED:295	270:100:0	
+	set_hsv	RGBLED:296	0:0:0	
+	endif			
+				
+	if	^section	==	9
+		log	Section is 9	
+	LCD "@(1:1:4)&b%20s			
+#	LCD "@(1:1:4)&bGrosBeat"			
+	set	^bank	9	
+	set_hsv	RGBLED:5	30:100:0	
+	set_hsv	RGBLED:6	90:100:0	
+	set_hsv	RGBLED:7	190:100:0	
+	set_hsv	RGBLED:8	270:100:0	
+				
+	set_hsv	RGBLED:141	120:100:0	
+	set_hsv	RGBLED:142	230:100:0	
+	set_hsv	RGBLED:143	270:100:0	
+	set_hsv	RGBLED:144	300:100:0	
+				
+	set_hsv	RGBLED:289	350:100:10	
+	set_hsv	RGBLED:290	230:100:0	
+	set_hsv	RGBLED:291	270:100:0	
+	set_hsv	RGBLED:292	300:100:0	
+	set_hsv	RGBLED:293	120:100:0	
+	set_hsv	RGBLED:294	230:100:0	
+	set_hsv	RGBLED:295	270:100:0	
+	set_hsv	RGBLED:296	300:100:0	
+	endif			
+				
+	if	^section	==	10
+		log	Section is 10	
+	set	^bank	10	
+	LCD "@(1:1:4)&b%20s			
+#	LCD "@(1:1:4)&bGrosBeat"			
+	set_hsv	RGBLED:5	30:100:0	
+	set_hsv	RGBLED:6	90:100:0	
+	set_hsv	RGBLED:7	190:100:0	
+	set_hsv	RGBLED:8	270:100:0	
+				
+	set_hsv	RGBLED:141	120:100:0	
+	set_hsv	RGBLED:142	230:100:0	
+	set_hsv	RGBLED:143	270:100:0	
+	set_hsv	RGBLED:144	300:100:0	
+				
+	set_hsv	RGBLED:289	350:100:0	
+	set_hsv	RGBLED:290	230:100:10	
+	set_hsv	RGBLED:291	270:100:0	
+	set_hsv	RGBLED:292	300:100:0	
+	set_hsv	RGBLED:293	120:100:0	
+	set_hsv	RGBLED:294	230:100:0	
+	set_hsv	RGBLED:295	270:100:0	
+	set_hsv	RGBLED:296	300:100:0	
+	endif			
+				
+	if	^section	==	11
+		log	Section is 11	
+	LCD "@(1:1:4)&b%20s			
+#	LCD "@(1:1:4)&bGrosBeat"			
+	set	^bank	11	
+	set_hsv	RGBLED:5	30:100:0	
+	set_hsv	RGBLED:6	90:100:0	
+	set_hsv	RGBLED:7	190:100:0	
+	set_hsv	RGBLED:8	270:100:0	
+				
+	set_hsv	RGBLED:141	120:100:0	
+	set_hsv	RGBLED:142	230:100:0	
+	set_hsv	RGBLED:143	270:100:0	
+	set_hsv	RGBLED:144	300:100:0	
+				
+	set_hsv	RGBLED:289	350:100:0	
+	set_hsv	RGBLED:290	230:100:0	
+	set_hsv	RGBLED:291	270:100:10	
+	set_hsv	RGBLED:292	300:100:0	
+	set_hsv	RGBLED:293	120:100:0	
+	set_hsv	RGBLED:294	230:100:0	
+	set_hsv	RGBLED:295	270:100:0	
+	set_hsv	RGBLED:296	300:100:0	
+	endif			
+				
+	if	^section	==	12
+		log	Section is 12	
+	LCD "@(1:1:4)&b%20s			
+#	LCD "@(1:1:4)&bGrosBeat"			
+	set	^bank	12	
+	set_hsv	RGBLED:5	30:100:0	
+	set_hsv	RGBLED:6	90:100:0	
+	set_hsv	RGBLED:7	190:100:0	
+	set_hsv	RGBLED:8	270:100:0	
+				
+	set_hsv	RGBLED:141	120:100:0	
+	set_hsv	RGBLED:142	230:100:0	
+	set_hsv	RGBLED:143	270:100:0	
+	set_hsv	RGBLED:144	300:100:0	
+				
+	set_hsv	RGBLED:289	350:100:0	
+	set_hsv	RGBLED:290	230:100:0	
+	set_hsv	RGBLED:291	270:100:0	
+	set_hsv	RGBLED:292	300:100:10	
+	set_hsv	RGBLED:293	120:100:0	
+	set_hsv	RGBLED:294	230:100:0	
+	set_hsv	RGBLED:295	270:100:0	
+	set_hsv	RGBLED:296	300:100:0	
+	endif			
+				
+				
+	if	^section	==	13
+		log	Section is 13	
+	LCD "@(1:1:4)&b%20s			
+#	LCD "@(1:1:4)&bGroBeat"			
+	set	^bank	13	
+	set_hsv	RGBLED:5	30:100:0	
+	set_hsv	RGBLED:6	90:100:0	
+	set_hsv	RGBLED:7	190:100:0	
+	set_hsv	RGBLED:8	270:100:0	
+				
+	set_hsv	RGBLED:141	120:100:0	
+	set_hsv	RGBLED:142	230:100:0	
+	set_hsv	RGBLED:143	270:100:0	
+	set_hsv	RGBLED:144	300:100:0	
+				
+	set_hsv	RGBLED:289	350:100:0	
+	set_hsv	RGBLED:290	230:100:0	
+	set_hsv	RGBLED:291	270:100:0	
+	set_hsv	RGBLED:292	300:100:0	
+	set_hsv	RGBLED:293	120:100:10	
+	set_hsv	RGBLED:294	230:100:0	
+	set_hsv	RGBLED:295	270:100:0	
+	set_hsv	RGBLED:296	300:100:0	
+	endif			
+				
+	if	^section	==	14
+		log	Section is 14	
+	LCD "@(1:1:4)&b%20s			
+#	LCD "@(1:1:4)&bGroBeat"			
+	set	^bank	14	
+	set_hsv	RGBLED:5	30:100:0	
+	set_hsv	RGBLED:6	90:100:0	
+	set_hsv	RGBLED:7	190:100:0	
+	set_hsv	RGBLED:8	270:100:0	
+				
+	set_hsv	RGBLED:141	120:100:0	
+	set_hsv	RGBLED:142	230:100:0	
+	set_hsv	RGBLED:143	270:100:0	
+	set_hsv	RGBLED:144	300:100:0	
+				
+	set_hsv	RGBLED:289	350:100:0	
+	set_hsv	RGBLED:290	230:100:0	
+	set_hsv	RGBLED:291	270:100:0	
+	set_hsv	RGBLED:292	300:100:0	
+	set_hsv	RGBLED:293	120:100:0	
+	set_hsv	RGBLED:294	230:100:10	
+	set_hsv	RGBLED:295	270:100:0	
+	set_hsv	RGBLED:296	300:100:0	
+	endif			
+				
+	if	^section	==	15
+		log	Section is 15	
+	LCD "@(1:1:4)&b%20s			
+	LCD "@(1:1:4)&bSend%5s			
+				
+	set	^bank	15	
+	set_hsv	RGBLED:5	30:100:0	
+	set_hsv	RGBLED:6	90:100:0	
+	set_hsv	RGBLED:7	190:100:0	
+	set_hsv	RGBLED:8	270:100:0	
+				
+	set_hsv	RGBLED:141	120:100:0	
+	set_hsv	RGBLED:142	230:100:0	
+	set_hsv	RGBLED:143	270:100:0	
+	set_hsv	RGBLED:144	300:100:0	
+				
+	set_hsv	RGBLED:289	350:100:0	
+	set_hsv	RGBLED:290	230:100:0	
+	set_hsv	RGBLED:291	270:100:0	
+	set_hsv	RGBLED:292	300:100:0	
+	set_hsv	RGBLED:293	120:100:0	
+	set_hsv	RGBLED:294	230:100:0	
+	set_hsv	RGBLED:295	270:100:10	
+	set_hsv	RGBLED:296	300:100:0	
+	endif			
+				
+	if	^section	==	16
+		log	Section is 16	
+	LCD "@(1:1:4)&b%20s			
+	LCD "@(1:1:4)&bGroBeat"			
+				
+	set	^bank	16	
+	set_hsv	RGBLED:5	50:100:0	
+	set_hsv	RGBLED:6	90:100:0	
+	set_hsv	RGBLED:7	130:100:0	
+	set_hsv	RGBLED:8	220:100:0	
+				
+	set_hsv	RGBLED:141	0:100:0	
+	set_hsv	RGBLED:142	25:100:0	
+	set_hsv	RGBLED:143	180:100:0	
+	set_hsv	RGBLED:144	300:100:0	
+				
+	set_hsv	RGBLED:289	350:100:0	
+	set_hsv	RGBLED:290	230:100:0	
+	set_hsv	RGBLED:291	270:100:0	
+	set_hsv	RGBLED:292	300:100:0	
+	set_hsv	RGBLED:293	120:100:0	
+	set_hsv	RGBLED:294	230:100:0	
+	set_hsv	RGBLED:295	270:100:0	
+	set_hsv	RGBLED:296	000:000:10	
+	endif			
+				
+				
+#if	^section	==	101
+#	LCD "@(1:1:7)&b%20s			
+#	LCD "@(1:1:7)&pg +"			
+#log	Section is 101
+# type port chn valeur
+#set LED:2000 [LED:2000 - 1]
+#send ProgramChange USB1   14 LED:2000
+#endif			
+
+#if	^section	==	102
+#	LCD "@(1:1:7)&b%20s			
+#	LCD "@(1:1:7)&pg +"			
+#set LED:2000 [LED:2000 + 1]
+#log	Section is 102
+# type port chn valeur
+#send ProgramChange USB1   14 LED:2000
+#endif			
+							
+				
+				
+	if	^section	==	105
+	LCD "@(1:1:7)&b%20s			
+#	LCD "@(1:1:7)&bSynth"			
+		log	Section is 105	
+	set_hsv	RGBLED:553	350:100:0	
+	set_hsv	RGBLED:554	230:100:0	
+	set_hsv	RGBLED:555	270:100:0	
+	set_hsv	RGBLED:556	300:100:0	
+	set_hsv	RGBLED:557	120:100:10	
+	set_hsv	RGBLED:558	230:100:0	
+	set_hsv	RGBLED:559	270:100:0	
+	set_hsv	RGBLED:560	000:000:0	
+	# Active			
+		# Encoders		
+		set_active 	(id)ENC:1333	1
+		set_active 	(id)ENC:1334	1
+		set_active 	(id)ENC:1335	1
+		set_active 	(id)ENC:1336	1
+		set_active 	(id)ENC:1337	1
+		set_active 	(id)ENC:1338	1
+		set_active 	(id)ENC:1339	1
+		set_active 	(id)ENC:1340	1
+		set_active 	(id)ENC:1341	1
+		set_active 	(id)ENC:1342	1
+		set_active 	(id)ENC:1343	1
+		set_active 	(id)ENC:1344	1
+		set_active 	(id)ENC:1345	1
+		set_active 	(id)ENC:1346	1
+		set_active 	(id)ENC:1347	1
+		set_active 	(id)ENC:1348	1
+				
+	# Desative			
+		# Encoders		
+		set_active 	(id)ENC:1433	0
+		set_active 	(id)ENC:1434	0
+		set_active 	(id)ENC:1435	0
+		set_active 	(id)ENC:1436	0
+		set_active 	(id)ENC:1437	0
+		set_active 	(id)ENC:1438	0
+		set_active 	(id)ENC:1439	0
+		set_active 	(id)ENC:1440	0
+		set_active 	(id)ENC:1441	0
+		set_active 	(id)ENC:1442	0
+		set_active 	(id)ENC:1443	0
+		set_active 	(id)ENC:1444	0
+		set_active 	(id)ENC:1445	0
+		set_active 	(id)ENC:1446	0
+		set_active 	(id)ENC:1447	0
+		set_active 	(id)ENC:1448	0
+		#ENC		
+		set_active 	(id)ENC:1533	0
+		set_active 	(id)ENC:1534	0
+		set_active 	(id)ENC:1535	0
+		set_active 	(id)ENC:1536	0
+		set_active 	(id)ENC:1537	0
+		set_active 	(id)ENC:1538	0
+		set_active 	(id)ENC:1539	0
+		set_active 	(id)ENC:1540	0
+		set_active 	(id)ENC:1541	0
+		set_active 	(id)ENC:1542	0
+		set_active 	(id)ENC:1543	0
+		set_active 	(id)ENC:1544	0
+		set_active 	(id)ENC:1545	0
+		set_active 	(id)ENC:1546	0
+		set_active 	(id)ENC:1547	0
+		set_active 	(id)ENC:1548	0
+		# Encoders		
+		set_active 	(id)ENC:1633	0
+		set_active 	(id)ENC:1634	0
+		set_active 	(id)ENC:1635	0
+		set_active 	(id)ENC:1636	0
+		set_active 	(id)ENC:1637	0
+		set_active 	(id)ENC:1638	0
+		set_active 	(id)ENC:1639	0
+		set_active 	(id)ENC:1640	0
+		set_active 	(id)ENC:1641	0
+		set_active 	(id)ENC:1642	0
+		set_active 	(id)ENC:1643	0
+		set_active 	(id)ENC:1644	0
+		set_active 	(id)ENC:1645	0
+		set_active 	(id)ENC:1646	0
+		set_active 	(id)ENC:1647	0
+		set_active 	(id)ENC:1648	0
+				
+	endif			
+				
+				
+	if	^section	==	106
+		log	Section is 106	
+	LCD "@(1:1:7)&b%20s			
+#	LCD "@(1:1:7)&bSynth			
+	set_hsv	RGBLED:553	350:100:0	
+	set_hsv	RGBLED:554	230:100:0	
+	set_hsv	RGBLED:555	270:100:0	
+	set_hsv	RGBLED:556	300:100:0	
+	set_hsv	RGBLED:557	120:100:0	
+	set_hsv	RGBLED:558	230:100:10	
+	set_hsv	RGBLED:559	270:100:0	
+	set_hsv	RGBLED:560	000:000:0	
+	# Active			
+		# Encoders		
+		set_active 	(id)ENC:1433	1
+		set_active 	(id)ENC:1434	1
+		set_active 	(id)ENC:1435	1
+		set_active 	(id)ENC:1436	1
+		set_active 	(id)ENC:1437	1
+		set_active 	(id)ENC:1438	1
+		set_active 	(id)ENC:1439	1
+		set_active 	(id)ENC:1440	1
+		set_active 	(id)ENC:1441	1
+		set_active 	(id)ENC:1442	1
+		set_active 	(id)ENC:1443	1
+		set_active 	(id)ENC:1444	1
+		set_active 	(id)ENC:1445	1
+		set_active 	(id)ENC:1446	1
+		set_active 	(id)ENC:1447	1
+		set_active 	(id)ENC:1448	1
+				
+	# Desative			
+		# Encoders		
+		set_active 	(id)ENC:1333	0
+		set_active 	(id)ENC:1334	0
+		set_active 	(id)ENC:1335	0
+		set_active 	(id)ENC:1336	0
+		set_active 	(id)ENC:1337	0
+		set_active 	(id)ENC:1338	0
+		set_active 	(id)ENC:1339	0
+		set_active 	(id)ENC:1340	0
+		set_active 	(id)ENC:1341	0
+		set_active 	(id)ENC:1342	0
+		set_active 	(id)ENC:1343	0
+		set_active 	(id)ENC:1344	0
+		set_active 	(id)ENC:1345	0
+		set_active 	(id)ENC:1346	0
+		set_active 	(id)ENC:1347	0
+		set_active 	(id)ENC:1348	0
+		#ENC		
+		set_active 	(id)ENC:1533	0
+		set_active 	(id)ENC:1534	0
+		set_active 	(id)ENC:1535	0
+		set_active 	(id)ENC:1536	0
+		set_active 	(id)ENC:1537	0
+		set_active 	(id)ENC:1538	0
+		set_active 	(id)ENC:1539	0
+		set_active 	(id)ENC:1540	0
+		set_active 	(id)ENC:1541	0
+		set_active 	(id)ENC:1542	0
+		set_active 	(id)ENC:1543	0
+		set_active 	(id)ENC:1544	0
+		set_active 	(id)ENC:1545	0
+		set_active 	(id)ENC:1546	0
+		set_active 	(id)ENC:1547	0
+		set_active 	(id)ENC:1548	0
+		# Encoders		
+		set_active 	(id)ENC:1633	0
+		set_active 	(id)ENC:1634	0
+		set_active 	(id)ENC:1635	0
+		set_active 	(id)ENC:1636	0
+		set_active 	(id)ENC:1637	0
+		set_active 	(id)ENC:1638	0
+		set_active 	(id)ENC:1639	0
+		set_active 	(id)ENC:1640	0
+		set_active 	(id)ENC:1641	0
+		set_active 	(id)ENC:1642	0
+		set_active 	(id)ENC:1643	0
+		set_active 	(id)ENC:1644	0
+		set_active 	(id)ENC:1645	0
+		set_active 	(id)ENC:1646	0
+		set_active 	(id)ENC:1647	0
+		set_active 	(id)ENC:1648	0
+				
+	endif			
+				
+				
+	if	^section	==	107
+	LCD "@(1:1:7)&b%20s			
+	LCD "@(1:1:7)&b   Send			
+				
+		log	Section is 107	
+	set_hsv	RGBLED:553	350:100:0	
+	set_hsv	RGBLED:554	230:100:0	
+	set_hsv	RGBLED:555	270:100:0	
+	set_hsv	RGBLED:556	300:100:0	
+	set_hsv	RGBLED:557	120:100:0	
+	set_hsv	RGBLED:558	230:100:0	
+	set_hsv	RGBLED:559	270:100:10	
+	set_hsv	RGBLED:560	000:000:0	
+	# Active			
+		#ENC		
+		set_active 	(id)ENC:1533	1
+		set_active 	(id)ENC:1534	1
+		set_active 	(id)ENC:1535	1
+		set_active 	(id)ENC:1536	1
+		set_active 	(id)ENC:1537	1
+		set_active 	(id)ENC:1538	1
+		set_active 	(id)ENC:1539	1
+		set_active 	(id)ENC:1540	1
+		set_active 	(id)ENC:1541	1
+		set_active 	(id)ENC:1542	1
+		set_active 	(id)ENC:1543	1
+		set_active 	(id)ENC:1544	1
+		set_active 	(id)ENC:1545	1
+		set_active 	(id)ENC:1546	1
+		set_active 	(id)ENC:1547	1
+		set_active 	(id)ENC:1548	1
+	# Desative			
+		# Encoders		
+		set_active 	(id)ENC:1333	0
+		set_active 	(id)ENC:1334	0
+		set_active 	(id)ENC:1335	0
+		set_active 	(id)ENC:1336	0
+		set_active 	(id)ENC:1337	0
+		set_active 	(id)ENC:1338	0
+		set_active 	(id)ENC:1339	0
+		set_active 	(id)ENC:1340	0
+		set_active 	(id)ENC:1341	0
+		set_active 	(id)ENC:1342	0
+		set_active 	(id)ENC:1343	0
+		set_active 	(id)ENC:1344	0
+		set_active 	(id)ENC:1345	0
+		set_active 	(id)ENC:1346	0
+		set_active 	(id)ENC:1347	0
+		set_active 	(id)ENC:1348	0
+		# Encoders		
+		set_active 	(id)ENC:1433	0
+		set_active 	(id)ENC:1434	0
+		set_active 	(id)ENC:1435	0
+		set_active 	(id)ENC:1436	0
+		set_active 	(id)ENC:1437	0
+		set_active 	(id)ENC:1438	0
+		set_active 	(id)ENC:1439	0
+		set_active 	(id)ENC:1440	0
+		set_active 	(id)ENC:1441	0
+		set_active 	(id)ENC:1442	0
+		set_active 	(id)ENC:1443	0
+		set_active 	(id)ENC:1444	0
+		set_active 	(id)ENC:1445	0
+		set_active 	(id)ENC:1446	0
+		set_active 	(id)ENC:1447	0
+		set_active 	(id)ENC:1448	0
+		# Encoders		
+		set_active 	(id)ENC:1633	0
+		set_active 	(id)ENC:1634	0
+		set_active 	(id)ENC:1635	0
+		set_active 	(id)ENC:1636	0
+		set_active 	(id)ENC:1637	0
+		set_active 	(id)ENC:1638	0
+		set_active 	(id)ENC:1639	0
+		set_active 	(id)ENC:1640	0
+		set_active 	(id)ENC:1641	0
+		set_active 	(id)ENC:1642	0
+		set_active 	(id)ENC:1643	0
+		set_active 	(id)ENC:1644	0
+		set_active 	(id)ENC:1645	0
+		set_active 	(id)ENC:1646	0
+		set_active 	(id)ENC:1647	0
+		set_active 	(id)ENC:1648	0
+				
+				
+				
+	endif			
+				
+	if	^section	==	108
+		log	Section is 108	
+	LCD "@(1:1:7)&b%20s			
+	LCD "@(1:1:7)&b   Synth			
+				
+	set_hsv	RGBLED:553	350:100:0	
+	set_hsv	RGBLED:554	230:100:0	
+	set_hsv	RGBLED:555	270:100:0	
+	set_hsv	RGBLED:556	300:100:0	
+	set_hsv	RGBLED:557	120:100:0	
+	set_hsv	RGBLED:558	230:100:0	
+	set_hsv	RGBLED:559	270:100:0	
+	set_hsv	RGBLED:560	000:000:10	
+	# Active			
+		# Encoders		
+		set_active 	(id)ENC:1633	1
+		set_active 	(id)ENC:1634	1
+		set_active 	(id)ENC:1635	1
+		set_active 	(id)ENC:1636	1
+		set_active 	(id)ENC:1637	1
+		set_active 	(id)ENC:1638	1
+		set_active 	(id)ENC:1639	1
+		set_active 	(id)ENC:1640	1
+		set_active 	(id)ENC:1641	1
+		set_active 	(id)ENC:1642	1
+		set_active 	(id)ENC:1643	1
+		set_active 	(id)ENC:1644	1
+		set_active 	(id)ENC:1645	1
+		set_active 	(id)ENC:1646	1
+		set_active 	(id)ENC:1647	1
+		set_active 	(id)ENC:1648	1
+				
+	# Desative			
+		# Encoders		
+		set_active 	(id)ENC:1333	0
+		set_active 	(id)ENC:1334	0
+		set_active 	(id)ENC:1335	0
+		set_active 	(id)ENC:1336	0
+		set_active 	(id)ENC:1337	0
+		set_active 	(id)ENC:1338	0
+		set_active 	(id)ENC:1339	0
+		set_active 	(id)ENC:1340	0
+		set_active 	(id)ENC:1341	0
+		set_active 	(id)ENC:1342	0
+		set_active 	(id)ENC:1343	0
+		set_active 	(id)ENC:1344	0
+		set_active 	(id)ENC:1345	0
+		set_active 	(id)ENC:1346	0
+		set_active 	(id)ENC:1347	0
+		set_active 	(id)ENC:1348	0
+		# Encoders		
+		set_active 	(id)ENC:1433	0
+		set_active 	(id)ENC:1434	0
+		set_active 	(id)ENC:1435	0
+		set_active 	(id)ENC:1436	0
+		set_active 	(id)ENC:1437	0
+		set_active 	(id)ENC:1438	0
+		set_active 	(id)ENC:1439	0
+		set_active 	(id)ENC:1440	0
+		set_active 	(id)ENC:1441	0
+		set_active 	(id)ENC:1442	0
+		set_active 	(id)ENC:1443	0
+		set_active 	(id)ENC:1444	0
+		set_active 	(id)ENC:1445	0
+		set_active 	(id)ENC:1446	0
+		set_active 	(id)ENC:1447	0
+		set_active 	(id)ENC:1448	0
+		#ENC		
+		set_active 	(id)ENC:1533	0
+		set_active 	(id)ENC:1534	0
+		set_active 	(id)ENC:1535	0
+		set_active 	(id)ENC:1536	0
+		set_active 	(id)ENC:1537	0
+		set_active 	(id)ENC:1538	0
+		set_active 	(id)ENC:1539	0
+		set_active 	(id)ENC:1540	0
+		set_active 	(id)ENC:1541	0
+		set_active 	(id)ENC:1542	0
+		set_active 	(id)ENC:1543	0
+		set_active 	(id)ENC:1544	0
+		set_active 	(id)ENC:1545	0
+		set_active 	(id)ENC:1546	0
+		set_active 	(id)ENC:1547	0
+		set_active 	(id)ENC:1548	0
+				
+	endif			

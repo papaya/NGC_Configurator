@@ -1,0 +1,1380 @@
+											
+											
+	if ^section == 0										
+	log "Hello World!"										
+	#	exec_meta RgbLedRainbow:5:10									
+	delay_ms 2000										
+											
+	  exit										
+	endif										
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											
+											
+	#################################################################################										
+	if ^section == 1										
+	  log "Section is 1"										
+											
+	set_hsv RGBLED:5	 300:100:10									
+	set_hsv RGBLED:6	 200:100:1									
+	set_hsv RGBLED:7	100:100:1									
+	set_hsv RGBLED:8	 50:100:1									
+											
+	set_hsv RGBLED:1	 300:100:10									
+	set_hsv RGBLED:2	 300:100:10									
+	set_hsv RGBLED:3	 300:100:10									
+	set_hsv RGBLED:4	 300:100:10									
+											
+	# Active										
+		# Encoders									
+		set_active 	(id)ENC:101	1			(id)ENC:	101			
+		set_active 	(id)ENC:102	1			(id)ENC:	102			
+		set_active 	(id)ENC:103	1			(id)ENC:	103			
+		set_active 	(id)ENC:104	1			(id)ENC:	104			
+		set_active 	(id)ENC:105	1			(id)ENC:	105			
+		set_active 	(id)ENC:106	1			(id)ENC:	106			
+		set_active 	(id)ENC:107	1			(id)ENC:	107			
+		set_active 	(id)ENC:108	1			(id)ENC:	108			
+		# BP ENC									
+		set_active 	(id)BUTTON:117	1			(id)BUTTON:	117			
+		set_active 	(id)BUTTON:118	1			(id)BUTTON:	118			
+		set_active 	(id)BUTTON:119	1			(id)BUTTON:	119			
+		set_active 	(id)BUTTON:120	1			(id)BUTTON:	120			
+		set_active 	(id)BUTTON:121	1			(id)BUTTON:	121			
+		set_active 	(id)BUTTON:122	1			(id)BUTTON:	122			
+		set_active 	(id)BUTTON:123	1			(id)BUTTON:	123			
+		set_active 	(id)BUTTON:124	1			(id)BUTTON:	124			
+		#FADERS									
+		set_active 	(id)AINSER:133 	1			(id)AINSER:	133 			
+		set_active 	(id)AINSER:134	1			(id)AINSER:	134			
+		set_active 	(id)AINSER:135	1			(id)AINSER:	135			
+		set_active 	(id)AINSER:136	1			(id)AINSER:	136			
+		#SWICTH MIXER									
+		set_active 	(id)BUTTON:141	1			(id)BUTTON:	141			
+		set_active 	(id)BUTTON:142	1			(id)BUTTON:	142			
+		set_active 	(id)BUTTON:143	1			(id)BUTTON:	143			
+		set_active 	(id)BUTTON:144	1			(id)BUTTON:	144			
+											
+											
+		#POTARDS									
+		set_active 	(id)AINSER:157	1			(id)AINSER:	157			
+		set_active 	(id)AINSER:158	1			(id)AINSER:	158			
+		set_active 	(id)AINSER:159	1			(id)AINSER:	159			
+		set_active 	(id)AINSER:160	1			(id)AINSER:	160			
+		set_active 	(id)AINSER:161	1			(id)AINSER:	161			
+		set_active 	(id)AINSER:162	1			(id)AINSER:	162			
+		set_active 	(id)AINSER:163	1			(id)AINSER:	163			
+		set_active 	(id)AINSER:164	1			(id)AINSER:	164			
+	# Desative										
+		#ENC									
+		set_active 	(id)ENC:201	0			(id)ENC:	201			
+		set_active 	(id)ENC:202	0			(id)ENC:	202			
+		set_active 	(id)ENC:203	0			(id)ENC:	203			
+		set_active 	(id)ENC:204	0			(id)ENC:	204			
+		set_active 	(id)ENC:205	0			(id)ENC:	205			
+		set_active 	(id)ENC:206	0			(id)ENC:	206			
+		set_active 	(id)ENC:207	0			(id)ENC:	207			
+		set_active 	(id)ENC:208	0			(id)ENC:	208			
+		# BP ENC									
+		set_active 	(id)BUTTON:217	0			(id)BUTTON:	217			
+		set_active 	(id)BUTTON:218	0			(id)BUTTON:	218			
+		set_active 	(id)BUTTON:219	0			(id)BUTTON:	219			
+		set_active 	(id)BUTTON:220	0			(id)BUTTON:	220			
+		set_active 	(id)BUTTON:221	0			(id)BUTTON:	221			
+		set_active 	(id)BUTTON:222	0			(id)BUTTON:	222			
+		set_active 	(id)BUTTON:223	0			(id)BUTTON:	223			
+		set_active 	(id)BUTTON:224	0			(id)BUTTON:	224			
+		#FADERS									
+		set_active 	(id)AINSER:233	0			(id)AINSER:	233			
+		set_active 	(id)AINSER:234	0			(id)AINSER:	234			
+		set_active 	(id)AINSER:235	0			(id)AINSER:	235			
+		set_active 	(id)AINSER:236	0			(id)AINSER:	236			
+		#SWICTH MIXER									
+		set_active 	(id)BUTTON:241	0			(id)BUTTON:	241			
+		set_active 	(id)BUTTON:242	0			(id)BUTTON:	242			
+		set_active 	(id)BUTTON:243	0			(id)BUTTON:	243			
+		set_active 	(id)BUTTON:244	0			(id)BUTTON:	244			
+											
+		#POTARDS									
+		set_active 	(id)AINSER:257	0			(id)AINSER:	257			
+		set_active 	(id)AINSER:258	0			(id)AINSER:	258			
+		set_active 	(id)AINSER:259	0			(id)AINSER:	259			
+		set_active 	(id)AINSER:260	0			(id)AINSER:	260			
+		set_active 	(id)AINSER:261	0			(id)AINSER:	261			
+		set_active 	(id)AINSER:262	0			(id)AINSER:	262			
+		set_active 	(id)AINSER:263	0			(id)AINSER:	263			
+		set_active 	(id)AINSER:264	0			(id)AINSER:	264			
+											
+		#ENC									
+		set_active 	(id)ENC:301	0			(id)ENC:	301			
+		set_active 	(id)ENC:302	0			(id)ENC:	302			
+		set_active 	(id)ENC:303	0			(id)ENC:	303			
+		set_active 	(id)ENC:304	0			(id)ENC:	304			
+		set_active 	(id)ENC:305	0			(id)ENC:	305			
+		set_active 	(id)ENC:306	0			(id)ENC:	306			
+		set_active 	(id)ENC:307	0			(id)ENC:	307			
+		set_active 	(id)ENC:308	0			(id)ENC:	308			
+		# BP ENC									
+		set_active 	(id)BUTTON:317	0			(id)BUTTON:	317			
+		set_active 	(id)BUTTON:318	0			(id)BUTTON:	318			
+		set_active 	(id)BUTTON:319	0			(id)BUTTON:	319			
+		set_active 	(id)BUTTON:320	0			(id)BUTTON:	320			
+		set_active 	(id)BUTTON:321	0			(id)BUTTON:	321			
+		set_active 	(id)BUTTON:322	0			(id)BUTTON:	322			
+		set_active 	(id)BUTTON:323	0			(id)BUTTON:	323			
+		set_active 	(id)BUTTON:324	0			(id)BUTTON:	324			
+		#FADERS									
+		set_active 	(id)AINSER:333	0			(id)AINSER:	333			
+		set_active 	(id)AINSER:334	0			(id)AINSER:	334			
+		set_active 	(id)AINSER:335	0			(id)AINSER:	335			
+		set_active 	(id)AINSER:336	0			(id)AINSER:	336			
+		#SWICTH MIXER									
+		set_active 	(id)BUTTON:341	0			(id)BUTTON:	341			
+		set_active 	(id)BUTTON:342	0			(id)BUTTON:	342			
+		set_active 	(id)BUTTON:343	0			(id)BUTTON:	343			
+		set_active 	(id)BUTTON:344	0			(id)BUTTON:	344			
+											
+		#POTARDS									
+		set_active 	(id)AINSER:357	0			(id)AINSER:	357			
+		set_active 	(id)AINSER:358	0			(id)AINSER:	358			
+		set_active 	(id)AINSER:359	0			(id)AINSER:	359			
+		set_active 	(id)AINSER:360	0			(id)AINSER:	360			
+		set_active 	(id)AINSER:361	0			(id)AINSER:	361			
+		set_active 	(id)AINSER:362	0			(id)AINSER:	362			
+		set_active 	(id)AINSER:363	0			(id)AINSER:	363			
+		set_active 	(id)AINSER:364	0			(id)AINSER:	364			
+											
+		#ENC									
+		set_active 	(id)ENC:401	0			(id)ENC:	401			
+		set_active 	(id)ENC:402	0			(id)ENC:	402			
+		set_active 	(id)ENC:403	0			(id)ENC:	403			
+		set_active 	(id)ENC:404	0			(id)ENC:	404			
+		set_active 	(id)ENC:405	0			(id)ENC:	405			
+		set_active 	(id)ENC:406	0			(id)ENC:	406			
+		set_active 	(id)ENC:407	0			(id)ENC:	407			
+		set_active 	(id)ENC:408	0			(id)ENC:	408			
+		# BP ENC									
+		set_active 	(id)BUTTON:417	0			(id)BUTTON:	417			
+		set_active 	(id)BUTTON:418	0			(id)BUTTON:	418			
+		set_active 	(id)BUTTON:419	0			(id)BUTTON:	419			
+		set_active 	(id)BUTTON:420	0			(id)BUTTON:	420			
+		set_active 	(id)BUTTON:421	0			(id)BUTTON:	421			
+		set_active 	(id)BUTTON:422	0			(id)BUTTON:	422			
+		set_active 	(id)BUTTON:423	0			(id)BUTTON:	423			
+		set_active 	(id)BUTTON:424	0			(id)BUTTON:	424			
+		#FADERS									
+		set_active 	(id)AINSER:433	0			(id)AINSER:	433			
+		set_active 	(id)AINSER:434	0			(id)AINSER:	434			
+		set_active 	(id)AINSER:435	0			(id)AINSER:	435			
+		set_active 	(id)AINSER:436	0			(id)AINSER:	436			
+		#SWICTH MIXER									
+		set_active 	(id)BUTTON:441	0			(id)BUTTON:	441			
+		set_active 	(id)BUTTON:442	0			(id)BUTTON:	442			
+		set_active 	(id)BUTTON:443	0			(id)BUTTON:	443			
+		set_active 	(id)BUTTON:444	0			(id)BUTTON:	444			
+											
+		#POTARDS									
+		set_active 	(id)AINSER:457	0			(id)AINSER:	457			
+		set_active 	(id)AINSER:458	0			(id)AINSER:	458			
+		set_active 	(id)AINSER:459	0			(id)AINSER:	459			
+		set_active 	(id)AINSER:460	0			(id)AINSER:	460			
+		set_active 	(id)AINSER:461	0			(id)AINSER:	461			
+		set_active 	(id)AINSER:462	0			(id)AINSER:	462			
+		set_active 	(id)AINSER:463	0			(id)AINSER:	463			
+		set_active 	(id)AINSER:464	0			(id)AINSER:	464			
+	  exit										
+	  endif										
+											
+	if ^section == 	2									
+	  log "Section is 	2	"								
+											
+	set_hsv RGBLED:5	 300:100:1									
+	set_hsv RGBLED:6	 200:100:10									
+	set_hsv RGBLED:7	100:100:1									
+	set_hsv RGBLED:8	 50:100:1									
+											
+	set_hsv RGBLED:1	 200:100:10									
+	set_hsv RGBLED:2	 200:100:10									
+	set_hsv RGBLED:3	 200:100:10									
+	set_hsv RGBLED:4	 200:100:10									
+											
+	# Active										
+		# Encoders									
+		set_active 	(id)ENC:101	0			(id)ENC:	101			
+		set_active 	(id)ENC:102	0			(id)ENC:	102			
+		set_active 	(id)ENC:103	0			(id)ENC:	103			
+		set_active 	(id)ENC:104	0			(id)ENC:	104			
+		set_active 	(id)ENC:105	0			(id)ENC:	105			
+		set_active 	(id)ENC:106	0			(id)ENC:	106			
+		set_active 	(id)ENC:107	0			(id)ENC:	107			
+		set_active 	(id)ENC:108	0			(id)ENC:	108			
+		# BP ENC									
+		set_active 	(id)BUTTON:117	0			(id)BUTTON:	117			
+		set_active 	(id)BUTTON:118	0			(id)BUTTON:	118			
+		set_active 	(id)BUTTON:119	0			(id)BUTTON:	119			
+		set_active 	(id)BUTTON:120	0			(id)BUTTON:	120			
+		set_active 	(id)BUTTON:121	0			(id)BUTTON:	121			
+		set_active 	(id)BUTTON:122	0			(id)BUTTON:	122			
+		set_active 	(id)BUTTON:123	0			(id)BUTTON:	123			
+		set_active 	(id)BUTTON:124	0			(id)BUTTON:	124			
+		#FADERS									
+		set_active 	(id)AINSER:133 	0			(id)AINSER:	133 			
+		set_active 	(id)AINSER:134	0			(id)AINSER:	134			
+		set_active 	(id)AINSER:135	0			(id)AINSER:	135			
+		set_active 	(id)AINSER:136	0			(id)AINSER:	136			
+		#SWICTH MIXER									
+		set_active 	(id)BUTTON:141	0			(id)BUTTON:	141			
+		set_active 	(id)BUTTON:142	0			(id)BUTTON:	142			
+		set_active 	(id)BUTTON:143	0			(id)BUTTON:	143			
+		set_active 	(id)BUTTON:144	0			(id)BUTTON:	144			
+											
+											
+		#POTARDS		0							
+		set_active 	(id)AINSER:157	0			(id)AINSER:	157			
+		set_active 	(id)AINSER:158	0			(id)AINSER:	158			
+		set_active 	(id)AINSER:159	0			(id)AINSER:	159			
+		set_active 	(id)AINSER:160	0			(id)AINSER:	160			
+		set_active 	(id)AINSER:161	0			(id)AINSER:	161			
+		set_active 	(id)AINSER:162	0			(id)AINSER:	162			
+		set_active 	(id)AINSER:163	0			(id)AINSER:	163			
+		set_active 	(id)AINSER:164	0			(id)AINSER:	164			
+	# Desative										
+		#ENC									
+		set_active 	(id)ENC:201	1			(id)ENC:	201			
+		set_active 	(id)ENC:202	1			(id)ENC:	202			
+		set_active 	(id)ENC:203	1			(id)ENC:	203			
+		set_active 	(id)ENC:204	1			(id)ENC:	204			
+		set_active 	(id)ENC:205	1			(id)ENC:	205			
+		set_active 	(id)ENC:206	1			(id)ENC:	206			
+		set_active 	(id)ENC:207	1			(id)ENC:	207			
+		set_active 	(id)ENC:208	1			(id)ENC:	208			
+		# BP ENC									
+		set_active 	(id)BUTTON:217	1			(id)BUTTON:	217			
+		set_active 	(id)BUTTON:218	1			(id)BUTTON:	218			
+		set_active 	(id)BUTTON:219	1			(id)BUTTON:	219			
+		set_active 	(id)BUTTON:220	1			(id)BUTTON:	220			
+		set_active 	(id)BUTTON:221	1			(id)BUTTON:	221			
+		set_active 	(id)BUTTON:222	1			(id)BUTTON:	222			
+		set_active 	(id)BUTTON:223	1			(id)BUTTON:	223			
+		set_active 	(id)BUTTON:224	1			(id)BUTTON:	224			
+		#FADERS									
+		set_active 	(id)AINSER:233	1			(id)AINSER:	233			
+		set_active 	(id)AINSER:234	1			(id)AINSER:	234			
+		set_active 	(id)AINSER:235	1			(id)AINSER:	235			
+		set_active 	(id)AINSER:236	1			(id)AINSER:	236			
+		#SWICTH MIXER									
+		set_active 	(id)BUTTON:241	1			(id)BUTTON:	241			
+		set_active 	(id)BUTTON:242	1			(id)BUTTON:	242			
+		set_active 	(id)BUTTON:243	1			(id)BUTTON:	243			
+		set_active 	(id)BUTTON:244	1			(id)BUTTON:	244			
+											
+		#POTARDS									
+		set_active 	(id)AINSER:257	1			(id)AINSER:	257			
+		set_active 	(id)AINSER:258	1			(id)AINSER:	258			
+		set_active 	(id)AINSER:259	1			(id)AINSER:	259			
+		set_active 	(id)AINSER:260	1			(id)AINSER:	260			
+		set_active 	(id)AINSER:261	1			(id)AINSER:	261			
+		set_active 	(id)AINSER:262	1			(id)AINSER:	262			
+		set_active 	(id)AINSER:263	1			(id)AINSER:	263			
+		set_active 	(id)AINSER:264	1			(id)AINSER:	264			
+											
+		#ENC									
+		set_active 	(id)ENC:301	0			(id)ENC:	301			
+		set_active 	(id)ENC:302	0			(id)ENC:	302			
+		set_active 	(id)ENC:303	0			(id)ENC:	303			
+		set_active 	(id)ENC:304	0			(id)ENC:	304			
+		set_active 	(id)ENC:305	0			(id)ENC:	305			
+		set_active 	(id)ENC:306	0			(id)ENC:	306			
+		set_active 	(id)ENC:307	0			(id)ENC:	307			
+		set_active 	(id)ENC:308	0			(id)ENC:	308			
+		# BP ENC									
+		set_active 	(id)BUTTON:317	0			(id)BUTTON:	317			
+		set_active 	(id)BUTTON:318	0			(id)BUTTON:	318			
+		set_active 	(id)BUTTON:319	0			(id)BUTTON:	319			
+		set_active 	(id)BUTTON:320	0			(id)BUTTON:	320			
+		set_active 	(id)BUTTON:321	0			(id)BUTTON:	321			
+		set_active 	(id)BUTTON:322	0			(id)BUTTON:	322			
+		set_active 	(id)BUTTON:323	0			(id)BUTTON:	323			
+		set_active 	(id)BUTTON:324	0			(id)BUTTON:	324			
+		#FADERS									
+		set_active 	(id)AINSER:333	0			(id)AINSER:	333			
+		set_active 	(id)AINSER:334	0			(id)AINSER:	334			
+		set_active 	(id)AINSER:335	0			(id)AINSER:	335			
+		set_active 	(id)AINSER:336	0			(id)AINSER:	336			
+		#SWICTH MIXER									
+		set_active 	(id)BUTTON:341	0			(id)BUTTON:	341			
+		set_active 	(id)BUTTON:342	0			(id)BUTTON:	342			
+		set_active 	(id)BUTTON:343	0			(id)BUTTON:	343			
+		set_active 	(id)BUTTON:344	0			(id)BUTTON:	344			
+											
+		#POTARDS									
+		set_active 	(id)AINSER:357	0			(id)AINSER:	357			
+		set_active 	(id)AINSER:358	0			(id)AINSER:	358			
+		set_active 	(id)AINSER:359	0			(id)AINSER:	359			
+		set_active 	(id)AINSER:360	0			(id)AINSER:	360			
+		set_active 	(id)AINSER:361	0			(id)AINSER:	361			
+		set_active 	(id)AINSER:362	0			(id)AINSER:	362			
+		set_active 	(id)AINSER:363	0			(id)AINSER:	363			
+		set_active 	(id)AINSER:364	0			(id)AINSER:	364			
+											
+		#ENC									
+		set_active 	(id)ENC:401	0			(id)ENC:	401			
+		set_active 	(id)ENC:402	0			(id)ENC:	402			
+		set_active 	(id)ENC:403	0			(id)ENC:	403			
+		set_active 	(id)ENC:404	0			(id)ENC:	404			
+		set_active 	(id)ENC:405	0			(id)ENC:	405			
+		set_active 	(id)ENC:406	0			(id)ENC:	406			
+		set_active 	(id)ENC:407	0			(id)ENC:	407			
+		set_active 	(id)ENC:408	0			(id)ENC:	408			
+		# BP ENC									
+		set_active 	(id)BUTTON:417	0			(id)BUTTON:	417			
+		set_active 	(id)BUTTON:418	0			(id)BUTTON:	418			
+		set_active 	(id)BUTTON:419	0			(id)BUTTON:	419			
+		set_active 	(id)BUTTON:420	0			(id)BUTTON:	420			
+		set_active 	(id)BUTTON:421	0			(id)BUTTON:	421			
+		set_active 	(id)BUTTON:422	0			(id)BUTTON:	422			
+		set_active 	(id)BUTTON:423	0			(id)BUTTON:	423			
+		set_active 	(id)BUTTON:424	0			(id)BUTTON:	424			
+		#FADERS									
+		set_active 	(id)AINSER:433	0			(id)AINSER:	433			
+		set_active 	(id)AINSER:434	0			(id)AINSER:	434			
+		set_active 	(id)AINSER:435	0			(id)AINSER:	435			
+		set_active 	(id)AINSER:436	0			(id)AINSER:	436			
+		#SWICTH MIXER									
+		set_active 	(id)BUTTON:441	0			(id)BUTTON:	441			
+		set_active 	(id)BUTTON:442	0			(id)BUTTON:	442			
+		set_active 	(id)BUTTON:443	0			(id)BUTTON:	443			
+		set_active 	(id)BUTTON:444	0			(id)BUTTON:	444			
+											
+		#POTARDS									
+		set_active 	(id)AINSER:457	0			(id)AINSER:	457			
+		set_active 	(id)AINSER:458	0			(id)AINSER:	458			
+		set_active 	(id)AINSER:459	0			(id)AINSER:	459			
+		set_active 	(id)AINSER:460	0			(id)AINSER:	460			
+		set_active 	(id)AINSER:461	0			(id)AINSER:	461			
+		set_active 	(id)AINSER:462	0			(id)AINSER:	462			
+		set_active 	(id)AINSER:463	0			(id)AINSER:	463			
+		set_active 	(id)AINSER:464	0			(id)AINSER:	464			
+	  exit										
+	  endif										
+											
+											
+	if ^section == 	3									
+	  log "Section is 	3	"								
+											
+	set_hsv RGBLED:5	 300:100:1									
+	set_hsv RGBLED:6	 200:100:1									
+	set_hsv RGBLED:7	100:100:10									
+	set_hsv RGBLED:8	 50:100:1									
+											
+	set_hsv RGBLED:1	100:100:10									
+	set_hsv RGBLED:2	100:100:10									
+	set_hsv RGBLED:3	100:100:10									
+	set_hsv RGBLED:4	100:100:10									
+											
+	# Active										
+		# Encoders									
+		set_active 	(id)ENC:101	0			(id)ENC:	101			
+		set_active 	(id)ENC:102	0			(id)ENC:	102			
+		set_active 	(id)ENC:103	0			(id)ENC:	103			
+		set_active 	(id)ENC:104	0			(id)ENC:	104			
+		set_active 	(id)ENC:105	0			(id)ENC:	105			
+		set_active 	(id)ENC:106	0			(id)ENC:	106			
+		set_active 	(id)ENC:107	0			(id)ENC:	107			
+		set_active 	(id)ENC:108	0			(id)ENC:	108			
+		# BP ENC									
+		set_active 	(id)BUTTON:117	0			(id)BUTTON:	117			
+		set_active 	(id)BUTTON:118	0			(id)BUTTON:	118			
+		set_active 	(id)BUTTON:119	0			(id)BUTTON:	119			
+		set_active 	(id)BUTTON:120	0			(id)BUTTON:	120			
+		set_active 	(id)BUTTON:121	0			(id)BUTTON:	121			
+		set_active 	(id)BUTTON:122	0			(id)BUTTON:	122			
+		set_active 	(id)BUTTON:123	0			(id)BUTTON:	123			
+		set_active 	(id)BUTTON:124	0			(id)BUTTON:	124			
+		#FADERS									
+		set_active 	(id)AINSER:133 	0			(id)AINSER:	133 			
+		set_active 	(id)AINSER:134	0			(id)AINSER:	134			
+		set_active 	(id)AINSER:135	0			(id)AINSER:	135			
+		set_active 	(id)AINSER:136	0			(id)AINSER:	136			
+		#SWICTH MIXER									
+		set_active 	(id)BUTTON:141	0			(id)BUTTON:	141			
+		set_active 	(id)BUTTON:142	0			(id)BUTTON:	142			
+		set_active 	(id)BUTTON:143	0			(id)BUTTON:	143			
+		set_active 	(id)BUTTON:144	0			(id)BUTTON:	144			
+											
+											
+		#POTARDS									
+		set_active 	(id)AINSER:157	0			(id)AINSER:	157			
+		set_active 	(id)AINSER:158	0			(id)AINSER:	158			
+		set_active 	(id)AINSER:159	0			(id)AINSER:	159			
+		set_active 	(id)AINSER:160	0			(id)AINSER:	160			
+		set_active 	(id)AINSER:161	0			(id)AINSER:	161			
+		set_active 	(id)AINSER:162	0			(id)AINSER:	162			
+		set_active 	(id)AINSER:163	0			(id)AINSER:	163			
+		set_active 	(id)AINSER:164	0			(id)AINSER:	164			
+	# Desative										
+		#ENC									
+		set_active 	(id)ENC:201	0			(id)ENC:	201			
+		set_active 	(id)ENC:202	0			(id)ENC:	202			
+		set_active 	(id)ENC:203	0			(id)ENC:	203			
+		set_active 	(id)ENC:204	0			(id)ENC:	204			
+		set_active 	(id)ENC:205	0			(id)ENC:	205			
+		set_active 	(id)ENC:206	0			(id)ENC:	206			
+		set_active 	(id)ENC:207	0			(id)ENC:	207			
+		set_active 	(id)ENC:208	0			(id)ENC:	208			
+		# BP ENC									
+		set_active 	(id)BUTTON:217	0			(id)BUTTON:	217			
+		set_active 	(id)BUTTON:218	0			(id)BUTTON:	218			
+		set_active 	(id)BUTTON:219	0			(id)BUTTON:	219			
+		set_active 	(id)BUTTON:220	0			(id)BUTTON:	220			
+		set_active 	(id)BUTTON:221	0			(id)BUTTON:	221			
+		set_active 	(id)BUTTON:222	0			(id)BUTTON:	222			
+		set_active 	(id)BUTTON:223	0			(id)BUTTON:	223			
+		set_active 	(id)BUTTON:224	0			(id)BUTTON:	224			
+		#FADERS									
+		set_active 	(id)AINSER:233	0			(id)AINSER:	233			
+		set_active 	(id)AINSER:234	0			(id)AINSER:	234			
+		set_active 	(id)AINSER:235	0			(id)AINSER:	235			
+		set_active 	(id)AINSER:236	0			(id)AINSER:	236			
+		#SWICTH MIXER									
+		set_active 	(id)BUTTON:241	0			(id)BUTTON:	241			
+		set_active 	(id)BUTTON:242	0			(id)BUTTON:	242			
+		set_active 	(id)BUTTON:243	0			(id)BUTTON:	243			
+		set_active 	(id)BUTTON:244	0			(id)BUTTON:	244			
+											
+		#POTARDS									
+		set_active 	(id)AINSER:257	0			(id)AINSER:	257			
+		set_active 	(id)AINSER:258	0			(id)AINSER:	258			
+		set_active 	(id)AINSER:259	0			(id)AINSER:	259			
+		set_active 	(id)AINSER:260	0			(id)AINSER:	260			
+		set_active 	(id)AINSER:261	0			(id)AINSER:	261			
+		set_active 	(id)AINSER:262	0			(id)AINSER:	262			
+		set_active 	(id)AINSER:263	0			(id)AINSER:	263			
+		set_active 	(id)AINSER:264	0			(id)AINSER:	264			
+											
+		#ENC									
+		set_active 	(id)ENC:301	1			(id)ENC:	301			
+		set_active 	(id)ENC:302	1			(id)ENC:	302			
+		set_active 	(id)ENC:303	1			(id)ENC:	303			
+		set_active 	(id)ENC:304	1			(id)ENC:	304			
+		set_active 	(id)ENC:305	1			(id)ENC:	305			
+		set_active 	(id)ENC:306	1			(id)ENC:	306			
+		set_active 	(id)ENC:307	1			(id)ENC:	307			
+		set_active 	(id)ENC:308	1			(id)ENC:	308			
+		# BP ENC									
+		set_active 	(id)BUTTON:317	1			(id)BUTTON:	317			
+		set_active 	(id)BUTTON:318	1			(id)BUTTON:	318			
+		set_active 	(id)BUTTON:319	1			(id)BUTTON:	319			
+		set_active 	(id)BUTTON:320	1			(id)BUTTON:	320			
+		set_active 	(id)BUTTON:321	1			(id)BUTTON:	321			
+		set_active 	(id)BUTTON:322	1			(id)BUTTON:	322			
+		set_active 	(id)BUTTON:323	1			(id)BUTTON:	323			
+		set_active 	(id)BUTTON:324	1			(id)BUTTON:	324			
+		#FADERS									
+		set_active 	(id)AINSER:333	1			(id)AINSER:	333			
+		set_active 	(id)AINSER:334	1			(id)AINSER:	334			
+		set_active 	(id)AINSER:335	1			(id)AINSER:	335			
+		set_active 	(id)AINSER:336	1			(id)AINSER:	336			
+		#SWICTH MIXER									
+		set_active 	(id)BUTTON:341	1			(id)BUTTON:	341			
+		set_active 	(id)BUTTON:342	1			(id)BUTTON:	342			
+		set_active 	(id)BUTTON:343	1			(id)BUTTON:	343			
+		set_active 	(id)BUTTON:344	1			(id)BUTTON:	344			
+											
+		#POTARDS									
+		set_active 	(id)AINSER:357	1			(id)AINSER:	357			
+		set_active 	(id)AINSER:358	1			(id)AINSER:	358			
+		set_active 	(id)AINSER:359	1			(id)AINSER:	359			
+		set_active 	(id)AINSER:360	1			(id)AINSER:	360			
+		set_active 	(id)AINSER:361	1			(id)AINSER:	361			
+		set_active 	(id)AINSER:362	1			(id)AINSER:	362			
+		set_active 	(id)AINSER:363	1			(id)AINSER:	363			
+		set_active 	(id)AINSER:364	1			(id)AINSER:	364			
+											
+		#ENC									
+		set_active 	(id)ENC:401	0			(id)ENC:	401			
+		set_active 	(id)ENC:402	0			(id)ENC:	402			
+		set_active 	(id)ENC:403	0			(id)ENC:	403			
+		set_active 	(id)ENC:404	0			(id)ENC:	404			
+		set_active 	(id)ENC:405	0			(id)ENC:	405			
+		set_active 	(id)ENC:406	0			(id)ENC:	406			
+		set_active 	(id)ENC:407	0			(id)ENC:	407			
+		set_active 	(id)ENC:408	0			(id)ENC:	408			
+		# BP ENC									
+		set_active 	(id)BUTTON:417	0			(id)BUTTON:	417			
+		set_active 	(id)BUTTON:418	0			(id)BUTTON:	418			
+		set_active 	(id)BUTTON:419	0			(id)BUTTON:	419			
+		set_active 	(id)BUTTON:420	0			(id)BUTTON:	420			
+		set_active 	(id)BUTTON:421	0			(id)BUTTON:	421			
+		set_active 	(id)BUTTON:422	0			(id)BUTTON:	422			
+		set_active 	(id)BUTTON:423	0			(id)BUTTON:	423			
+		set_active 	(id)BUTTON:424	0			(id)BUTTON:	424			
+		#FADERS									
+		set_active 	(id)AINSER:433	0			(id)AINSER:	433			
+		set_active 	(id)AINSER:434	0			(id)AINSER:	434			
+		set_active 	(id)AINSER:435	0			(id)AINSER:	435			
+		set_active 	(id)AINSER:436	0			(id)AINSER:	436			
+		#SWICTH MIXER									
+		set_active 	(id)BUTTON:441	0			(id)BUTTON:	441			
+		set_active 	(id)BUTTON:442	0			(id)BUTTON:	442			
+		set_active 	(id)BUTTON:443	0			(id)BUTTON:	443			
+		set_active 	(id)BUTTON:444	0			(id)BUTTON:	444			
+											
+		#POTARDS									
+		set_active 	(id)AINSER:457	0			(id)AINSER:	457			
+		set_active 	(id)AINSER:458	0			(id)AINSER:	458			
+		set_active 	(id)AINSER:459	0			(id)AINSER:	459			
+		set_active 	(id)AINSER:460	0			(id)AINSER:	460			
+		set_active 	(id)AINSER:461	0			(id)AINSER:	461			
+		set_active 	(id)AINSER:462	0			(id)AINSER:	462			
+		set_active 	(id)AINSER:463	0			(id)AINSER:	463			
+		set_active 	(id)AINSER:464	0			(id)AINSER:	464			
+	  exit										
+	  endif										
+											
+	if ^section == 	4									
+	  log "Section is 	4	"								
+											
+	set_hsv RGBLED:5	 300:100:1									
+	set_hsv RGBLED:6	 200:100:1									
+	set_hsv RGBLED:7	100:100:1									
+	set_hsv RGBLED:8	 50:100:10									
+											
+	set_hsv RGBLED:1	 50:100:10									
+	set_hsv RGBLED:2	 50:100:10									
+	set_hsv RGBLED:3	 50:100:10									
+	set_hsv RGBLED:4	 50:100:10									
+											
+	# Active										
+		# Encoders									
+		set_active 	(id)ENC:101	0			(id)ENC:	101			
+		set_active 	(id)ENC:102	0			(id)ENC:	102			
+		set_active 	(id)ENC:103	0			(id)ENC:	103			
+		set_active 	(id)ENC:104	0			(id)ENC:	104			
+		set_active 	(id)ENC:105	0			(id)ENC:	105			
+		set_active 	(id)ENC:106	0			(id)ENC:	106			
+		set_active 	(id)ENC:107	0			(id)ENC:	107			
+		set_active 	(id)ENC:108	0			(id)ENC:	108			
+		# BP ENC									
+		set_active 	(id)BUTTON:117	0			(id)BUTTON:	117			
+		set_active 	(id)BUTTON:118	0			(id)BUTTON:	118			
+		set_active 	(id)BUTTON:119	0			(id)BUTTON:	119			
+		set_active 	(id)BUTTON:120	0			(id)BUTTON:	120			
+		set_active 	(id)BUTTON:121	0			(id)BUTTON:	121			
+		set_active 	(id)BUTTON:122	0			(id)BUTTON:	122			
+		set_active 	(id)BUTTON:123	0			(id)BUTTON:	123			
+		set_active 	(id)BUTTON:124	0			(id)BUTTON:	124			
+		#FADERS									
+		set_active 	(id)AINSER:133 	0			(id)AINSER:	133 			
+		set_active 	(id)AINSER:134	0			(id)AINSER:	134			
+		set_active 	(id)AINSER:135	0			(id)AINSER:	135			
+		set_active 	(id)AINSER:136	0			(id)AINSER:	136			
+		#SWICTH MIXER									
+		set_active 	(id)BUTTON:141	0			(id)BUTTON:	141			
+		set_active 	(id)BUTTON:142	0			(id)BUTTON:	142			
+		set_active 	(id)BUTTON:143	0			(id)BUTTON:	143			
+		set_active 	(id)BUTTON:144	0			(id)BUTTON:	144			
+											
+											
+		#POTARDS		0							
+		set_active 	(id)AINSER:157	0			(id)AINSER:	157			
+		set_active 	(id)AINSER:158	0			(id)AINSER:	158			
+		set_active 	(id)AINSER:159	0			(id)AINSER:	159			
+		set_active 	(id)AINSER:160	0			(id)AINSER:	160			
+		set_active 	(id)AINSER:161	0			(id)AINSER:	161			
+		set_active 	(id)AINSER:162	0			(id)AINSER:	162			
+		set_active 	(id)AINSER:163	0			(id)AINSER:	163			
+		set_active 	(id)AINSER:164	0			(id)AINSER:	164			
+	# Desative										
+		#ENC									
+		set_active 	(id)ENC:201	0			(id)ENC:	201			
+		set_active 	(id)ENC:202	0			(id)ENC:	202			
+		set_active 	(id)ENC:203	0			(id)ENC:	203			
+		set_active 	(id)ENC:204	0			(id)ENC:	204			
+		set_active 	(id)ENC:205	0			(id)ENC:	205			
+		set_active 	(id)ENC:206	0			(id)ENC:	206			
+		set_active 	(id)ENC:207	0			(id)ENC:	207			
+		set_active 	(id)ENC:208	0			(id)ENC:	208			
+		# BP ENC									
+		set_active 	(id)BUTTON:217	0			(id)BUTTON:	217			
+		set_active 	(id)BUTTON:218	0			(id)BUTTON:	218			
+		set_active 	(id)BUTTON:219	0			(id)BUTTON:	219			
+		set_active 	(id)BUTTON:220	0			(id)BUTTON:	220			
+		set_active 	(id)BUTTON:221	0			(id)BUTTON:	221			
+		set_active 	(id)BUTTON:222	0			(id)BUTTON:	222			
+		set_active 	(id)BUTTON:223	0			(id)BUTTON:	223			
+		set_active 	(id)BUTTON:224	0			(id)BUTTON:	224			
+		#FADERS									
+		set_active 	(id)AINSER:233	0			(id)AINSER:	233			
+		set_active 	(id)AINSER:234	0			(id)AINSER:	234			
+		set_active 	(id)AINSER:235	0			(id)AINSER:	235			
+		set_active 	(id)AINSER:236	0			(id)AINSER:	236			
+		#SWICTH MIXER									
+		set_active 	(id)BUTTON:241	0			(id)BUTTON:	241			
+		set_active 	(id)BUTTON:242	0			(id)BUTTON:	242			
+		set_active 	(id)BUTTON:243	0			(id)BUTTON:	243			
+		set_active 	(id)BUTTON:244	0			(id)BUTTON:	244			
+											
+		#POTARDS									
+		set_active 	(id)AINSER:257	0			(id)AINSER:	257			
+		set_active 	(id)AINSER:258	0			(id)AINSER:	258			
+		set_active 	(id)AINSER:259	0			(id)AINSER:	259			
+		set_active 	(id)AINSER:260	0			(id)AINSER:	260			
+		set_active 	(id)AINSER:261	0			(id)AINSER:	261			
+		set_active 	(id)AINSER:262	0			(id)AINSER:	262			
+		set_active 	(id)AINSER:263	0			(id)AINSER:	263			
+		set_active 	(id)AINSER:264	0			(id)AINSER:	264			
+											
+		#ENC									
+		set_active 	(id)ENC:301	0			(id)ENC:	301			
+		set_active 	(id)ENC:302	0			(id)ENC:	302			
+		set_active 	(id)ENC:303	0			(id)ENC:	303			
+		set_active 	(id)ENC:304	0			(id)ENC:	304			
+		set_active 	(id)ENC:305	0			(id)ENC:	305			
+		set_active 	(id)ENC:306	0			(id)ENC:	306			
+		set_active 	(id)ENC:307	0			(id)ENC:	307			
+		set_active 	(id)ENC:308	0			(id)ENC:	308			
+		# BP ENC									
+		set_active 	(id)BUTTON:317	0			(id)BUTTON:	317			
+		set_active 	(id)BUTTON:318	0			(id)BUTTON:	318			
+		set_active 	(id)BUTTON:319	0			(id)BUTTON:	319			
+		set_active 	(id)BUTTON:320	0			(id)BUTTON:	320			
+		set_active 	(id)BUTTON:321	0			(id)BUTTON:	321			
+		set_active 	(id)BUTTON:322	0			(id)BUTTON:	322			
+		set_active 	(id)BUTTON:323	0			(id)BUTTON:	323			
+		set_active 	(id)BUTTON:324	0			(id)BUTTON:	324			
+		#FADERS									
+		set_active 	(id)AINSER:333	0			(id)AINSER:	333			
+		set_active 	(id)AINSER:334	0			(id)AINSER:	334			
+		set_active 	(id)AINSER:335	0			(id)AINSER:	335			
+		set_active 	(id)AINSER:336	0			(id)AINSER:	336			
+		#SWICTH MIXER									
+		set_active 	(id)BUTTON:341	0			(id)BUTTON:	341			
+		set_active 	(id)BUTTON:342	0			(id)BUTTON:	342			
+		set_active 	(id)BUTTON:343	0			(id)BUTTON:	343			
+		set_active 	(id)BUTTON:344	0			(id)BUTTON:	344			
+											
+		#POTARDS									
+		set_active 	(id)AINSER:357	0			(id)AINSER:	357			
+		set_active 	(id)AINSER:358	0			(id)AINSER:	358			
+		set_active 	(id)AINSER:359	0			(id)AINSER:	359			
+		set_active 	(id)AINSER:360	0			(id)AINSER:	360			
+		set_active 	(id)AINSER:361	0			(id)AINSER:	361			
+		set_active 	(id)AINSER:362	0			(id)AINSER:	362			
+		set_active 	(id)AINSER:363	0			(id)AINSER:	363			
+		set_active 	(id)AINSER:364	0			(id)AINSER:	364			
+											
+		#ENC									
+		set_active 	(id)ENC:401	1			(id)ENC:	401			
+		set_active 	(id)ENC:402	1			(id)ENC:	402			
+		set_active 	(id)ENC:403	1			(id)ENC:	403			
+		set_active 	(id)ENC:404	1			(id)ENC:	404			
+		set_active 	(id)ENC:405	1			(id)ENC:	405			
+		set_active 	(id)ENC:406	1			(id)ENC:	406			
+		set_active 	(id)ENC:407	1			(id)ENC:	407			
+		set_active 	(id)ENC:408	1			(id)ENC:	408			
+		# BP ENC									
+		set_active 	(id)BUTTON:417	1			(id)BUTTON:	417			
+		set_active 	(id)BUTTON:418	1			(id)BUTTON:	418			
+		set_active 	(id)BUTTON:419	1			(id)BUTTON:	419			
+		set_active 	(id)BUTTON:420	1			(id)BUTTON:	420			
+		set_active 	(id)BUTTON:421	1			(id)BUTTON:	421			
+		set_active 	(id)BUTTON:422	1			(id)BUTTON:	422			
+		set_active 	(id)BUTTON:423	1			(id)BUTTON:	423			
+		set_active 	(id)BUTTON:424	1			(id)BUTTON:	424			
+		#FADERS									
+		set_active 	(id)AINSER:433	1			(id)AINSER:	433			
+		set_active 	(id)AINSER:434	1			(id)AINSER:	434			
+		set_active 	(id)AINSER:435	1			(id)AINSER:	435			
+		set_active 	(id)AINSER:436	1			(id)AINSER:	436			
+		#SWICTH MIXER									
+		set_active 	(id)BUTTON:441	1			(id)BUTTON:	441			
+		set_active 	(id)BUTTON:442	1			(id)BUTTON:	442			
+		set_active 	(id)BUTTON:443	1			(id)BUTTON:	443			
+		set_active 	(id)BUTTON:444	1			(id)BUTTON:	444			
+											
+		#POTARDS									
+		set_active 	(id)AINSER:457	1			(id)AINSER:	457			
+		set_active 	(id)AINSER:458	1			(id)AINSER:	458			
+		set_active 	(id)AINSER:459	1			(id)AINSER:	459			
+		set_active 	(id)AINSER:460	1			(id)AINSER:	460			
+		set_active 	(id)AINSER:461	1			(id)AINSER:	461			
+		set_active 	(id)AINSER:462	1			(id)AINSER:	462			
+		set_active 	(id)AINSER:463	1			(id)AINSER:	463			
+		set_active 	(id)AINSER:464	1			(id)AINSER:	464			
+	  exit										
+	  endif										
+											
+	if ^section == 	5									
+	  log "Section is 	5	"								
+											
+	set_hsv RGBLED:141	 300:100:10									
+	set_hsv RGBLED:142	 200:100:1									
+	set_hsv RGBLED:143	100:100:1									
+	set_hsv RGBLED:144	 50:100:1									
+											
+	set_hsv RGBLED:137	 300:100:10									
+	set_hsv RGBLED:138	 300:100:10									
+	set_hsv RGBLED:139	 300:100:10									
+	set_hsv RGBLED:140	 300:100:10									
+											
+	# Active										
+		# Encoders									
+		set_active 	(id)ENC:109	1			(id)ENC:	109			
+		set_active 	(id)ENC:110	1			(id)ENC:	110			
+		set_active 	(id)ENC:111	1			(id)ENC:	111			
+		set_active 	(id)ENC:112	1			(id)ENC:	112			
+		set_active 	(id)ENC:113	1			(id)ENC:	113			
+		set_active 	(id)ENC:114	1			(id)ENC:	114			
+		set_active 	(id)ENC:115	1			(id)ENC:	115			
+		set_active 	(id)ENC:116	1			(id)ENC:	116			
+		# BP ENC									
+		set_active 	(id)BUTTON:125	1			(id)BUTTON:	125			
+		set_active 	(id)BUTTON:126	1			(id)BUTTON:	126			
+		set_active 	(id)BUTTON:127	1			(id)BUTTON:	127			
+		set_active 	(id)BUTTON:128	1			(id)BUTTON:	128			
+		set_active 	(id)BUTTON:129	1			(id)BUTTON:	129			
+		set_active 	(id)BUTTON:130	1			(id)BUTTON:	130			
+		set_active 	(id)BUTTON:131	1			(id)BUTTON:	131			
+		set_active 	(id)BUTTON:132	1			(id)BUTTON:	132			
+		#FADERS									
+		set_active 	(id)AINSER:137	1			(id)AINSER:	137			
+		set_active 	(id)AINSER:138	1			(id)AINSER:	138			
+		set_active 	(id)AINSER:139	1			(id)AINSER:	139			
+		set_active 	(id)AINSER:140	1			(id)AINSER:	140			
+		#SWICTH MIXER									
+		set_active 	(id)BUTTON:153	1			(id)BUTTON:	153			
+		set_active 	(id)BUTTON:154	1			(id)BUTTON:	154			
+		set_active 	(id)BUTTON:155	1			(id)BUTTON:	155			
+		set_active 	(id)BUTTON:156	1			(id)BUTTON:	156			
+		#POTARDS									
+		set_active 	(id)AINSER:165	1			(id)AINSER:	165			
+		set_active 	(id)AINSER:166	1			(id)AINSER:	166			
+		set_active 	(id)AINSER:167	1			(id)AINSER:	167			
+		set_active 	(id)AINSER:168	1			(id)AINSER:	168			
+		set_active 	(id)AINSER:169	1			(id)AINSER:	169			
+		set_active 	(id)AINSER:170	1			(id)AINSER:	170			
+		set_active 	(id)AINSER:171	1			(id)AINSER:	171			
+		set_active 	(id)AINSER:172	1			(id)AINSER:	172			
+	# Desative										
+		#ENC									
+		set_active 	(id)ENC:209	0			(id)ENC:	209			
+		set_active 	(id)ENC:210	0			(id)ENC:	210			
+		set_active 	(id)ENC:211	0			(id)ENC:	211			
+		set_active 	(id)ENC:212	0			(id)ENC:	212			
+		set_active 	(id)ENC:213	0			(id)ENC:	213			
+		set_active 	(id)ENC:214	0			(id)ENC:	214			
+		set_active 	(id)ENC:215	0			(id)ENC:	215			
+		set_active 	(id)ENC:216	0			(id)ENC:	216			
+		# BP ENC									
+		set_active 	(id)BUTTON:225	0			(id)BUTTON:	225			
+		set_active 	(id)BUTTON:226	0			(id)BUTTON:	226			
+		set_active 	(id)BUTTON:227	0			(id)BUTTON:	227			
+		set_active 	(id)BUTTON:228	0			(id)BUTTON:	228			
+		set_active 	(id)BUTTON:229	0			(id)BUTTON:	229			
+		set_active 	(id)BUTTON:230	0			(id)BUTTON:	230			
+		set_active 	(id)BUTTON:231	0			(id)BUTTON:	231			
+		set_active 	(id)BUTTON:232	0			(id)BUTTON:	232			
+		#FADERS									
+		set_active 	(id)AINSER:237	0			(id)AINSER:	237			
+		set_active 	(id)AINSER:238	0			(id)AINSER:	238			
+		set_active 	(id)AINSER:239	0			(id)AINSER:	239			
+		set_active 	(id)AINSER:240	0			(id)AINSER:	240			
+		#SWICTH MIXER									
+		set_active 	(id)BUTTON:253	0			(id)BUTTON:	253			
+		set_active 	(id)BUTTON:254	0			(id)BUTTON:	254			
+		set_active 	(id)BUTTON:255	0			(id)BUTTON:	255			
+		set_active 	(id)BUTTON:256	0			(id)BUTTON:	256			
+		#POTARDS									
+		set_active 	(id)AINSER:265	0			(id)AINSER:	265			
+		set_active 	(id)AINSER:266	0			(id)AINSER:	266			
+		set_active 	(id)AINSER:267	0			(id)AINSER:	267			
+		set_active 	(id)AINSER:268	0			(id)AINSER:	268			
+		set_active 	(id)AINSER:269	0			(id)AINSER:	269			
+		set_active 	(id)AINSER:270	0			(id)AINSER:	270			
+		set_active 	(id)AINSER:271	0			(id)AINSER:	271			
+		set_active 	(id)AINSER:272	0			(id)AINSER:	272			
+		#ENC									
+		set_active 	(id)ENC:309	0			(id)ENC:	309			
+		set_active 	(id)ENC:310	0			(id)ENC:	310			
+		set_active 	(id)ENC:311	0			(id)ENC:	311			
+		set_active 	(id)ENC:312	0			(id)ENC:	312			
+		set_active 	(id)ENC:313	0			(id)ENC:	313			
+		set_active 	(id)ENC:314	0			(id)ENC:	314			
+		set_active 	(id)ENC:315	0			(id)ENC:	315			
+		set_active 	(id)ENC:316	0			(id)ENC:	316			
+		# BP ENC									
+		set_active 	(id)BUTTON:325	0			(id)BUTTON:	325			
+		set_active 	(id)BUTTON:326	0			(id)BUTTON:	326			
+		set_active 	(id)BUTTON:327	0			(id)BUTTON:	327			
+		set_active 	(id)BUTTON:328	0			(id)BUTTON:	328			
+		set_active 	(id)BUTTON:329	0			(id)BUTTON:	329			
+		set_active 	(id)BUTTON:330	0			(id)BUTTON:	330			
+		set_active 	(id)BUTTON:331	0			(id)BUTTON:	331			
+		set_active 	(id)BUTTON:332	0			(id)BUTTON:	332			
+		#FADERS									
+		set_active 	(id)AINSER:337	0			(id)AINSER:	337			
+		set_active 	(id)AINSER:338	0			(id)AINSER:	338			
+		set_active 	(id)AINSER:339	0			(id)AINSER:	339			
+		set_active 	(id)AINSER:340	0			(id)AINSER:	340			
+		#SWICTH MIXER									
+		set_active 	(id)BUTTON:353	0			(id)BUTTON:	353			
+		set_active 	(id)BUTTON:354	0			(id)BUTTON:	354			
+		set_active 	(id)BUTTON:355	0			(id)BUTTON:	355			
+		set_active 	(id)BUTTON:356	0			(id)BUTTON:	356			
+		#POTARDS									
+		set_active 	(id)AINSER:365	0			(id)AINSER:	365			
+		set_active 	(id)AINSER:366	0			(id)AINSER:	366			
+		set_active 	(id)AINSER:367	0			(id)AINSER:	367			
+		set_active 	(id)AINSER:368	0			(id)AINSER:	368			
+		set_active 	(id)AINSER:369	0			(id)AINSER:	369			
+		set_active 	(id)AINSER:370	0			(id)AINSER:	370			
+		set_active 	(id)AINSER:371	0			(id)AINSER:	371			
+		set_active 	(id)AINSER:372	0			(id)AINSER:	372			
+		#ENC									
+		set_active 	(id)ENC:409	0			(id)ENC:	409			
+		set_active 	(id)ENC:410	0			(id)ENC:	410			
+		set_active 	(id)ENC:411	0			(id)ENC:	411			
+		set_active 	(id)ENC:412	0			(id)ENC:	412			
+		set_active 	(id)ENC:413	0			(id)ENC:	413			
+		set_active 	(id)ENC:414	0			(id)ENC:	414			
+		set_active 	(id)ENC:415	0			(id)ENC:	415			
+		set_active 	(id)ENC:416	0			(id)ENC:	416			
+		# BP ENC									
+		set_active 	(id)BUTTON:425	0			(id)BUTTON:	425			
+		set_active 	(id)BUTTON:426	0			(id)BUTTON:	426			
+		set_active 	(id)BUTTON:427	0			(id)BUTTON:	427			
+		set_active 	(id)BUTTON:428	0			(id)BUTTON:	428			
+		set_active 	(id)BUTTON:429	0			(id)BUTTON:	429			
+		set_active 	(id)BUTTON:430	0			(id)BUTTON:	430			
+		set_active 	(id)BUTTON:431	0			(id)BUTTON:	431			
+		set_active 	(id)BUTTON:432	0			(id)BUTTON:	432			
+		#FADERS									
+		set_active 	(id)AINSER:437	0			(id)AINSER:	437			
+		set_active 	(id)AINSER:438	0			(id)AINSER:	438			
+		set_active 	(id)AINSER:439	0			(id)AINSER:	439			
+		set_active 	(id)AINSER:440	0			(id)AINSER:	440			
+		#SWICTH MIXER									
+		set_active 	(id)BUTTON:453	0			(id)BUTTON:	453			
+		set_active 	(id)BUTTON:454	0			(id)BUTTON:	454			
+		set_active 	(id)BUTTON:455	0			(id)BUTTON:	455			
+		set_active 	(id)BUTTON:456	0			(id)BUTTON:	456			
+		#POTARDS									
+		set_active 	(id)AINSER:465	0			(id)AINSER:	465			
+		set_active 	(id)AINSER:466	0			(id)AINSER:	466			
+		set_active 	(id)AINSER:467	0			(id)AINSER:	467			
+		set_active 	(id)AINSER:468	0			(id)AINSER:	468			
+		set_active 	(id)AINSER:469	0			(id)AINSER:	469			
+		set_active 	(id)AINSER:470	0			(id)AINSER:	470			
+		set_active 	(id)AINSER:471	0			(id)AINSER:	471			
+		set_active 	(id)AINSER:472	0			(id)AINSER:	472			
+											
+	  exit										
+	  endif										
+											
+											
+	if ^section == 	6									
+	  log "Section is 	6	"								
+											
+	set_hsv RGBLED:141	 300:100:1									
+	set_hsv RGBLED:142	 200:100:10									
+	set_hsv RGBLED:143	100:100:1									
+	set_hsv RGBLED:144	 50:100:1									
+	set_hsv RGBLED:137	 200:100:10									
+	set_hsv RGBLED:138	 200:100:10									
+	set_hsv RGBLED:139	 200:100:10									
+	set_hsv RGBLED:140	 200:100:10									
+											
+		# Encoders									
+		set_active 	(id)ENC:109	0			(id)ENC:	109			
+		set_active 	(id)ENC:110	0			(id)ENC:	110			
+		set_active 	(id)ENC:111	0			(id)ENC:	111			
+		set_active 	(id)ENC:112	0			(id)ENC:	112			
+		set_active 	(id)ENC:113	0			(id)ENC:	113			
+		set_active 	(id)ENC:114	0			(id)ENC:	114			
+		set_active 	(id)ENC:115	0			(id)ENC:	115			
+		set_active 	(id)ENC:116	0			(id)ENC:	116			
+		# BP ENC									
+		set_active 	(id)BUTTON:125	0			(id)BUTTON:	125			
+		set_active 	(id)BUTTON:126	0			(id)BUTTON:	126			
+		set_active 	(id)BUTTON:127	0			(id)BUTTON:	127			
+		set_active 	(id)BUTTON:128	0			(id)BUTTON:	128			
+		set_active 	(id)BUTTON:129	0			(id)BUTTON:	129			
+		set_active 	(id)BUTTON:130	0			(id)BUTTON:	130			
+		set_active 	(id)BUTTON:131	0			(id)BUTTON:	131			
+		set_active 	(id)BUTTON:132	0			(id)BUTTON:	132			
+		#FADERS									
+		set_active 	(id)AINSER:137	0			(id)AINSER:	137			
+		set_active 	(id)AINSER:138	0			(id)AINSER:	138			
+		set_active 	(id)AINSER:139	0			(id)AINSER:	139			
+		set_active 	(id)AINSER:140	0			(id)AINSER:	140			
+		#SWICTH MIXER									
+		set_active 	(id)BUTTON:153	0			(id)BUTTON:	153			
+		set_active 	(id)BUTTON:154	0			(id)BUTTON:	154			
+		set_active 	(id)BUTTON:155	0			(id)BUTTON:	155			
+		set_active 	(id)BUTTON:156	0			(id)BUTTON:	156			
+		#POTARDS									
+		set_active 	(id)AINSER:165	0			(id)AINSER:	165			
+		set_active 	(id)AINSER:166	0			(id)AINSER:	166			
+		set_active 	(id)AINSER:167	0			(id)AINSER:	167			
+		set_active 	(id)AINSER:168	0			(id)AINSER:	168			
+		set_active 	(id)AINSER:169	0			(id)AINSER:	169			
+		set_active 	(id)AINSER:170	0			(id)AINSER:	170			
+		set_active 	(id)AINSER:171	0			(id)AINSER:	171			
+		set_active 	(id)AINSER:172	0			(id)AINSER:	172			
+	# Desative										
+		#ENC									
+		set_active 	(id)ENC:209	1			(id)ENC:	209			
+		set_active 	(id)ENC:210	1			(id)ENC:	210			
+		set_active 	(id)ENC:211	1			(id)ENC:	211			
+		set_active 	(id)ENC:212	1			(id)ENC:	212			
+		set_active 	(id)ENC:213	1			(id)ENC:	213			
+		set_active 	(id)ENC:214	1			(id)ENC:	214			
+		set_active 	(id)ENC:215	1			(id)ENC:	215			
+		set_active 	(id)ENC:216	1			(id)ENC:	216			
+		# BP ENC									
+		set_active 	(id)BUTTON:225	1			(id)BUTTON:	225			
+		set_active 	(id)BUTTON:226	1			(id)BUTTON:	226			
+		set_active 	(id)BUTTON:227	1			(id)BUTTON:	227			
+		set_active 	(id)BUTTON:228	1			(id)BUTTON:	228			
+		set_active 	(id)BUTTON:229	1			(id)BUTTON:	229			
+		set_active 	(id)BUTTON:230	1			(id)BUTTON:	230			
+		set_active 	(id)BUTTON:231	1			(id)BUTTON:	231			
+		set_active 	(id)BUTTON:232	1			(id)BUTTON:	232			
+		#FADERS									
+		set_active 	(id)AINSER:237	1			(id)AINSER:	237			
+		set_active 	(id)AINSER:238	1			(id)AINSER:	238			
+		set_active 	(id)AINSER:239	1			(id)AINSER:	239			
+		set_active 	(id)AINSER:240	1			(id)AINSER:	240			
+		#SWICTH MIXER									
+		set_active 	(id)BUTTON:253	1			(id)BUTTON:	253			
+		set_active 	(id)BUTTON:254	1			(id)BUTTON:	254			
+		set_active 	(id)BUTTON:255	1			(id)BUTTON:	255			
+		set_active 	(id)BUTTON:256	1			(id)BUTTON:	256			
+		#POTARDS									
+		set_active 	(id)AINSER:265	1			(id)AINSER:	265			
+		set_active 	(id)AINSER:266	1			(id)AINSER:	266			
+		set_active 	(id)AINSER:267	1			(id)AINSER:	267			
+		set_active 	(id)AINSER:268	1			(id)AINSER:	268			
+		set_active 	(id)AINSER:269	1			(id)AINSER:	269			
+		set_active 	(id)AINSER:270	1			(id)AINSER:	270			
+		set_active 	(id)AINSER:271	1			(id)AINSER:	271			
+		set_active 	(id)AINSER:272	1			(id)AINSER:	272			
+		#ENC									
+		set_active 	(id)ENC:309	0			(id)ENC:	309			
+		set_active 	(id)ENC:310	0			(id)ENC:	310			
+		set_active 	(id)ENC:311	0			(id)ENC:	311			
+		set_active 	(id)ENC:312	0			(id)ENC:	312			
+		set_active 	(id)ENC:313	0			(id)ENC:	313			
+		set_active 	(id)ENC:314	0			(id)ENC:	314			
+		set_active 	(id)ENC:315	0			(id)ENC:	315			
+		set_active 	(id)ENC:316	0			(id)ENC:	316			
+		# BP ENC									
+		set_active 	(id)BUTTON:325	0			(id)BUTTON:	325			
+		set_active 	(id)BUTTON:326	0			(id)BUTTON:	326			
+		set_active 	(id)BUTTON:327	0			(id)BUTTON:	327			
+		set_active 	(id)BUTTON:328	0			(id)BUTTON:	328			
+		set_active 	(id)BUTTON:329	0			(id)BUTTON:	329			
+		set_active 	(id)BUTTON:330	0			(id)BUTTON:	330			
+		set_active 	(id)BUTTON:331	0			(id)BUTTON:	331			
+		set_active 	(id)BUTTON:332	0			(id)BUTTON:	332			
+		#FADERS									
+		set_active 	(id)AINSER:337	0			(id)AINSER:	337			
+		set_active 	(id)AINSER:338	0			(id)AINSER:	338			
+		set_active 	(id)AINSER:339	0			(id)AINSER:	339			
+		set_active 	(id)AINSER:340	0			(id)AINSER:	340			
+		#SWICTH MIXER									
+		set_active 	(id)BUTTON:353	0			(id)BUTTON:	353			
+		set_active 	(id)BUTTON:354	0			(id)BUTTON:	354			
+		set_active 	(id)BUTTON:355	0			(id)BUTTON:	355			
+		set_active 	(id)BUTTON:356	0			(id)BUTTON:	356			
+		#POTARDS									
+		set_active 	(id)AINSER:365	0			(id)AINSER:	365			
+		set_active 	(id)AINSER:366	0			(id)AINSER:	366			
+		set_active 	(id)AINSER:367	0			(id)AINSER:	367			
+		set_active 	(id)AINSER:368	0			(id)AINSER:	368			
+		set_active 	(id)AINSER:369	0			(id)AINSER:	369			
+		set_active 	(id)AINSER:370	0			(id)AINSER:	370			
+		set_active 	(id)AINSER:371	0			(id)AINSER:	371			
+		set_active 	(id)AINSER:372	0			(id)AINSER:	372			
+		#ENC									
+		set_active 	(id)ENC:409	0			(id)ENC:	409			
+		set_active 	(id)ENC:410	0			(id)ENC:	410			
+		set_active 	(id)ENC:411	0			(id)ENC:	411			
+		set_active 	(id)ENC:412	0			(id)ENC:	412			
+		set_active 	(id)ENC:413	0			(id)ENC:	413			
+		set_active 	(id)ENC:414	0			(id)ENC:	414			
+		set_active 	(id)ENC:415	0			(id)ENC:	415			
+		set_active 	(id)ENC:416	0			(id)ENC:	416			
+		# BP ENC									
+		set_active 	(id)BUTTON:425	0			(id)BUTTON:	425			
+		set_active 	(id)BUTTON:426	0			(id)BUTTON:	426			
+		set_active 	(id)BUTTON:427	0			(id)BUTTON:	427			
+		set_active 	(id)BUTTON:428	0			(id)BUTTON:	428			
+		set_active 	(id)BUTTON:429	0			(id)BUTTON:	429			
+		set_active 	(id)BUTTON:430	0			(id)BUTTON:	430			
+		set_active 	(id)BUTTON:431	0			(id)BUTTON:	431			
+		set_active 	(id)BUTTON:432	0			(id)BUTTON:	432			
+		#FADERS									
+		set_active 	(id)AINSER:437	0			(id)AINSER:	437			
+		set_active 	(id)AINSER:438	0			(id)AINSER:	438			
+		set_active 	(id)AINSER:439	0			(id)AINSER:	439			
+		set_active 	(id)AINSER:440	0			(id)AINSER:	440			
+		#SWICTH MIXER									
+		set_active 	(id)BUTTON:453	0			(id)BUTTON:	453			
+		set_active 	(id)BUTTON:454	0			(id)BUTTON:	454			
+		set_active 	(id)BUTTON:455	0			(id)BUTTON:	455			
+		set_active 	(id)BUTTON:456	0			(id)BUTTON:	456			
+		#POTARDS									
+		set_active 	(id)AINSER:465	0			(id)AINSER:	465			
+		set_active 	(id)AINSER:466	0			(id)AINSER:	466			
+		set_active 	(id)AINSER:467	0			(id)AINSER:	467			
+		set_active 	(id)AINSER:468	0			(id)AINSER:	468			
+		set_active 	(id)AINSER:469	0			(id)AINSER:	469			
+		set_active 	(id)AINSER:470	0			(id)AINSER:	470			
+		set_active 	(id)AINSER:471	0			(id)AINSER:	471			
+		set_active 	(id)AINSER:472	0			(id)AINSER:	472			
+											
+	  exit										
+	  endif										
+											
+	if ^section == 	7									
+	  log "Section is 	7	"								
+											
+	set_hsv RGBLED:141	 300:100:1									
+	set_hsv RGBLED:142	 200:100:1									
+	set_hsv RGBLED:143	100:100:10									
+	set_hsv RGBLED:144	 50:100:1									
+	set_hsv RGBLED:137	100:100:10									
+	set_hsv RGBLED:138	100:100:10									
+	set_hsv RGBLED:139	100:100:10									
+	set_hsv RGBLED:140	100:100:10									
+	# Active										
+		# Encoders									
+		set_active 	(id)ENC:109	0			(id)ENC:	109			
+		set_active 	(id)ENC:110	0			(id)ENC:	110			
+		set_active 	(id)ENC:111	0			(id)ENC:	111			
+		set_active 	(id)ENC:112	0			(id)ENC:	112			
+		set_active 	(id)ENC:113	0			(id)ENC:	113			
+		set_active 	(id)ENC:114	0			(id)ENC:	114			
+		set_active 	(id)ENC:115	0			(id)ENC:	115			
+		set_active 	(id)ENC:116	0			(id)ENC:	116			
+		# BP ENC									
+		set_active 	(id)BUTTON:125	0			(id)BUTTON:	125			
+		set_active 	(id)BUTTON:126	0			(id)BUTTON:	126			
+		set_active 	(id)BUTTON:127	0			(id)BUTTON:	127			
+		set_active 	(id)BUTTON:128	0			(id)BUTTON:	128			
+		set_active 	(id)BUTTON:129	0			(id)BUTTON:	129			
+		set_active 	(id)BUTTON:130	0			(id)BUTTON:	130			
+		set_active 	(id)BUTTON:131	0			(id)BUTTON:	131			
+		set_active 	(id)BUTTON:132	0			(id)BUTTON:	132			
+		#FADERS									
+		set_active 	(id)AINSER:137	0			(id)AINSER:	137			
+		set_active 	(id)AINSER:138	0			(id)AINSER:	138			
+		set_active 	(id)AINSER:139	0			(id)AINSER:	139			
+		set_active 	(id)AINSER:140	0			(id)AINSER:	140			
+		#SWICTH MIXER									
+		set_active 	(id)BUTTON:153	0			(id)BUTTON:	153			
+		set_active 	(id)BUTTON:154	0			(id)BUTTON:	154			
+		set_active 	(id)BUTTON:155	0			(id)BUTTON:	155			
+		set_active 	(id)BUTTON:156	0			(id)BUTTON:	156			
+		#POTARDS									
+		set_active 	(id)AINSER:165	0			(id)AINSER:	165			
+		set_active 	(id)AINSER:166	0			(id)AINSER:	166			
+		set_active 	(id)AINSER:167	0			(id)AINSER:	167			
+		set_active 	(id)AINSER:168	0			(id)AINSER:	168			
+		set_active 	(id)AINSER:169	0			(id)AINSER:	169			
+		set_active 	(id)AINSER:170	0			(id)AINSER:	170			
+		set_active 	(id)AINSER:171	0			(id)AINSER:	171			
+		set_active 	(id)AINSER:172	0			(id)AINSER:	172			
+	# Desative										
+		#ENC									
+		set_active 	(id)ENC:209	0			(id)ENC:	209			
+		set_active 	(id)ENC:210	0			(id)ENC:	210			
+		set_active 	(id)ENC:211	0			(id)ENC:	211			
+		set_active 	(id)ENC:212	0			(id)ENC:	212			
+		set_active 	(id)ENC:213	0			(id)ENC:	213			
+		set_active 	(id)ENC:214	0			(id)ENC:	214			
+		set_active 	(id)ENC:215	0			(id)ENC:	215			
+		set_active 	(id)ENC:216	0			(id)ENC:	216			
+		# BP ENC									
+		set_active 	(id)BUTTON:225	0			(id)BUTTON:	225			
+		set_active 	(id)BUTTON:226	0			(id)BUTTON:	226			
+		set_active 	(id)BUTTON:227	0			(id)BUTTON:	227			
+		set_active 	(id)BUTTON:228	0			(id)BUTTON:	228			
+		set_active 	(id)BUTTON:229	0			(id)BUTTON:	229			
+		set_active 	(id)BUTTON:230	0			(id)BUTTON:	230			
+		set_active 	(id)BUTTON:231	0			(id)BUTTON:	231			
+		set_active 	(id)BUTTON:232	0			(id)BUTTON:	232			
+		#FADERS									
+		set_active 	(id)AINSER:237	0			(id)AINSER:	237			
+		set_active 	(id)AINSER:238	0			(id)AINSER:	238			
+		set_active 	(id)AINSER:239	0			(id)AINSER:	239			
+		set_active 	(id)AINSER:240	0			(id)AINSER:	240			
+		#SWICTH MIXER									
+		set_active 	(id)BUTTON:253	0			(id)BUTTON:	253			
+		set_active 	(id)BUTTON:254	0			(id)BUTTON:	254			
+		set_active 	(id)BUTTON:255	0			(id)BUTTON:	255			
+		set_active 	(id)BUTTON:256	0			(id)BUTTON:	256			
+		#POTARDS									
+		set_active 	(id)AINSER:265	0			(id)AINSER:	265			
+		set_active 	(id)AINSER:266	0			(id)AINSER:	266			
+		set_active 	(id)AINSER:267	0			(id)AINSER:	267			
+		set_active 	(id)AINSER:268	0			(id)AINSER:	268			
+		set_active 	(id)AINSER:269	0			(id)AINSER:	269			
+		set_active 	(id)AINSER:270	0			(id)AINSER:	270			
+		set_active 	(id)AINSER:271	0			(id)AINSER:	271			
+		set_active 	(id)AINSER:272	0			(id)AINSER:	272			
+		#ENC									
+		set_active 	(id)ENC:309	1			(id)ENC:	309			
+		set_active 	(id)ENC:310	1			(id)ENC:	310			
+		set_active 	(id)ENC:311	1			(id)ENC:	311			
+		set_active 	(id)ENC:312	1			(id)ENC:	312			
+		set_active 	(id)ENC:313	1			(id)ENC:	313			
+		set_active 	(id)ENC:314	1			(id)ENC:	314			
+		set_active 	(id)ENC:315	1			(id)ENC:	315			
+		set_active 	(id)ENC:316	1			(id)ENC:	316			
+		# BP ENC									
+		set_active 	(id)BUTTON:325	1			(id)BUTTON:	325			
+		set_active 	(id)BUTTON:326	1			(id)BUTTON:	326			
+		set_active 	(id)BUTTON:327	1			(id)BUTTON:	327			
+		set_active 	(id)BUTTON:328	1			(id)BUTTON:	328			
+		set_active 	(id)BUTTON:329	1			(id)BUTTON:	329			
+		set_active 	(id)BUTTON:330	1			(id)BUTTON:	330			
+		set_active 	(id)BUTTON:331	1			(id)BUTTON:	331			
+		set_active 	(id)BUTTON:332	1			(id)BUTTON:	332			
+		#FADERS									
+		set_active 	(id)AINSER:337	1			(id)AINSER:	337			
+		set_active 	(id)AINSER:338	1			(id)AINSER:	338			
+		set_active 	(id)AINSER:339	1			(id)AINSER:	339			
+		set_active 	(id)AINSER:340	1			(id)AINSER:	340			
+		#SWICTH MIXER									
+		set_active 	(id)BUTTON:353	1			(id)BUTTON:	353			
+		set_active 	(id)BUTTON:354	1			(id)BUTTON:	354			
+		set_active 	(id)BUTTON:355	1			(id)BUTTON:	355			
+		set_active 	(id)BUTTON:356	1			(id)BUTTON:	356			
+		#POTARDS									
+		set_active 	(id)AINSER:365	1			(id)AINSER:	365			
+		set_active 	(id)AINSER:366	1			(id)AINSER:	366			
+		set_active 	(id)AINSER:367	1			(id)AINSER:	367			
+		set_active 	(id)AINSER:368	1			(id)AINSER:	368			
+		set_active 	(id)AINSER:369	1			(id)AINSER:	369			
+		set_active 	(id)AINSER:370	1			(id)AINSER:	370			
+		set_active 	(id)AINSER:371	1			(id)AINSER:	371			
+		set_active 	(id)AINSER:372	1			(id)AINSER:	372			
+		#ENC									
+		set_active 	(id)ENC:409	0			(id)ENC:	409			
+		set_active 	(id)ENC:410	0			(id)ENC:	410			
+		set_active 	(id)ENC:411	0			(id)ENC:	411			
+		set_active 	(id)ENC:412	0			(id)ENC:	412			
+		set_active 	(id)ENC:413	0			(id)ENC:	413			
+		set_active 	(id)ENC:414	0			(id)ENC:	414			
+		set_active 	(id)ENC:415	0			(id)ENC:	415			
+		set_active 	(id)ENC:416	0			(id)ENC:	416			
+		# BP ENC									
+		set_active 	(id)BUTTON:425	0			(id)BUTTON:	425			
+		set_active 	(id)BUTTON:426	0			(id)BUTTON:	426			
+		set_active 	(id)BUTTON:427	0			(id)BUTTON:	427			
+		set_active 	(id)BUTTON:428	0			(id)BUTTON:	428			
+		set_active 	(id)BUTTON:429	0			(id)BUTTON:	429			
+		set_active 	(id)BUTTON:430	0			(id)BUTTON:	430			
+		set_active 	(id)BUTTON:431	0			(id)BUTTON:	431			
+		set_active 	(id)BUTTON:432	0			(id)BUTTON:	432			
+		#FADERS									
+		set_active 	(id)AINSER:437	0			(id)AINSER:	437			
+		set_active 	(id)AINSER:438	0			(id)AINSER:	438			
+		set_active 	(id)AINSER:439	0			(id)AINSER:	439			
+		set_active 	(id)AINSER:440	0			(id)AINSER:	440			
+		#SWICTH MIXER									
+		set_active 	(id)BUTTON:453	0			(id)BUTTON:	453			
+		set_active 	(id)BUTTON:454	0			(id)BUTTON:	454			
+		set_active 	(id)BUTTON:455	0			(id)BUTTON:	455			
+		set_active 	(id)BUTTON:456	0			(id)BUTTON:	456			
+		#POTARDS									
+		set_active 	(id)AINSER:465	0			(id)AINSER:	465			
+		set_active 	(id)AINSER:466	0			(id)AINSER:	466			
+		set_active 	(id)AINSER:467	0			(id)AINSER:	467			
+		set_active 	(id)AINSER:468	0			(id)AINSER:	468			
+		set_active 	(id)AINSER:469	0			(id)AINSER:	469			
+		set_active 	(id)AINSER:470	0			(id)AINSER:	470			
+		set_active 	(id)AINSER:471	0			(id)AINSER:	471			
+		set_active 	(id)AINSER:472	0			(id)AINSER:	472			
+											
+	  exit										
+	  endif										
+											
+											
+	if ^section == 	8									
+	  log "Section is 	8	"								
+											
+	set_hsv RGBLED:141	 300:100:1									
+	set_hsv RGBLED:142	 200:100:1									
+	set_hsv RGBLED:143	100:100:1									
+	set_hsv RGBLED:144	 50:100:10									
+	set_hsv RGBLED:137	 50:100:10									
+	set_hsv RGBLED:138	 50:100:10									
+	set_hsv RGBLED:139	 50:100:10									
+	set_hsv RGBLED:140	 50:100:10									
+	# Active										
+		# Encoders									
+		set_active 	(id)ENC:109	0			(id)ENC:	109			
+		set_active 	(id)ENC:110	0			(id)ENC:	110			
+		set_active 	(id)ENC:111	0			(id)ENC:	111			
+		set_active 	(id)ENC:112	0			(id)ENC:	112			
+		set_active 	(id)ENC:113	0			(id)ENC:	113			
+		set_active 	(id)ENC:114	0			(id)ENC:	114			
+		set_active 	(id)ENC:115	0			(id)ENC:	115			
+		set_active 	(id)ENC:116	0			(id)ENC:	116			
+		# BP ENC									
+		set_active 	(id)BUTTON:125	0			(id)BUTTON:	125			
+		set_active 	(id)BUTTON:126	0			(id)BUTTON:	126			
+		set_active 	(id)BUTTON:127	0			(id)BUTTON:	127			
+		set_active 	(id)BUTTON:128	0			(id)BUTTON:	128			
+		set_active 	(id)BUTTON:129	0			(id)BUTTON:	129			
+		set_active 	(id)BUTTON:130	0			(id)BUTTON:	130			
+		set_active 	(id)BUTTON:131	0			(id)BUTTON:	131			
+		set_active 	(id)BUTTON:132	0			(id)BUTTON:	132			
+		#FADERS									
+		set_active 	(id)AINSER:137	0			(id)AINSER:	137			
+		set_active 	(id)AINSER:138	0			(id)AINSER:	138			
+		set_active 	(id)AINSER:139	0			(id)AINSER:	139			
+		set_active 	(id)AINSER:140	0			(id)AINSER:	140			
+		#SWICTH MIXER									
+		set_active 	(id)BUTTON:153	0			(id)BUTTON:	153			
+		set_active 	(id)BUTTON:154	0			(id)BUTTON:	154			
+		set_active 	(id)BUTTON:155	0			(id)BUTTON:	155			
+		set_active 	(id)BUTTON:156	0			(id)BUTTON:	156			
+		#POTARDS									
+		set_active 	(id)AINSER:165	0			(id)AINSER:	165			
+		set_active 	(id)AINSER:166	0			(id)AINSER:	166			
+		set_active 	(id)AINSER:167	0			(id)AINSER:	167			
+		set_active 	(id)AINSER:168	0			(id)AINSER:	168			
+		set_active 	(id)AINSER:169	0			(id)AINSER:	169			
+		set_active 	(id)AINSER:170	0			(id)AINSER:	170			
+		set_active 	(id)AINSER:171	0			(id)AINSER:	171			
+		set_active 	(id)AINSER:172	0			(id)AINSER:	172			
+	# Desative										
+		#ENC									
+		set_active 	(id)ENC:209	0			(id)ENC:	209			
+		set_active 	(id)ENC:210	0			(id)ENC:	210			
+		set_active 	(id)ENC:211	0			(id)ENC:	211			
+		set_active 	(id)ENC:212	0			(id)ENC:	212			
+		set_active 	(id)ENC:213	0			(id)ENC:	213			
+		set_active 	(id)ENC:214	0			(id)ENC:	214			
+		set_active 	(id)ENC:215	0			(id)ENC:	215			
+		set_active 	(id)ENC:216	0			(id)ENC:	216			
+		# BP ENC									
+		set_active 	(id)BUTTON:225	0			(id)BUTTON:	225			
+		set_active 	(id)BUTTON:226	0			(id)BUTTON:	226			
+		set_active 	(id)BUTTON:227	0			(id)BUTTON:	227			
+		set_active 	(id)BUTTON:228	0			(id)BUTTON:	228			
+		set_active 	(id)BUTTON:229	0			(id)BUTTON:	229			
+		set_active 	(id)BUTTON:230	0			(id)BUTTON:	230			
+		set_active 	(id)BUTTON:231	0			(id)BUTTON:	231			
+		set_active 	(id)BUTTON:232	0			(id)BUTTON:	232			
+		#FADERS									
+		set_active 	(id)AINSER:237	0			(id)AINSER:	237			
+		set_active 	(id)AINSER:238	0			(id)AINSER:	238			
+		set_active 	(id)AINSER:239	0			(id)AINSER:	239			
+		set_active 	(id)AINSER:240	0			(id)AINSER:	240			
+		#SWICTH MIXER									
+		set_active 	(id)BUTTON:253	0			(id)BUTTON:	253			
+		set_active 	(id)BUTTON:254	0			(id)BUTTON:	254			
+		set_active 	(id)BUTTON:255	0			(id)BUTTON:	255			
+		set_active 	(id)BUTTON:256	0			(id)BUTTON:	256			
+		#POTARDS									
+		set_active 	(id)AINSER:265	0			(id)AINSER:	265			
+		set_active 	(id)AINSER:266	0			(id)AINSER:	266			
+		set_active 	(id)AINSER:267	0			(id)AINSER:	267			
+		set_active 	(id)AINSER:268	0			(id)AINSER:	268			
+		set_active 	(id)AINSER:269	0			(id)AINSER:	269			
+		set_active 	(id)AINSER:270	0			(id)AINSER:	270			
+		set_active 	(id)AINSER:271	0			(id)AINSER:	271			
+		set_active 	(id)AINSER:272	0			(id)AINSER:	272			
+		#ENC									
+		set_active 	(id)ENC:309	0			(id)ENC:	309			
+		set_active 	(id)ENC:310	0			(id)ENC:	310			
+		set_active 	(id)ENC:311	0			(id)ENC:	311			
+		set_active 	(id)ENC:312	0			(id)ENC:	312			
+		set_active 	(id)ENC:313	0			(id)ENC:	313			
+		set_active 	(id)ENC:314	0			(id)ENC:	314			
+		set_active 	(id)ENC:315	0			(id)ENC:	315			
+		set_active 	(id)ENC:316	0			(id)ENC:	316			
+		# BP ENC									
+		set_active 	(id)BUTTON:325	0			(id)BUTTON:	325			
+		set_active 	(id)BUTTON:326	0			(id)BUTTON:	326			
+		set_active 	(id)BUTTON:327	0			(id)BUTTON:	327			
+		set_active 	(id)BUTTON:328	0			(id)BUTTON:	328			
+		set_active 	(id)BUTTON:329	0			(id)BUTTON:	329			
+		set_active 	(id)BUTTON:330	0			(id)BUTTON:	330			
+		set_active 	(id)BUTTON:331	0			(id)BUTTON:	331			
+		set_active 	(id)BUTTON:332	0			(id)BUTTON:	332			
+		#FADERS									
+		set_active 	(id)AINSER:337	0			(id)AINSER:	337			
+		set_active 	(id)AINSER:338	0			(id)AINSER:	338			
+		set_active 	(id)AINSER:339	0			(id)AINSER:	339			
+		set_active 	(id)AINSER:340	0			(id)AINSER:	340			
+		#SWICTH MIXER									
+		set_active 	(id)BUTTON:353	0			(id)BUTTON:	353			
+		set_active 	(id)BUTTON:354	0			(id)BUTTON:	354			
+		set_active 	(id)BUTTON:355	0			(id)BUTTON:	355			
+		set_active 	(id)BUTTON:356	0			(id)BUTTON:	356			
+		#POTARDS									
+		set_active 	(id)AINSER:365	0			(id)AINSER:	365			
+		set_active 	(id)AINSER:366	0			(id)AINSER:	366			
+		set_active 	(id)AINSER:367	0			(id)AINSER:	367			
+		set_active 	(id)AINSER:368	0			(id)AINSER:	368			
+		set_active 	(id)AINSER:369	0			(id)AINSER:	369			
+		set_active 	(id)AINSER:370	0			(id)AINSER:	370			
+		set_active 	(id)AINSER:371	0			(id)AINSER:	371			
+		set_active 	(id)AINSER:372	0			(id)AINSER:	372			
+		#ENC									
+		set_active 	(id)ENC:409	1			(id)ENC:	409			
+		set_active 	(id)ENC:410	1			(id)ENC:	410			
+		set_active 	(id)ENC:411	1			(id)ENC:	411			
+		set_active 	(id)ENC:412	1			(id)ENC:	412			
+		set_active 	(id)ENC:413	1			(id)ENC:	413			
+		set_active 	(id)ENC:414	1			(id)ENC:	414			
+		set_active 	(id)ENC:415	1			(id)ENC:	415			
+		set_active 	(id)ENC:416	1			(id)ENC:	416			
+		# BP ENC									
+		set_active 	(id)BUTTON:425	1			(id)BUTTON:	425			
+		set_active 	(id)BUTTON:426	1			(id)BUTTON:	426			
+		set_active 	(id)BUTTON:427	1			(id)BUTTON:	427			
+		set_active 	(id)BUTTON:428	1			(id)BUTTON:	428			
+		set_active 	(id)BUTTON:429	1			(id)BUTTON:	429			
+		set_active 	(id)BUTTON:430	1			(id)BUTTON:	430			
+		set_active 	(id)BUTTON:431	1			(id)BUTTON:	431			
+		set_active 	(id)BUTTON:432	1			(id)BUTTON:	432			
+		#FADERS									
+		set_active 	(id)AINSER:437	1			(id)AINSER:	437			
+		set_active 	(id)AINSER:438	1			(id)AINSER:	438			
+		set_active 	(id)AINSER:439	1			(id)AINSER:	439			
+		set_active 	(id)AINSER:440	1			(id)AINSER:	440			
+		#SWICTH MIXER									
+		set_active 	(id)BUTTON:453	1			(id)BUTTON:	453			
+		set_active 	(id)BUTTON:454	1			(id)BUTTON:	454			
+		set_active 	(id)BUTTON:455	1			(id)BUTTON:	455			
+		set_active 	(id)BUTTON:456	1			(id)BUTTON:	456			
+		#POTARDS									
+		set_active 	(id)AINSER:465	1			(id)AINSER:	465			
+		set_active 	(id)AINSER:466	1			(id)AINSER:	466			
+		set_active 	(id)AINSER:467	1			(id)AINSER:	467			
+		set_active 	(id)AINSER:468	1			(id)AINSER:	468			
+		set_active 	(id)AINSER:469	1			(id)AINSER:	469			
+		set_active 	(id)AINSER:470	1			(id)AINSER:	470			
+		set_active 	(id)AINSER:471	1			(id)AINSER:	471			
+		set_active 	(id)AINSER:472	1			(id)AINSER:	472			
+											
+	  exit										
+	  endif										

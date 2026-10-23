@@ -1,0 +1,310 @@
+[
+  {
+    "id": "core32f4",
+    "name": "Core32F4",
+    "category": "Core",
+    "description": "Core STM32F4 avec bus MIDIbox NG et interfaces ModulBox documentées.",
+    "buses": ["DIN", "DOUT", "AIN", "WS2812", "SCS", "SPI"],
+    "connectors": ["J8J9: DIN/DOUT", "J19: AIN/SPI", "J4A/J4B: WS2812", "J10A/J10B: GPIO/SCS"],
+    "ports": [
+      {"id": "J9", "buses": ["DIN"], "direction": "output", "usage": "chain"},
+      {"id": "J8", "buses": ["DOUT"], "direction": "output", "usage": "chain"},
+      {"id": "J19", "buses": ["SPI"], "direction": "bidirectional", "usage": "bus"},
+      {"id": "J4A/J4B", "buses": ["WS2812"], "direction": "output", "usage": "bus"},
+      {"id": "J10A/J10B", "buses": ["SCS"], "direction": "bidirectional", "usage": "bus"}
+    ],
+    "controls": [],
+    "maxInstances": 1,
+    "status": "Documenté",
+    "evidence": "reference/MB_ModulBox_NG/standard-modules/Core/README.md",
+    "image": "reference/MB_ModulBox_NG/standard-modules/Core/assets/Core-Core32F4.png"
+  },
+  {
+    "id": "din4",
+    "name": "DIN4_R5_KS",
+    "category": "Extension",
+    "description": "Module DIN à 4 registres 74HC165, soit 32 entrées numériques. J1 vers Core ou DIN précédent, J2 vers le module suivant.",
+    "buses": ["DIN"],
+    "connectors": ["J1: entrée chaîne DIN", "J2: sortie chaîne DIN", "J3-J6: entrées"],
+    "ports": [
+      {"id": "J1", "buses": ["DIN"], "direction": "input", "usage": "chain"},
+      {"id": "J2", "buses": ["DIN"], "direction": "output", "usage": "chain"},
+      {"id": "J3-J6", "buses": ["DIN"], "direction": "input", "usage": "control"}
+    ],
+    "controls": [],
+    "maxInstances": null,
+    "status": "Documenté",
+    "evidence": "reference/MB_ModulBox_NG/standard-modules/DIN/README.md",
+    "image": "reference/MB_ModulBox_NG/standard-modules/DIN/assets/DIN-DIN4_R5_KS.png"
+  },
+  {
+    "id": "ainser64",
+    "name": "AINSER64",
+    "category": "Extension",
+    "description": "Entrées analogiques via MCP3208 et multiplexeurs CD4051. Jusqu'à 64 voies par module selon la documentation de référence ; aucun schéma KiCad exploitable n'est fourni dans ce dépôt.",
+    "buses": ["AIN", "SPI"],
+    "connectors": ["J2: interface série", "J6-J13: entrées analogiques"],
+    "ports": [
+      {"id": "J2", "buses": ["SPI"], "direction": "bidirectional", "usage": "bus"},
+      {"id": "J6-J13", "buses": ["AIN"], "direction": "input", "usage": "control"}
+    ],
+    "controls": [],
+    "maxInstances": 2,
+    "status": "À vérifier",
+    "evidence": "reference/MB_ModulBox_NG/standard-modules/AIN/README.md",
+    "image": null
+  },
+  {
+    "id": "dout",
+    "name": "DOUT",
+    "category": "Extension",
+    "description": "Registres de sorties numériques pour LED non adressables et autres charges compatibles.",
+    "buses": ["DOUT"],
+    "connectors": ["J1: entrée chaîne DOUT", "J2: sortie chaîne DOUT", "J3-J6: sorties"],
+    "ports": [
+      {"id": "J1", "buses": ["DOUT"], "direction": "input", "usage": "chain"},
+      {"id": "J2", "buses": ["DOUT"], "direction": "output", "usage": "chain"},
+      {"id": "J3-J6", "buses": ["DOUT"], "direction": "output", "usage": "control"}
+    ],
+    "controls": [],
+    "maxInstances": null,
+    "status": "Documenté",
+    "evidence": "reference/MB_ModulBox_NG/standard-modules/DOUT/README.md",
+    "image": "reference/MB_ModulBox_NG/standard-modules/DOUT/assets/DOUT-DOUT.png"
+  },
+  {
+    "id": "io-midi",
+    "name": "IO-Midi",
+    "category": "Extension",
+    "description": "Carte d'interface MIDI ; détails de raccordement à vérifier dans la documentation et le schéma.",
+    "buses": ["MIDI"],
+    "connectors": [],
+    "controls": [],
+    "maxInstances": null,
+    "status": "À vérifier",
+    "evidence": "reference/MB_ModulBox_NG/standard-modules/IO/README.md",
+    "image": "reference/MB_ModulBox_NG/standard-modules/IO/assets/IO-Midi_V0.1.png"
+  },
+  {
+    "id": "encoders-led-rgb",
+    "name": "8 encodeurs + 128 WS2812",
+    "category": "Front-end",
+    "description": "Huit encodeurs PEC16 avec poussoirs (24 entrées DIN) et 128 WS2812 en cascade sur une ligne dédiée.",
+    "buses": ["DIN", "WS2812", "Power"],
+    "connectors": ["J11-J13: DIN", "J4/J5: cascade WS2812", "J44/J45: alimentation"],
+    "ports": [
+      {"id": "J11-J13", "buses": ["DIN"], "direction": "passive", "usage": "control"},
+      {"id": "J4/J5", "buses": ["WS2812"], "direction": "passive", "usage": "control"}
+    ],
+    "controls": [
+      {
+        "kind": "encoder",
+        "count": 8,
+        "prefix": "ENC",
+        "resources": [
+          {"connectors": ["J13"], "signals": ["C_ENC1A", "C_ENC1B"]},
+          {"connectors": ["J13"], "signals": ["C_ENC2A", "C_ENC2B"]},
+          {"connectors": ["J13"], "signals": ["C_ENC3A", "C_ENC3B"]},
+          {"connectors": ["J13"], "signals": ["C_ENC4A", "C_ENC4B"]},
+          {"connectors": ["J12"], "signals": ["C_ENC5A", "C_ENC5B"]},
+          {"connectors": ["J12"], "signals": ["C_ENC6A", "C_ENC6B"]},
+          {"connectors": ["J12"], "signals": ["C_ENC7A", "C_ENC7B"]},
+          {"connectors": ["J12"], "signals": ["C_ENC8A", "C_ENC8B"]}
+        ]
+      },
+      {
+        "kind": "button",
+        "count": 8,
+        "prefix": "BTN",
+        "resources": [
+          {"connectors": ["J11"], "signals": ["C_SW1"]},
+          {"connectors": ["J11"], "signals": ["C_SW2"]},
+          {"connectors": ["J11"], "signals": ["C_SW3"]},
+          {"connectors": ["J11"], "signals": ["C_SW4"]},
+          {"connectors": ["J11"], "signals": ["C_SW5"]},
+          {"connectors": ["J11"], "signals": ["C_SW6"]},
+          {"connectors": ["J11"], "signals": ["C_SW7"]},
+          {"connectors": ["J11"], "signals": ["C_SW8"]}
+        ]
+      }
+    ],
+    "maxInstances": null,
+    "status": "Conception non vérifiée",
+    "evidence": "reference/MB_ModulBox_NG/custom-frontends/encoders-led-rgb/README.md",
+    "image": "reference/MB_ModulBox_NG/custom-frontends/encoders-led-rgb/assets/PEC_16_V0.2.png"
+  },
+  {
+    "id": "8x-buttons",
+    "name": "8x-buttons",
+    "category": "Front-end",
+    "description": "Huit boutons avec LED intégrée et huit sorties LED indépendantes ; nécessite les cartes DIN et DOUT adaptées.",
+    "buses": ["DIN", "DOUT"],
+    "connectors": ["J1: DIN", "J2: DOUT"],
+    "ports": [
+      {"id": "J1", "buses": ["DIN"], "direction": "passive", "usage": "control"},
+      {"id": "J2", "buses": ["DOUT"], "direction": "passive", "usage": "control"}
+    ],
+    "controls": [{
+      "kind": "button",
+      "count": 8,
+      "prefix": "BTN",
+      "resources": [
+        {"connectors": ["J1"], "signals": ["J1-D0"]},
+        {"connectors": ["J1"], "signals": ["J1-D1"]},
+        {"connectors": ["J1"], "signals": ["J1-D2"]},
+        {"connectors": ["J1"], "signals": ["J1-D3"]},
+        {"connectors": ["J1"], "signals": ["J1-D4"]},
+        {"connectors": ["J1"], "signals": ["J1-D5"]},
+        {"connectors": ["J1"], "signals": ["J1-D6"]},
+        {"connectors": ["J1"], "signals": ["J1-D7"]}
+      ]
+    }],
+    "maxInstances": null,
+    "status": "Documenté",
+    "evidence": "reference/MB_ModulBox_NG/custom-frontends/8x-buttons/README.md",
+    "image": "reference/MB_ModulBox_NG/custom-frontends/8x-buttons/assets/BP.png"
+  },
+  {
+    "id": "8x-pots",
+    "name": "8x-pots",
+    "category": "Front-end",
+    "description": "Huit potentiomètres 10 kΩ sur huit voies analogiques, alimentés en +3V0.",
+    "buses": ["AIN"],
+    "connectors": ["J1: 8 curseurs analogiques"],
+    "ports": [{"id": "J1", "buses": ["AIN"], "direction": "passive", "usage": "control"}],
+    "controls": [{
+      "kind": "analog",
+      "count": 8,
+      "prefix": "POT",
+      "resources": [
+        {"connectors": ["J1"], "signals": ["J1-A1"]},
+        {"connectors": ["J1"], "signals": ["J1-A0"]},
+        {"connectors": ["J1"], "signals": ["J1-A2"]},
+        {"connectors": ["J1"], "signals": ["J1-A4"]},
+        {"connectors": ["J1"], "signals": ["J1-A6"]},
+        {"connectors": ["J1"], "signals": ["J1-A3"]},
+        {"connectors": ["J1"], "signals": ["J1-A5"]},
+        {"connectors": ["J1"], "signals": ["J1-A7"]}
+      ]
+    }],
+    "maxInstances": null,
+    "status": "Documenté",
+    "evidence": "reference/MB_ModulBox_NG/custom-frontends/8x-pots/README.md",
+    "image": "reference/MB_ModulBox_NG/custom-frontends/8x-pots/assets/Pot.png"
+  },
+  {
+    "id": "4x-faders",
+    "name": "4x-faders",
+    "category": "Front-end",
+    "description": "Carte de quatre faders par PCB, lue via AINSER64. Le dépôt contient des variantes Fad_1 et Fad_2.",
+    "buses": ["AIN"],
+    "connectors": ["J3/J5: curseurs analogiques", "J4: passage sur Fad_1"],
+    "controls": [{"kind": "analog", "count": 4, "prefix": "FAD"}],
+    "maxInstances": null,
+    "status": "Documenté",
+    "evidence": "reference/MB_ModulBox_NG/custom-frontends/4x-faders/README.md",
+    "image": "reference/MB_ModulBox_NG/custom-frontends/4x-faders/assets/Fad_1.png"
+  },
+  {
+    "id": "keysw-4x2",
+    "name": "keysw-4x2",
+    "category": "Front-end",
+    "description": "Clavier de huit touches DIN avec huit LED RGB SK6812 adressables en cascade. Compatibilité de son interface LED avec le Core à confirmer.",
+    "buses": ["DIN", "SK6812"],
+    "connectors": ["J1: DIN", "J2: entrée LED SK6812", "J3: sortie LED SK6812"],
+    "ports": [
+      {"id": "J1", "buses": ["DIN"], "direction": "passive", "usage": "control"},
+      {"id": "J2/J3", "buses": ["SK6812"], "direction": "passive", "usage": "control"}
+    ],
+    "controls": [{
+      "kind": "button",
+      "count": 8,
+      "prefix": "KEY",
+      "resources": [
+        {"connectors": ["J1"], "signals": ["J1-D0"]},
+        {"connectors": ["J1"], "signals": ["J1-D1"]},
+        {"connectors": ["J1"], "signals": ["J1-D2"]},
+        {"connectors": ["J1"], "signals": ["J1-D3"]},
+        {"connectors": ["J1"], "signals": ["J1-D4"]},
+        {"connectors": ["J1"], "signals": ["J1-D5"]},
+        {"connectors": ["J1"], "signals": ["J1-D6"]},
+        {"connectors": ["J1"], "signals": ["J1-D7"]}
+      ]
+    }],
+    "maxInstances": null,
+    "status": "Documenté",
+    "evidence": "reference/MB_ModulBox_NG/custom-frontends/keysw-4x2/README.md",
+    "image": "reference/MB_ModulBox_NG/custom-frontends/keysw-4x2/assets/MB-KeySW_4x2_V0.3.png"
+  },
+  {
+    "id": "pad-rgb",
+    "name": "pad-rgb",
+    "category": "Front-end",
+    "description": "Deux zones de pads fournissant huit contacts DIN et huit WS2812 en cascade.",
+    "buses": ["DIN", "WS2812"],
+    "connectors": ["J1: DIN", "J2: entrée WS2812", "J3: sortie WS2812"],
+    "ports": [
+      {"id": "J1", "buses": ["DIN"], "direction": "passive", "usage": "control"},
+      {"id": "J2", "buses": ["WS2812"], "direction": "input", "usage": "control"},
+      {"id": "J3", "buses": ["WS2812"], "direction": "output", "usage": "control"}
+    ],
+    "controls": [{
+      "kind": "button",
+      "count": 8,
+      "prefix": "PAD",
+      "resources": [
+        {"connectors": ["J1"], "signals": ["J1-D0"]},
+        {"connectors": ["J1"], "signals": ["J1-D1"]},
+        {"connectors": ["J1"], "signals": ["J1-D2"]},
+        {"connectors": ["J1"], "signals": ["J1-D3"]},
+        {"connectors": ["J1"], "signals": ["J1-D4"]},
+        {"connectors": ["J1"], "signals": ["J1-D5"]},
+        {"connectors": ["J1"], "signals": ["J1-D6"]},
+        {"connectors": ["J1"], "signals": ["J1-D7"]}
+      ]
+    }],
+    "maxInstances": null,
+    "status": "Documenté",
+    "evidence": "reference/MB_ModulBox_NG/custom-frontends/pad-rgb/README.md",
+    "image": "reference/MB_ModulBox_NG/custom-frontends/pad-rgb/assets/Pad.png"
+  },
+  {
+    "id": "oled-128x64",
+    "name": "oled-128x64",
+    "category": "Front-end",
+    "description": "Afficheur OLED repéré dans le dépôt ; interface, alimentation et firmware à vérifier.",
+    "buses": ["SPI"],
+    "connectors": [],
+    "controls": [],
+    "maxInstances": null,
+    "status": "À vérifier",
+    "evidence": "reference/MB_ModulBox_NG/custom-frontends/oled-128x64/README.md",
+    "image": "reference/MB_ModulBox_NG/custom-frontends/oled-128x64/assets/Oled_1309_x1_V0.0.png"
+  },
+  {
+    "id": "power",
+    "name": "Carte puissance",
+    "category": "Alimentation",
+    "description": "Carte de distribution d'alimentation. Ne constitue pas une interface de contrôle MIDI.",
+    "buses": ["Power"],
+    "connectors": [],
+    "controls": [],
+    "maxInstances": null,
+    "status": "À vérifier",
+    "evidence": "reference/MB_ModulBox_NG/custom-frontends/carte-puissance/README.md",
+    "image": "reference/MB_ModulBox_NG/custom-frontends/carte-puissance/assets/Carte_puissance.png"
+  },
+  {
+    "id": "surface-control",
+    "name": "surface-control",
+    "category": "Front-end",
+    "description": "Surface de contrôle SCS raccordée aux GPIO J10A/J10B du Core selon la documentation du dépôt.",
+    "buses": ["SCS"],
+    "connectors": ["J10A/J10B: GPIO SCS"],
+    "controls": [],
+    "maxInstances": null,
+    "status": "Documenté",
+    "evidence": "reference/MB_ModulBox_NG/custom-frontends/surface-control/README.md",
+    "image": "reference/MB_ModulBox_NG/custom-frontends/surface-control/assets/Surface Control V0.1.png"
+  }
+]

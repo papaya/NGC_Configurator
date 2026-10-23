@@ -1,0 +1,503 @@
+	# EVENT	id=	0	hw_id=	0	fwd_id=LED:0	type=CC	chn=	0			cc=	0	button_mode=	Toggle	range=	0:127	fwd_to_lcd=1	rgbled_pattern=	0	hsv=	359:100:10				
+																										
+	# Ju_Box																									
+	RESET_HW																									
+	# LCD message after load																									
+	LCD "%C@(1:1:1)&tJuBox"																									
+																										
+																										
+																										
+	#Appel des BANKS																									
+																										
+	EVENT_BUTTON	id=	1001	hw_id=	5		type=Meta							button_mode=	OnOnly								 meta=RunSection:1			
+	EVENT_BUTTON	id=	1002	hw_id=	6		type=Meta							button_mode=	OnOnly								 meta=RunSection:2			
+	EVENT_BUTTON	id=	1003	hw_id=	7		type=Meta							button_mode=	OnOnly								   meta=RunSection:3			
+	EVENT_BUTTON	id=	1004	hw_id=	8		type=Meta							button_mode=	OnOnly								meta=RunSection:4			
+																										
+	EVENT_BUTTON	id=	1005	hw_id=	37		type=Meta							button_mode=	OnOnly								  meta=RunSection:5			
+	EVENT_BUTTON	id=	1006	hw_id=	38		type=Meta							button_mode=	OnOnly								  meta=RunSection:6			
+	EVENT_BUTTON	id=	1007	hw_id=	39		type=Meta							button_mode=	OnOnly								  meta=RunSection:7			
+	EVENT_BUTTON	id=	1008	hw_id=	40		type=Meta							button_mode=	OnOnly								meta=RunSection:8			
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+	#encoder_hardware_configuration																									
+																										
+	ENC	n=	1	sr=	2	pins=1:0	type=non_detented																			
+	ENC	n=	2	sr=	2	pins=3:2	type=non_detented																			
+	ENC	n=	3	sr=	2	pins=5:4	type=non_detented																			
+	ENC	n=	4	sr=	2	pins=7:6	type=non_detented																			
+	ENC	n=	5	sr=	3	pins=1:0	type=non_detented																			
+	ENC	n=	6	sr=	3	pins=3:2	type=non_detented																			
+	ENC	n=	7	sr=	3	pins=5:4	type=non_detented																			
+	ENC	n=	8	sr=	3	pins=7:6	type=non_detented																			
+																										
+	ENC	n=	9	sr=	6	pins=1:0	type=non_detented																			
+	ENC	n=	10	sr=	6	pins=3:2	type=non_detented																			
+	ENC	n=	11	sr=	6	pins=5:4	type=non_detented																			
+	ENC	n=	12	sr=	6	pins=7:6	type=non_detented																			
+	ENC	n=	13	sr=	7	pins=1:0	type=non_detented																			
+	ENC	n=	14	sr=	7	pins=3:2	type=non_detented																			
+	ENC	n=	15	sr=	7	pins=5:4	type=non_detented																			
+	ENC	n=	16	sr=	7	pins=7:6	type=non_detented																			
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+	#ainser	hardware	configuration																							
+	aINSER	n=	1	enabled=1	muxed=1	cs=0	resolution=7bit																			
+	aINSER	n=	2	enabled=0	muxed=1	cs=1	resolution=7bit																			
+																										
+	# LED will change brightness (v) based on value (hue statically defined)																									
+	EVENT_RGBLED	id=	1			dimmed=1 										 range=	0:10 									
+	EVENT_RGBLED	id=	2			dimmed=1 										 range=	0:10 									
+	EVENT_RGBLED	id=	3			dimmed=1 										 range=	0:10 									
+	EVENT_RGBLED	id=	4			dimmed=1 										 range=	0:10 									
+																										
+	EVENT_RGBLED	id=	137			dimmed=1 										 range=	0:10 									
+	EVENT_RGBLED	id=	138			dimmed=1 										 range=	0:10 									
+	EVENT_RGBLED	id=	139			dimmed=1 										 range=	0:10 									
+	EVENT_RGBLED	id=	140			dimmed=1 										 range=	0:10 									
+																										
+																										
+																										
+																										
+	#Section 	1																								
+	#Encoders																									
+	EVENT_ENC	id=	101	hw_id=	1	fwd_id=RGBLED:10	type=CC	chn=	1			cc=	1			range=	0:127		rgbled_pattern=	1	hsv=	328:100:10				
+	EVENT_ENC	id=	102	hw_id=	2	fwd_id=RGBLED:26	type=CC	chn=	1			cc=	2			range=	0:127		rgbled_pattern=	1	hsv=	330:100:10				
+	EVENT_ENC	id=	103	hw_id=	3	fwd_id=RGBLED:42	type=CC	chn=	1			cc=	3			range=	0:127		rgbled_pattern=	1	hsv=	332:100:10				
+	EVENT_ENC	id=	104	hw_id=	4	fwd_id=RGBLED:58	type=CC	chn=	1			cc=	4			range=	0:127		rgbled_pattern=	1	hsv=	334:100:10				
+	EVENT_ENC	id=	105	hw_id=	5	fwd_id=RGBLED:74	type=CC	chn=	1			cc=	5			range=	0:127		rgbled_pattern=	1	hsv=	336:100:10				
+	EVENT_ENC	id=	106	hw_id=	6	fwd_id=RGBLED:90	type=CC	chn=	1			cc=	6			range=	0:127		rgbled_pattern=	1	hsv=	338:100:10				
+	EVENT_ENC	id=	107	hw_id=	7	fwd_id=RGBLED:106	type=CC	chn=	1			cc=	7			range=	0:127		rgbled_pattern=	1	hsv=	340:100:10				
+	EVENT_ENC	id=	108	hw_id=	8	fwd_id=RGBLED:122	type=CC	chn=	1			cc=	8			range=	0:127		rgbled_pattern=	1	hsv=	342:100:10				
+																										
+	#Encoders	#Section5																								
+	EVENT_ENC	id=	109	hw_id=	9	fwd_id=RGBLED:146	type=CC	chn=	1			cc=	1			range=	0:127		rgbled_pattern=	1	hsv=	344:100:10				
+	EVENT_ENC	id=	110	hw_id=	10	fwd_id=RGBLED:162	type=CC	chn=	1			cc=	2			range=	0:127		rgbled_pattern=	1	hsv=	346:100:10				
+	EVENT_ENC	id=	111	hw_id=	11	fwd_id=RGBLED:178	type=CC	chn=	1			cc=	3			range=	0:127		rgbled_pattern=	1	hsv=	348:100:10				
+	EVENT_ENC	id=	112	hw_id=	12	fwd_id=RGBLED:194	type=CC	chn=	1			cc=	4			range=	0:127		rgbled_pattern=	1	hsv=	350:100:10				
+	EVENT_ENC	id=	113	hw_id=	13	fwd_id=RGBLED:210	type=CC	chn=	1			cc=	5			range=	0:127		rgbled_pattern=	1	hsv=	352:100:10				
+	EVENT_ENC	id=	114	hw_id=	14	fwd_id=RGBLED:226	type=CC	chn=	1			cc=	6			range=	0:127		rgbled_pattern=	1	hsv=	354:100:10				
+	EVENT_ENC	id=	115	hw_id=	15	fwd_id=RGBLED:242	type=CC	chn=	1			cc=	7			range=	0:127		rgbled_pattern=	1	hsv=	356:100:10				
+	EVENT_ENC	id=	116	hw_id=	16	fwd_id=RGBLED:258	type=CC	chn=	1			cc=	8			range=	0:127		rgbled_pattern=	1	hsv=	358:100:10				
+																										
+	# BP encodeurs T1	#Section 1																								
+	EVENT_BUTTON	id=	117	hw_id=	25	fwd_id=RGBLED:9	type=CC	chn=	1			cc=	9	button_mode=	Toggle						hsv=	0:100:10				
+	EVENT_BUTTON	id=	118	hw_id=	26	fwd_id=RGBLED:25	type=CC	chn=	1			cc=	10	button_mode=	Toggle						hsv=	0:100:10				
+	EVENT_BUTTON	id=	119	hw_id=	27	fwd_id=RGBLED:41	type=CC	chn=	1			cc=	11	button_mode=	Toggle						hsv=	0:100:10				
+	EVENT_BUTTON	id=	120	hw_id=	28	fwd_id=RGBLED:57	type=CC	chn=	1			cc=	12	button_mode=	Toggle						hsv=	0:100:10				
+	EVENT_BUTTON	id=	121	hw_id=	29	fwd_id=RGBLED:73	type=CC	chn=	1			cc=	13	button_mode=	Toggle						hsv=	0:100:10				
+	EVENT_BUTTON	id=	122	hw_id=	30	fwd_id=RGBLED:89	type=CC	chn=	1			cc=	14	button_mode=	Toggle						hsv=	0:100:10				
+	EVENT_BUTTON	id=	123	hw_id=	31	fwd_id=RGBLED:105	type=CC	chn=	1			cc=	15	button_mode=	Toggle						hsv=	0:100:10				
+	EVENT_BUTTON	id=	124	hw_id=	32	fwd_id=RGBLED:121	type=CC	chn=	1			cc=	16	button_mode=	Toggle						hsv=	0:100:10				
+																										
+	# BP encodeurs T2	#Section5																								
+	EVENT_BUTTON	id=	125	hw_id=	57	fwd_id=RGBLED:145	type=CC	chn=	1			cc=	9	button_mode=	Toggle						hsv=	0:100:10				
+	EVENT_BUTTON	id=	126	hw_id=	58	fwd_id=RGBLED:161	type=CC	chn=	1			cc=	10	button_mode=	Toggle						hsv=	0:100:10				
+	EVENT_BUTTON	id=	127	hw_id=	59	fwd_id=RGBLED:177	type=CC	chn=	1			cc=	11	button_mode=	Toggle						hsv=	0:100:10				
+	EVENT_BUTTON	id=	128	hw_id=	60	fwd_id=RGBLED:193	type=CC	chn=	1			cc=	12	button_mode=	Toggle						hsv=	0:100:10				
+	EVENT_BUTTON	id=	129	hw_id=	61	fwd_id=RGBLED:209	type=CC	chn=	1			cc=	13	button_mode=	Toggle						hsv=	0:100:10				
+	EVENT_BUTTON	id=	130	hw_id=	62	fwd_id=RGBLED:225	type=CC	chn=	1			cc=	14	button_mode=	Toggle						hsv=	0:100:10				
+	EVENT_BUTTON	id=	131	hw_id=	63	fwd_id=RGBLED:241	type=CC	chn=	1			cc=	15	button_mode=	Toggle						hsv=	0:100:10				
+	EVENT_BUTTON	id=	132	hw_id=	64	fwd_id=RGBLED:257	type=CC	chn=	1			cc=	16	button_mode=	Toggle						hsv=	0:100:10				
+	#---------------- 	MIXER-------------																								
+	#FADER	#Section 1																								
+	EVENT_AINSER	id=	133	hw_id=	1		type=CC	chn=	1			cc=	17			range=	0:127									
+	EVENT_AINSER	id=	134	hw_id=	2		type=CC	chn=	1			cc=	18			range=	0:127									
+	EVENT_AINSER	id=	135	hw_id=	3		type=CC	chn=	1			cc=	19			range=	0:127									
+	EVENT_AINSER	id=	136	hw_id=	4		type=CC	chn=	1			cc=	20			range=	0:127									
+																										
+	#FADER	#Section5																								
+	EVENT_AINSER	id=	137	hw_id=	5		type=CC	chn=	1			cc=	17			range=	0:127									
+	EVENT_AINSER	id=	138	hw_id=	6		type=CC	chn=	1			cc=	18			range=	0:127									
+	EVENT_AINSER	id=	139	hw_id=	7		type=CC	chn=	1			cc=	19			range=	0:127									
+	EVENT_AINSER	id=	140	hw_id=	8		type=CC	chn=	1			cc=	20			range=	0:127									
+																										
+	#switch	#Section 1																								
+	EVENT_BUTTON	id=	141	hw_id=	1	fwd_id=RGBLED:1	type=CC	chn=	1			cc=	21	button_mode=	Toggle						hsv=	328:100:10				
+	EVENT_BUTTON	id=	142	hw_id=	2	fwd_id=RGBLED:2	type=CC	chn=	1			cc=	22	button_mode=	Toggle						hsv=	330:100:10				
+	EVENT_BUTTON	id=	143	hw_id=	3	fwd_id=RGBLED:3	type=CC	chn=	1			cc=	23	button_mode=	Toggle						hsv=	332:100:10				
+	EVENT_BUTTON	id=	144	hw_id=	4	fwd_id=RGBLED:4	type=CC	chn=	1			cc=	24	button_mode=	Toggle						hsv=	334:100:10				
+																										
+	#switch	#Section5																								
+	EVENT_BUTTON	id=	153	hw_id=	33	fwd_id=RGBLED:137	type=CC	chn=	1			cc=	21	button_mode=	Toggle						hsv=	328:100:10				
+	EVENT_BUTTON	id=	154	hw_id=	34	fwd_id=RGBLED:138	type=CC	chn=	1			cc=	22	button_mode=	Toggle						hsv=	330:100:10				
+	EVENT_BUTTON	id=	155	hw_id=	35	fwd_id=RGBLED:139	type=CC	chn=	1			cc=	23	button_mode=	Toggle						hsv=	332:100:10				
+	EVENT_BUTTON	id=	156	hw_id=	36	fwd_id=RGBLED:140	type=CC	chn=	1			cc=	24	button_mode=	Toggle						hsv=	334:100:10				
+																										
+	#POTARD  T1	#Section 1																								
+	EVENT_AINSER	id=	157	hw_id=	9		type=CC	chn=	1			cc=	25			range=	0:127									
+	EVENT_AINSER	id=	158	hw_id=	10		type=CC	chn=	1			cc=	26			range=	0:127									
+	EVENT_AINSER	id=	159	hw_id=	11		type=CC	chn=	1			cc=	27			range=	0:127									
+	EVENT_AINSER	id=	160	hw_id=	12		type=CC	chn=	1			cc=	28			range=	0:127									
+	EVENT_AINSER	id=	161	hw_id=	13		type=CC	chn=	1			cc=	29			range=	0:127									
+	EVENT_AINSER	id=	162	hw_id=	14		type=CC	chn=	1			cc=	30			range=	0:127									
+	EVENT_AINSER	id=	163	hw_id=	15		type=CC	chn=	1			cc=	31			range=	0:127									
+	EVENT_AINSER	id=	164	hw_id=	16		type=CC	chn=	1			cc=	32			range=	0:127									
+																										
+	#POTARD T2	#Section5																								
+	EVENT_AINSER	id=	165	hw_id=	17		type=CC	chn=	1			cc=	25			range=	0:127									
+	EVENT_AINSER	id=	166	hw_id=	18		type=CC	chn=	1			cc=	26			range=	0:127									
+	EVENT_AINSER	id=	167	hw_id=	19		type=CC	chn=	1			cc=	27			range=	0:127									
+	EVENT_AINSER	id=	168	hw_id=	20		type=CC	chn=	1			cc=	28			range=	0:127									
+	EVENT_AINSER	id=	169	hw_id=	21		type=CC	chn=	1			cc=	29			range=	0:127									
+	EVENT_AINSER	id=	170	hw_id=	22		type=CC	chn=	1			cc=	30			range=	0:127									
+	EVENT_AINSER	id=	171	hw_id=	23		type=CC	chn=	1			cc=	31			range=	0:127									
+	EVENT_AINSER	id=	172	hw_id=	24		type=CC	chn=	1			cc=	32			range=	0:127									
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+	# SECTION 2	2																								
+	#Encoders	# SECTION 2																								
+	EVENT_ENC	id=	201	hw_id=	1	fwd_id=RGBLED:10	type=CC	chn=	2			cc=	1			range=	0:127		rgbled_pattern=	1	hsv=	160:100:10				
+	EVENT_ENC	id=	202	hw_id=	2	fwd_id=RGBLED:26	type=CC	chn=	2			cc=	2			range=	0:127		rgbled_pattern=	1	hsv=	170:100:10				
+	EVENT_ENC	id=	203	hw_id=	3	fwd_id=RGBLED:42	type=CC	chn=	2			cc=	3			range=	0:127		rgbled_pattern=	1	hsv=	180:100:10				
+	EVENT_ENC	id=	204	hw_id=	4	fwd_id=RGBLED:58	type=CC	chn=	2			cc=	4			range=	0:127		rgbled_pattern=	1	hsv=	190:100:10				
+	EVENT_ENC	id=	205	hw_id=	5	fwd_id=RGBLED:74	type=CC	chn=	2			cc=	5			range=	0:127		rgbled_pattern=	1	hsv=	200:100:10				
+	EVENT_ENC	id=	206	hw_id=	6	fwd_id=RGBLED:90	type=CC	chn=	2			cc=	6			range=	0:127		rgbled_pattern=	1	hsv=	210:100:10				
+	EVENT_ENC	id=	207	hw_id=	7	fwd_id=RGBLED:106	type=CC	chn=	2			cc=	7			range=	0:127		rgbled_pattern=	1	hsv=	220:100:10				
+	EVENT_ENC	id=	208	hw_id=	8	fwd_id=RGBLED:122	type=CC	chn=	2			cc=	8			range=	0:127		rgbled_pattern=	1	hsv=	230:100:10				
+																										
+		# SECTION 6																								
+	EVENT_ENC	id=	209	hw_id=	9	fwd_id=RGBLED:146	type=CC	chn=	2			cc=	1			range=	0:127		rgbled_pattern=	1	hsv=	160:100:10				
+	EVENT_ENC	id=	210	hw_id=	10	fwd_id=RGBLED:162	type=CC	chn=	2			cc=	2			range=	0:127		rgbled_pattern=	1	hsv=	170:100:10				
+	EVENT_ENC	id=	211	hw_id=	11	fwd_id=RGBLED:178	type=CC	chn=	2			cc=	3			range=	0:127		rgbled_pattern=	1	hsv=	180:100:10				
+	EVENT_ENC	id=	212	hw_id=	12	fwd_id=RGBLED:194	type=CC	chn=	2			cc=	4			range=	0:127		rgbled_pattern=	1	hsv=	190:100:10				
+	EVENT_ENC	id=	213	hw_id=	13	fwd_id=RGBLED:210	type=CC	chn=	2			cc=	5			range=	0:127		rgbled_pattern=	1	hsv=	200:100:10				
+	EVENT_ENC	id=	214	hw_id=	14	fwd_id=RGBLED:226	type=CC	chn=	2			cc=	6			range=	0:127		rgbled_pattern=	1	hsv=	210:100:10				
+	EVENT_ENC	id=	215	hw_id=	15	fwd_id=RGBLED:242	type=CC	chn=	2			cc=	7			range=	0:127		rgbled_pattern=	1	hsv=	220:100:10				
+	EVENT_ENC	id=	216	hw_id=	16	fwd_id=RGBLED:258	type=CC	chn=	2			cc=	8			range=	0:127		rgbled_pattern=	1	hsv=	230:100:10				
+																										
+	#bouton_poussoir_encodeurs_1	# SECTION 2																								
+	EVENT_BUTTON	id=	217	hw_id=	25	fwd_id=RGBLED:9	type=CC	chn=	2			cc=	9	button_mode=	Toggle						hsv=	0:100:10				
+	EVENT_BUTTON	id=	218	hw_id=	26	fwd_id=RGBLED:25	type=CC	chn=	2			cc=	10	button_mode=	Toggle						hsv=	0:100:10				
+	EVENT_BUTTON	id=	219	hw_id=	27	fwd_id=RGBLED:41	type=CC	chn=	2			cc=	11	button_mode=	Toggle						hsv=	0:100:10				
+	EVENT_BUTTON	id=	220	hw_id=	28	fwd_id=RGBLED:57	type=CC	chn=	2			cc=	12	button_mode=	Toggle						hsv=	0:100:10				
+	EVENT_BUTTON	id=	221	hw_id=	29	fwd_id=RGBLED:73	type=CC	chn=	2			cc=	13	button_mode=	Toggle						hsv=	0:100:10				
+	EVENT_BUTTON	id=	222	hw_id=	30	fwd_id=RGBLED:89	type=CC	chn=	2			cc=	14	button_mode=	Toggle						hsv=	0:100:10				
+	EVENT_BUTTON	id=	223	hw_id=	31	fwd_id=RGBLED:105	type=CC	chn=	2			cc=	15	button_mode=	Toggle						hsv=	0:100:10				
+	EVENT_BUTTON	id=	224	hw_id=	32	fwd_id=RGBLED:121	type=CC	chn=	2			cc=	16	button_mode=	Toggle						hsv=	0:100:10				
+																										
+	#bouton_poussoir_encodeurs_2	# SECTION 6																								
+	EVENT_BUTTON	id=	225	hw_id=	57	fwd_id=RGBLED:145	type=CC	chn=	2			cc=	9	button_mode=	Toggle						hsv=	0:100:10				
+	EVENT_BUTTON	id=	226	hw_id=	58	fwd_id=RGBLED:161	type=CC	chn=	2			cc=	10	button_mode=	Toggle						hsv=	0:100:10				
+	EVENT_BUTTON	id=	227	hw_id=	59	fwd_id=RGBLED:177	type=CC	chn=	2			cc=	11	button_mode=	Toggle						hsv=	0:100:10				
+	EVENT_BUTTON	id=	228	hw_id=	60	fwd_id=RGBLED:193	type=CC	chn=	2			cc=	12	button_mode=	Toggle						hsv=	0:100:10				
+	EVENT_BUTTON	id=	229	hw_id=	61	fwd_id=RGBLED:209	type=CC	chn=	2			cc=	13	button_mode=	Toggle						hsv=	0:100:10				
+	EVENT_BUTTON	id=	230	hw_id=	62	fwd_id=RGBLED:225	type=CC	chn=	2			cc=	14	button_mode=	Toggle						hsv=	0:100:10				
+	EVENT_BUTTON	id=	231	hw_id=	63	fwd_id=RGBLED:241	type=CC	chn=	2			cc=	15	button_mode=	Toggle						hsv=	0:100:10				
+	EVENT_BUTTON	id=	232	hw_id=	64	fwd_id=RGBLED:257	type=CC	chn=	2			cc=	16	button_mode=	Toggle						hsv=	0:100:10				
+	#---------------- 	MIXER-------------																								
+	#FADER	# SECTION 2																								
+	EVENT_AINSER	id=	233	hw_id=	1		type=CC	chn=	2			cc=	17			range=	0:127									
+	EVENT_AINSER	id=	234	hw_id=	2		type=CC	chn=	2			cc=	18			range=	0:127									
+	EVENT_AINSER	id=	235	hw_id=	3		type=CC	chn=	2			cc=	19			range=	0:127									
+	EVENT_AINSER	id=	236	hw_id=	4		type=CC	chn=	2			cc=	20			range=	0:127									
+																										
+		# SECTION 6																								
+	EVENT_AINSER	id=	237	hw_id=	5		type=CC	chn=	2			cc=	17			range=	0:127									
+	EVENT_AINSER	id=	238	hw_id=	6		type=CC	chn=	2			cc=	18			range=	0:127									
+	EVENT_AINSER	id=	239	hw_id=	7		type=CC	chn=	2			cc=	19			range=	0:127									
+	EVENT_AINSER	id=	240	hw_id=	8		type=CC	chn=	2			cc=	20			range=	0:127									
+																										
+	#switch	# SECTION 2																								
+	EVENT_BUTTON	id=	241	hw_id=	1	fwd_id=RGBLED:1	type=CC	chn=	2			cc=	21	button_mode=	Toggle						hsv=	220:100:10				
+	EVENT_BUTTON	id=	242	hw_id=	2	fwd_id=RGBLED:2	type=CC	chn=	2			cc=	22	button_mode=	Toggle						hsv=	220:100:10				
+	EVENT_BUTTON	id=	243	hw_id=	3	fwd_id=RGBLED:3	type=CC	chn=	2			cc=	23	button_mode=	Toggle						hsv=	220:100:10				
+	EVENT_BUTTON	id=	244	hw_id=	4	fwd_id=RGBLED:4	type=CC	chn=	2			cc=	24	button_mode=	Toggle						hsv=	220:100:10				
+																										
+	#switch	# SECTION 6																								
+	EVENT_BUTTON	id=	253	hw_id=	33	fwd_id=RGBLED:137	type=CC	chn=	2			cc=	21	button_mode=	Toggle						hsv=	220:100:10				
+	EVENT_BUTTON	id=	254	hw_id=	34	fwd_id=RGBLED:138	type=CC	chn=	2			cc=	22	button_mode=	Toggle						hsv=	220:100:10				
+	EVENT_BUTTON	id=	255	hw_id=	35	fwd_id=RGBLED:139	type=CC	chn=	2			cc=	23	button_mode=	Toggle						hsv=	220:100:10				
+	EVENT_BUTTON	id=	256	hw_id=	36	fwd_id=RGBLED:140	type=CC	chn=	2			cc=	24	button_mode=	Toggle						hsv=	220:100:10				
+																										
+	#POTARD	# SECTION 2																								
+	EVENT_AINSER	id=	257	hw_id=	9		type=CC	chn=	2			cc=	25			range=	0:127									
+	EVENT_AINSER	id=	258	hw_id=	10		type=CC	chn=	2			cc=	26			range=	0:127									
+	EVENT_AINSER	id=	259	hw_id=	11		type=CC	chn=	2			cc=	27			range=	0:127									
+	EVENT_AINSER	id=	260	hw_id=	12		type=CC	chn=	2			cc=	28			range=	0:127									
+	EVENT_AINSER	id=	261	hw_id=	13		type=CC	chn=	2			cc=	29			range=	0:127									
+	EVENT_AINSER	id=	262	hw_id=	14		type=CC	chn=	2			cc=	30			range=	0:127									
+	EVENT_AINSER	id=	263	hw_id=	15		type=CC	chn=	2			cc=	31			range=	0:127									
+	EVENT_AINSER	id=	264	hw_id=	16		type=CC	chn=	2			cc=	32			range=	0:127									
+																										
+	#POTARD	# SECTION 6																								
+	EVENT_AINSER	id=	265	hw_id=	17		type=CC	chn=	2			cc=	25			range=	0:127									
+	EVENT_AINSER	id=	266	hw_id=	18		type=CC	chn=	2			cc=	26			range=	0:127									
+	EVENT_AINSER	id=	267	hw_id=	19		type=CC	chn=	2			cc=	27			range=	0:127									
+	EVENT_AINSER	id=	268	hw_id=	20		type=CC	chn=	2			cc=	28			range=	0:127									
+	EVENT_AINSER	id=	269	hw_id=	21		type=CC	chn=	2			cc=	29			range=	0:127									
+	EVENT_AINSER	id=	270	hw_id=	22		type=CC	chn=	2			cc=	30			range=	0:127									
+	EVENT_AINSER	id=	271	hw_id=	23		type=CC	chn=	2			cc=	31			range=	0:127									
+	EVENT_AINSER	id=	272	hw_id=	24		type=CC	chn=	2			cc=	32			range=	0:127									
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+	#Section  3	3																								
+	#Encoders																									
+	EVENT_ENC	id=	301	hw_id=	1	fwd_id=RGBLED:10	type=CC	chn=	3			cc=	1			range=	0:127		rgbled_pattern=	1	hsv=	100:100:10				
+	EVENT_ENC	id=	302	hw_id=	2	fwd_id=RGBLED:26	type=CC	chn=	3			cc=	2			range=	0:127		rgbled_pattern=	1	hsv=	100:100:10				
+	EVENT_ENC	id=	303	hw_id=	3	fwd_id=RGBLED:42	type=CC	chn=	3			cc=	3			range=	0:127		rgbled_pattern=	1	hsv=	100:100:10				
+	EVENT_ENC	id=	304	hw_id=	4	fwd_id=RGBLED:58	type=CC	chn=	3			cc=	4			range=	0:127		rgbled_pattern=	1	hsv=	100:100:10				
+	EVENT_ENC	id=	305	hw_id=	5	fwd_id=RGBLED:74	type=CC	chn=	3			cc=	5			range=	0:127		rgbled_pattern=	1	hsv=	100:100:10				
+	EVENT_ENC	id=	306	hw_id=	6	fwd_id=RGBLED:90	type=CC	chn=	3			cc=	6			range=	0:127		rgbled_pattern=	1	hsv=	100:100:10				
+	EVENT_ENC	id=	307	hw_id=	7	fwd_id=RGBLED:106	type=CC	chn=	3			cc=	7			range=	0:127		rgbled_pattern=	1	hsv=	100:100:10				
+	EVENT_ENC	id=	308	hw_id=	8	fwd_id=RGBLED:122	type=CC	chn=	3			cc=	8			range=	0:127		rgbled_pattern=	1	hsv=	100:100:10				
+																										
+	#Encoders	#Section   7																								
+	EVENT_ENC	id=	309	hw_id=	9	fwd_id=RGBLED:146	type=CC	chn=	3			cc=	1			range=	0:127		rgbled_pattern=	1	hsv=	100:100:10				
+	EVENT_ENC	id=	310	hw_id=	10	fwd_id=RGBLED:162	type=CC	chn=	3			cc=	2			range=	0:127		rgbled_pattern=	1	hsv=	100:100:10				
+	EVENT_ENC	id=	311	hw_id=	11	fwd_id=RGBLED:178	type=CC	chn=	3			cc=	3			range=	0:127		rgbled_pattern=	1	hsv=	100:100:10				
+	EVENT_ENC	id=	312	hw_id=	12	fwd_id=RGBLED:194	type=CC	chn=	3			cc=	4			range=	0:127		rgbled_pattern=	1	hsv=	100:100:10				
+	EVENT_ENC	id=	313	hw_id=	13	fwd_id=RGBLED:210	type=CC	chn=	3			cc=	5			range=	0:127		rgbled_pattern=	1	hsv=	100:100:10				
+	EVENT_ENC	id=	314	hw_id=	14	fwd_id=RGBLED:226	type=CC	chn=	3			cc=	6			range=	0:127		rgbled_pattern=	1	hsv=	100:100:10				
+	EVENT_ENC	id=	315	hw_id=	15	fwd_id=RGBLED:242	type=CC	chn=	3			cc=	7			range=	0:127		rgbled_pattern=	1	hsv=	100:100:10				
+	EVENT_ENC	id=	316	hw_id=	16	fwd_id=RGBLED:258	type=CC	chn=	3			cc=	8			range=	0:127		rgbled_pattern=	1	hsv=	100:100:10				
+																										
+	# BP encodeurs T1	#Section  3																								
+	EVENT_BUTTON	id=	317	hw_id=	25	fwd_id=RGBLED:9	type=CC	chn=	3			cc=	9	button_mode=	Toggle						hsv=	0:100:10				
+	EVENT_BUTTON	id=	318	hw_id=	26	fwd_id=RGBLED:25	type=CC	chn=	3			cc=	10	button_mode=	Toggle						hsv=	0:100:10				
+	EVENT_BUTTON	id=	319	hw_id=	27	fwd_id=RGBLED:41	type=CC	chn=	3			cc=	11	button_mode=	Toggle						hsv=	0:100:10				
+	EVENT_BUTTON	id=	320	hw_id=	28	fwd_id=RGBLED:57	type=CC	chn=	3			cc=	12	button_mode=	Toggle						hsv=	0:100:10				
+	EVENT_BUTTON	id=	321	hw_id=	29	fwd_id=RGBLED:73	type=CC	chn=	3			cc=	13	button_mode=	Toggle						hsv=	0:100:10				
+	EVENT_BUTTON	id=	322	hw_id=	30	fwd_id=RGBLED:89	type=CC	chn=	3			cc=	14	button_mode=	Toggle						hsv=	0:100:10				
+	EVENT_BUTTON	id=	323	hw_id=	31	fwd_id=RGBLED:105	type=CC	chn=	3			cc=	15	button_mode=	Toggle						hsv=	0:100:10				
+	EVENT_BUTTON	id=	324	hw_id=	32	fwd_id=RGBLED:121	type=CC	chn=	3			cc=	16	button_mode=	Toggle						hsv=	0:100:10				
+																										
+	# BP encodeurs T2	#Section   7																								
+	EVENT_BUTTON	id=	325	hw_id=	57	fwd_id=RGBLED:145	type=CC	chn=	3			cc=	9	button_mode=	Toggle						hsv=	0:100:10				
+	EVENT_BUTTON	id=	326	hw_id=	58	fwd_id=RGBLED:161	type=CC	chn=	3			cc=	10	button_mode=	Toggle						hsv=	0:100:10				
+	EVENT_BUTTON	id=	327	hw_id=	59	fwd_id=RGBLED:177	type=CC	chn=	3			cc=	11	button_mode=	Toggle						hsv=	0:100:10				
+	EVENT_BUTTON	id=	328	hw_id=	60	fwd_id=RGBLED:193	type=CC	chn=	3			cc=	12	button_mode=	Toggle						hsv=	0:100:10				
+	EVENT_BUTTON	id=	329	hw_id=	61	fwd_id=RGBLED:209	type=CC	chn=	3			cc=	13	button_mode=	Toggle						hsv=	0:100:10				
+	EVENT_BUTTON	id=	330	hw_id=	62	fwd_id=RGBLED:225	type=CC	chn=	3			cc=	14	button_mode=	Toggle						hsv=	0:100:10				
+	EVENT_BUTTON	id=	331	hw_id=	63	fwd_id=RGBLED:241	type=CC	chn=	3			cc=	15	button_mode=	Toggle						hsv=	0:100:10				
+	EVENT_BUTTON	id=	332	hw_id=	64	fwd_id=RGBLED:257	type=CC	chn=	3			cc=	16	button_mode=	Toggle						hsv=	0:100:10				
+	#---------------- 	MIXER-------------																								
+	#FADER	#Section  3																								
+	EVENT_AINSER	id=	333	hw_id=	1		type=CC	chn=	3			cc=	17			range=	0:127									
+	EVENT_AINSER	id=	334	hw_id=	2		type=CC	chn=	3			cc=	18			range=	0:127									
+	EVENT_AINSER	id=	335	hw_id=	3		type=CC	chn=	3			cc=	19			range=	0:127									
+	EVENT_AINSER	id=	336	hw_id=	4		type=CC	chn=	3			cc=	20			range=	0:127									
+																										
+	#FADER	#Section   7																								
+	EVENT_AINSER	id=	337	hw_id=	5		type=CC	chn=	3			cc=	17			range=	0:127									
+	EVENT_AINSER	id=	338	hw_id=	6		type=CC	chn=	3			cc=	18			range=	0:127									
+	EVENT_AINSER	id=	339	hw_id=	7		type=CC	chn=	3			cc=	19			range=	0:127									
+	EVENT_AINSER	id=	340	hw_id=	8		type=CC	chn=	3			cc=	20			range=	0:127									
+																										
+	#switch	#Section  3																								
+	EVENT_BUTTON	id=	341	hw_id=	1	fwd_id=RGBLED:1	type=CC	chn=	3			cc=	21	button_mode=	Toggle						hsv=	100:100:10				
+	EVENT_BUTTON	id=	342	hw_id=	2	fwd_id=RGBLED:2	type=CC	chn=	3			cc=	22	button_mode=	Toggle						hsv=	100:100:10				
+	EVENT_BUTTON	id=	343	hw_id=	3	fwd_id=RGBLED:3	type=CC	chn=	3			cc=	23	button_mode=	Toggle						hsv=	100:100:10				
+	EVENT_BUTTON	id=	344	hw_id=	4	fwd_id=RGBLED:4	type=CC	chn=	3			cc=	24	button_mode=	Toggle						hsv=	100:100:10				
+																										
+	#switch	#Section   7																								
+	EVENT_BUTTON	id=	353	hw_id=	33	fwd_id=RGBLED:137	type=CC	chn=	3			cc=	21	button_mode=	Toggle						hsv=	100:100:10				
+	EVENT_BUTTON	id=	354	hw_id=	34	fwd_id=RGBLED:138	type=CC	chn=	3			cc=	22	button_mode=	Toggle						hsv=	100:100:10				
+	EVENT_BUTTON	id=	355	hw_id=	35	fwd_id=RGBLED:139	type=CC	chn=	3			cc=	23	button_mode=	Toggle						hsv=	100:100:10				
+	EVENT_BUTTON	id=	356	hw_id=	36	fwd_id=RGBLED:140	type=CC	chn=	3			cc=	24	button_mode=	Toggle						hsv=	100:100:10				
+																										
+	#POTARD  T1	#Section  3																								
+	EVENT_AINSER	id=	357	hw_id=	9		type=CC	chn=	3			cc=	25			range=	0:127									
+	EVENT_AINSER	id=	358	hw_id=	10		type=CC	chn=	3			cc=	26			range=	0:127									
+	EVENT_AINSER	id=	359	hw_id=	11		type=CC	chn=	3			cc=	27			range=	0:127									
+	EVENT_AINSER	id=	360	hw_id=	12		type=CC	chn=	3			cc=	28			range=	0:127									
+	EVENT_AINSER	id=	361	hw_id=	13		type=CC	chn=	3			cc=	29			range=	0:127									
+	EVENT_AINSER	id=	362	hw_id=	14		type=CC	chn=	3			cc=	30			range=	0:127									
+	EVENT_AINSER	id=	363	hw_id=	15		type=CC	chn=	3			cc=	31			range=	0:127									
+	EVENT_AINSER	id=	364	hw_id=	16		type=CC	chn=	3			cc=	32			range=	0:127									
+																										
+	#POTARD T2	#Section   7																								
+	EVENT_AINSER	id=	365	hw_id=	17		type=CC	chn=	3			cc=	25			range=	0:127									
+	EVENT_AINSER	id=	366	hw_id=	18		type=CC	chn=	3			cc=	26			range=	0:127									
+	EVENT_AINSER	id=	367	hw_id=	19		type=CC	chn=	3			cc=	27			range=	0:127									
+	EVENT_AINSER	id=	368	hw_id=	20		type=CC	chn=	3			cc=	28			range=	0:127									
+	EVENT_AINSER	id=	369	hw_id=	21		type=CC	chn=	3			cc=	29			range=	0:127									
+	EVENT_AINSER	id=	370	hw_id=	22		type=CC	chn=	3			cc=	30			range=	0:127									
+	EVENT_AINSER	id=	371	hw_id=	23		type=CC	chn=	3			cc=	31			range=	0:127									
+	EVENT_AINSER	id=	372	hw_id=	24		type=CC	chn=	3			cc=	32			range=	0:127									
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+	# SECTION 4	4																								
+	#Encoders	# SECTION 4																								
+	EVENT_ENC	id=	401	hw_id=	1	fwd_id=RGBLED:10	type=CC	chn=	4			cc=	1			range=	0:127		rgbled_pattern=	1	hsv=	50:100:10				
+	EVENT_ENC	id=	402	hw_id=	2	fwd_id=RGBLED:26	type=CC	chn=	4			cc=	2			range=	0:127		rgbled_pattern=	1	hsv=	50:100:10				
+	EVENT_ENC	id=	403	hw_id=	3	fwd_id=RGBLED:42	type=CC	chn=	4			cc=	3			range=	0:127		rgbled_pattern=	1	hsv=	50:100:10				
+	EVENT_ENC	id=	404	hw_id=	4	fwd_id=RGBLED:58	type=CC	chn=	4			cc=	4			range=	0:127		rgbled_pattern=	1	hsv=	50:100:10				
+	EVENT_ENC	id=	405	hw_id=	5	fwd_id=RGBLED:74	type=CC	chn=	4			cc=	5			range=	0:127		rgbled_pattern=	1	hsv=	50:100:10				
+	EVENT_ENC	id=	406	hw_id=	6	fwd_id=RGBLED:90	type=CC	chn=	4			cc=	6			range=	0:127		rgbled_pattern=	1	hsv=	50:100:10				
+	EVENT_ENC	id=	407	hw_id=	7	fwd_id=RGBLED:106	type=CC	chn=	4			cc=	7			range=	0:127		rgbled_pattern=	1	hsv=	50:100:10				
+	EVENT_ENC	id=	408	hw_id=	8	fwd_id=RGBLED:122	type=CC	chn=	4			cc=	8			range=	0:127		rgbled_pattern=	1	hsv=	50:100:10				
+																										
+		# SECTION 8																								
+	EVENT_ENC	id=	409	hw_id=	9	fwd_id=RGBLED:146	type=CC	chn=	4			cc=	1			range=	0:127		rgbled_pattern=	1	hsv=	50:100:10				
+	EVENT_ENC	id=	410	hw_id=	10	fwd_id=RGBLED:162	type=CC	chn=	4			cc=	2			range=	0:127		rgbled_pattern=	1	hsv=	50:100:10				
+	EVENT_ENC	id=	411	hw_id=	11	fwd_id=RGBLED:178	type=CC	chn=	4			cc=	3			range=	0:127		rgbled_pattern=	1	hsv=	50:100:10				
+	EVENT_ENC	id=	412	hw_id=	12	fwd_id=RGBLED:194	type=CC	chn=	4			cc=	4			range=	0:127		rgbled_pattern=	1	hsv=	50:100:10				
+	EVENT_ENC	id=	413	hw_id=	13	fwd_id=RGBLED:210	type=CC	chn=	4			cc=	5			range=	0:127		rgbled_pattern=	1	hsv=	50:100:10				
+	EVENT_ENC	id=	414	hw_id=	14	fwd_id=RGBLED:226	type=CC	chn=	4			cc=	6			range=	0:127		rgbled_pattern=	1	hsv=	50:100:10				
+	EVENT_ENC	id=	415	hw_id=	15	fwd_id=RGBLED:242	type=CC	chn=	4			cc=	7			range=	0:127		rgbled_pattern=	1	hsv=	50:100:10				
+	EVENT_ENC	id=	416	hw_id=	16	fwd_id=RGBLED:258	type=CC	chn=	4			cc=	8			range=	0:127		rgbled_pattern=	1	hsv=	50:100:10				
+																										
+	#bouton_poussoir_encodeurs_1	# SECTION 4																								
+	EVENT_BUTTON	id=	417	hw_id=	25	fwd_id=RGBLED:9	type=CC	chn=	4			cc=	9	button_mode=	Toggle						hsv=	0:100:10				
+	EVENT_BUTTON	id=	418	hw_id=	26	fwd_id=RGBLED:25	type=CC	chn=	4			cc=	10	button_mode=	Toggle						hsv=	0:100:10				
+	EVENT_BUTTON	id=	419	hw_id=	27	fwd_id=RGBLED:41	type=CC	chn=	4			cc=	11	button_mode=	Toggle						hsv=	0:100:10				
+	EVENT_BUTTON	id=	420	hw_id=	28	fwd_id=RGBLED:57	type=CC	chn=	4			cc=	12	button_mode=	Toggle						hsv=	0:100:10				
+	EVENT_BUTTON	id=	421	hw_id=	29	fwd_id=RGBLED:73	type=CC	chn=	4			cc=	13	button_mode=	Toggle						hsv=	0:100:10				
+	EVENT_BUTTON	id=	422	hw_id=	30	fwd_id=RGBLED:89	type=CC	chn=	4			cc=	14	button_mode=	Toggle						hsv=	0:100:10				
+	EVENT_BUTTON	id=	423	hw_id=	31	fwd_id=RGBLED:105	type=CC	chn=	4			cc=	15	button_mode=	Toggle						hsv=	0:100:10				
+	EVENT_BUTTON	id=	424	hw_id=	32	fwd_id=RGBLED:121	type=CC	chn=	4			cc=	16	button_mode=	Toggle						hsv=	0:100:10				
+																										
+	#bouton_poussoir_encodeurs_2	# SECTION 8																								
+	EVENT_BUTTON	id=	425	hw_id=	57	fwd_id=RGBLED:145	type=CC	chn=	4			cc=	9	button_mode=	Toggle						hsv=	0:100:10				
+	EVENT_BUTTON	id=	426	hw_id=	58	fwd_id=RGBLED:161	type=CC	chn=	4			cc=	10	button_mode=	Toggle						hsv=	0:100:10				
+	EVENT_BUTTON	id=	427	hw_id=	59	fwd_id=RGBLED:177	type=CC	chn=	4			cc=	11	button_mode=	Toggle						hsv=	0:100:10				
+	EVENT_BUTTON	id=	428	hw_id=	60	fwd_id=RGBLED:193	type=CC	chn=	4			cc=	12	button_mode=	Toggle						hsv=	0:100:10				
+	EVENT_BUTTON	id=	429	hw_id=	61	fwd_id=RGBLED:209	type=CC	chn=	4			cc=	13	button_mode=	Toggle						hsv=	0:100:10				
+	EVENT_BUTTON	id=	430	hw_id=	62	fwd_id=RGBLED:225	type=CC	chn=	4			cc=	14	button_mode=	Toggle						hsv=	0:100:10				
+	EVENT_BUTTON	id=	431	hw_id=	63	fwd_id=RGBLED:241	type=CC	chn=	4			cc=	15	button_mode=	Toggle						hsv=	0:100:10				
+	EVENT_BUTTON	id=	432	hw_id=	64	fwd_id=RGBLED:257	type=CC	chn=	4			cc=	16	button_mode=	Toggle						hsv=	0:100:10				
+	#---------------- 	MIXER-------------																								
+	#FADER	# SECTION 4																								
+	EVENT_AINSER	id=	433	hw_id=	1		type=CC	chn=	4			cc=	17			range=	0:127									
+	EVENT_AINSER	id=	434	hw_id=	2		type=CC	chn=	4			cc=	18			range=	0:127									
+	EVENT_AINSER	id=	435	hw_id=	3		type=CC	chn=	4			cc=	19			range=	0:127									
+	EVENT_AINSER	id=	436	hw_id=	4		type=CC	chn=	4			cc=	20			range=	0:127									
+																										
+		# SECTION 8																								
+	EVENT_AINSER	id=	437	hw_id=	5		type=CC	chn=	4			cc=	17			range=	0:127									
+	EVENT_AINSER	id=	438	hw_id=	6		type=CC	chn=	4			cc=	18			range=	0:127									
+	EVENT_AINSER	id=	439	hw_id=	7		type=CC	chn=	4			cc=	19			range=	0:127									
+	EVENT_AINSER	id=	440	hw_id=	8		type=CC	chn=	4			cc=	20			range=	0:127									
+																										
+	#switch	# SECTION 4																								
+	EVENT_BUTTON	id=	441	hw_id=	1	fwd_id=RGBLED:1	type=CC	chn=	4			cc=	21	button_mode=	Toggle						hsv=	50:100:10				
+	EVENT_BUTTON	id=	442	hw_id=	2	fwd_id=RGBLED:2	type=CC	chn=	4			cc=	22	button_mode=	Toggle						hsv=	50:100:10				
+	EVENT_BUTTON	id=	443	hw_id=	3	fwd_id=RGBLED:3	type=CC	chn=	4			cc=	23	button_mode=	Toggle						hsv=	50:100:10				
+	EVENT_BUTTON	id=	444	hw_id=	4	fwd_id=RGBLED:4	type=CC	chn=	4			cc=	24	button_mode=	Toggle						hsv=	50:100:10				
+																										
+	#switch	# SECTION 8																								
+	EVENT_BUTTON	id=	453	hw_id=	33	fwd_id=RGBLED:137	type=CC	chn=	4			cc=	21	button_mode=	Toggle						hsv=	50:100:10				
+	EVENT_BUTTON	id=	454	hw_id=	34	fwd_id=RGBLED:138	type=CC	chn=	4			cc=	22	button_mode=	Toggle						hsv=	50:100:10				
+	EVENT_BUTTON	id=	455	hw_id=	35	fwd_id=RGBLED:139	type=CC	chn=	4			cc=	23	button_mode=	Toggle						hsv=	50:100:10				
+	EVENT_BUTTON	id=	456	hw_id=	36	fwd_id=RGBLED:140	type=CC	chn=	4			cc=	24	button_mode=	Toggle						hsv=	50:100:10				
+																										
+	#POTARD	# SECTION 4																								
+	EVENT_AINSER	id=	457	hw_id=	9		type=CC	chn=	4			cc=	25			range=	0:127									
+	EVENT_AINSER	id=	458	hw_id=	10		type=CC	chn=	4			cc=	26			range=	0:127									
+	EVENT_AINSER	id=	459	hw_id=	11		type=CC	chn=	4			cc=	27			range=	0:127									
+	EVENT_AINSER	id=	460	hw_id=	12		type=CC	chn=	4			cc=	28			range=	0:127									
+	EVENT_AINSER	id=	461	hw_id=	13		type=CC	chn=	4			cc=	29			range=	0:127									
+	EVENT_AINSER	id=	462	hw_id=	14		type=CC	chn=	4			cc=	30			range=	0:127									
+	EVENT_AINSER	id=	463	hw_id=	15		type=CC	chn=	4			cc=	31			range=	0:127									
+	EVENT_AINSER	id=	464	hw_id=	16		type=CC	chn=	4			cc=	32			range=	0:127									
+																										
+	#POTARD	# SECTION 8																								
+	EVENT_AINSER	id=	465	hw_id=	17		type=CC	chn=	4			cc=	25			range=	0:127									
+	EVENT_AINSER	id=	466	hw_id=	18		type=CC	chn=	4			cc=	26			range=	0:127									
+	EVENT_AINSER	id=	467	hw_id=	19		type=CC	chn=	4			cc=	27			range=	0:127									
+	EVENT_AINSER	id=	468	hw_id=	20		type=CC	chn=	4			cc=	28			range=	0:127									
+	EVENT_AINSER	id=	469	hw_id=	21		type=CC	chn=	4			cc=	29			range=	0:127									
+	EVENT_AINSER	id=	470	hw_id=	22		type=CC	chn=	4			cc=	30			range=	0:127									
+	EVENT_AINSER	id=	471	hw_id=	23		type=CC	chn=	4			cc=	31			range=	0:127									
+	EVENT_AINSER	id=	472	hw_id=	24		type=CC	chn=	4			cc=	32			range=	0:127									
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																										
+																			

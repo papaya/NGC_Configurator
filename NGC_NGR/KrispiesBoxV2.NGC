@@ -1,0 +1,187 @@
+# EVENT	id=	0	hw_id=	0	fwd_id=LED:0	type=CC	chn=	0	cc=	0	button_mode=	Toggle	range=	0:127	fwd_to_lcd=1	rgbled_pattern=	0	hsv=	359:100:10	lcd_pos=	1:1:8 	label= 	"^std_btn" 
+																							
+# KrispiesBox																							
+RESET_HW																							
+# LCD message after load																							
+#LCD "%C@(11:2:2)READY."																							
+																							
+# the purpose of this EVENT item is to print the bank whenever the LCD is refreshed (e.g. after startup or bank change)																							
+LCD "@(1:18:4) &tBANK"																							
+EVENT_LED id=2000 fwd_to_lcd=1 lcd_pos=1:7:5 label="&b%q"																							
+																							
+																							
+#encoder_hardware_configuration																							
+ENC n= 15 sr= 6 pins=5:4 type=non_detented																							
+ENC n= 16 sr= 6 pins=7:6 type=non_detented																							
+ENC n= 1 sr= 1 pins=1:0 type=non_detented																							
+ENC n= 2 sr= 1 pins=3:2 type=non_detented																							
+ENC n= 3 sr= 1 pins=5:4 type=non_detented																							
+ENC n= 4 sr= 1 pins=7:6 type=non_detented																							
+ENC n= 5 sr= 2 pins=1:0 type=non_detented																							
+ENC n= 6 sr= 2 pins=3:2 type=non_detented																							
+ENC n= 7 sr= 2 pins=5:4 type=non_detented																							
+ENC n= 8 sr= 2 pins=7:6 type=non_detented																							
+ENC n= 9 sr= 5 pins=1:0 type=non_detented																							
+ENC n= 10 sr= 5 pins=3:2 type=non_detented																							
+ENC n= 11 sr= 5 pins=5:4 type=non_detented																							
+ENC n= 12 sr= 5 pins=7:6 type=non_detented																							
+ENC n= 13 sr= 6 pins=1:0 type=non_detented																							
+ENC n= 14 sr= 6 pins=3:2 type=non_detented																							
+																							
+																							
+																							
+#ainser_hardware_configuration                                                                                                  																							
+aINSER n= 1 enabled=1 muxed=1 cs=0 resolution=7bit                                                                                                  																							
+aINSER n= 2 enabled=0 muxed=1 cs=1 resolution=7bit																							
+																							
+																							
+																							
+# LED will change brightness (v) based on value (hue statically defined)                                                                																							
+EVENT_RGBLED    id= 129         dimmed=1    range=  0:10                                																							
+EVENT_RGBLED    id= 130         dimmed=1  range=    0:10 																							
+EVENT_RGBLED    id= 131         dimmed=1    range=  0:10  																							
+EVENT_RGBLED    id= 132         dimmed=1    range=  0:10 																							
+                                                                																							
+EVENT_RGBLED    id= 133         dimmed=1    range=  0:10 																							
+EVENT_RGBLED    id= 134         dimmed=1    range=  0:10  																							
+EVENT_RGBLED    id= 135         dimmed=1    range=  0:10  																							
+EVENT_RGBLED    id= 136         dimmed=1    range=  0:10																							
+																							
+#FADER                                                                                                  																							
+#EVENT_AINSER    id= 1   hw_id = 1           type=CC chn=    16  cc= 1   range=  0:127   lcd_pos=    1:1:8   label=  "^std_aser"                             																							
+																							
+EVENT_AINSER	id=	1	hw_id=	1		type=CC	chn=	16	cc=	1			range=	0:127						lcd_pos=	1:1:8 	label= 	"^std_aser"  
+EVENT_AINSER	id=	2	hw_id=	2		type=CC	chn=	16	cc=	2			range=	0:127						lcd_pos=	1:1:8 	label= 	"^std_aser"  
+EVENT_AINSER	id=	3	hw_id=	3		type=CC	chn=	16	cc=	3			range=	0:127						lcd_pos=	1:1:8 	label= 	"^std_aser"  
+EVENT_AINSER	id=	4	hw_id=	4		type=CC	chn=	16	cc=	4			range=	0:127						lcd_pos=	1:1:8 	label= 	"^std_aser"  
+EVENT_AINSER	id=	5	hw_id=	5		type=CC	chn=	16	cc=	5			range=	0:127						lcd_pos=	1:1:8 	label= 	"^std_aser"  
+EVENT_AINSER	id=	6	hw_id=	6		type=CC	chn=	16	cc=	6			range=	0:127						lcd_pos=	1:1:8 	label= 	"^std_aser"  
+EVENT_AINSER	id=	7	hw_id=	7		type=CC	chn=	16	cc=	7			range=	0:127						lcd_pos=	1:1:8 	label= 	"^std_aser"  
+EVENT_AINSER	id=	8	hw_id=	8		type=CC	chn=	16	cc=	8			range=	0:127						lcd_pos=	1:1:8 	label= 	"^std_aser"  
+																							
+																							
+																							
+																							
+#KEY_SWITCH    																							
+EVENT_BUTTON	id=	65	hw_id=	25	fwd_id=RGBLED:129	type=CC	chn=	16	cc=	33	button_mode=	Toggle						hsv=	50:100:10 	lcd_pos=	1:1:8 	label= 	"^std_btn" 
+EVENT_BUTTON	id=	66	hw_id=	26	fwd_id=RGBLED:130	type=CC	chn=	16	cc=	34	button_mode=	Toggle						hsv=	90:100:10	lcd_pos=	1:1:8 	label= 	"^std_btn" 
+EVENT_BUTTON	id=	67	hw_id=	27	fwd_id=RGBLED:131	type=CC	chn=	16	cc=	35	button_mode=	Toggle						hsv=	130:100:10	lcd_pos=	1:1:8	label= 	"^std_btn" 
+EVENT_BUTTON	id=	68	hw_id=	28	fwd_id=RGBLED:132	type=CC	chn=	16	cc=	36	button_mode=	Toggle						hsv=	220:100:10	lcd_pos=	1:1:8	label= 	"^std_btn" 
+EVENT_BUTTON	id=	69	hw_id=	29	fwd_id=RGBLED:133	type=CC	chn=	16	cc=	37	button_mode=	Toggle						hsv=	50:100:10 	lcd_pos=	1:1:8	label= 	"^std_btn" 
+EVENT_BUTTON	id=	70	hw_id=	30	fwd_id=RGBLED:134	type=CC	chn=	16	cc=	38	button_mode=	Toggle						hsv=	90:100:10	lcd_pos=	1:1:8	label= 	"^std_btn" 
+EVENT_BUTTON	id=	71	hw_id=	31	fwd_id=RGBLED:135	type=CC	chn=	16	cc=	39	button_mode=	Toggle						hsv=	130:100:10	lcd_pos=	1:1:8	label= 	"^std_btn" 
+EVENT_BUTTON	id=	72	hw_id=	32	fwd_id=RGBLED:136	type=CC	chn=	16	cc=	40	button_mode=	Toggle						hsv=	220:100:10	lcd_pos=	1:1:8	label= 	"^std_btn" 
+																							
+EVENT_BUTTON	id=	73	hw_id=	33	fwd_id=RGBLED:137	type=CC	chn=	16	cc=	41	button_mode=	Toggle						hsv=	0:100:10	lcd_pos=	1:1:8	label= 	"^std_btn" 
+EVENT_BUTTON	id=	74	hw_id=	34	fwd_id=RGBLED:138	type=CC	chn=	16	cc=	42	button_mode=	Toggle						hsv=	25:100:10	lcd_pos=	1:1:8	label= 	"^std_btn" 
+EVENT_BUTTON	id=	75	hw_id=	35	fwd_id=RGBLED:139	type=CC	chn=	16	cc=	43	button_mode=	Toggle						hsv=	180:100:10	lcd_pos=	1:1:8	label= 	"^std_btn" 
+EVENT_BUTTON	id=	76	hw_id=	36	fwd_id=RGBLED:140	type=CC	chn=	16	cc=	44	button_mode=	Toggle						hsv=	300:100:10	lcd_pos=	1:1:8	label= 	"^std_btn" 
+EVENT_BUTTON	id=	77	hw_id=	37	fwd_id=RGBLED:141	type=CC	chn=	16	cc=	45	button_mode=	Toggle						hsv=	0:100:10	lcd_pos=	1:1:8	label= 	"^std_btn" 
+EVENT_BUTTON	id=	78	hw_id=	38	fwd_id=RGBLED:142	type=CC	chn=	16	cc=	46	button_mode=	Toggle						hsv=	25:100:10	lcd_pos=	1:1:8	label= 	"^std_btn" 
+EVENT_BUTTON	id=	79	hw_id=	39	fwd_id=RGBLED:143	type=CC	chn=	16	cc=	47	button_mode=	Toggle						hsv=	180:100:10	lcd_pos=	1:1:8	label= 	"^std_btn" 
+EVENT_BUTTON	id=	80	hw_id=	40	fwd_id=RGBLED:144	type=CC	chn=	16	cc=	48	button_mode=	Toggle						hsv=	300:100:10	lcd_pos=	1:1:8	label= 	"^std_btn" 
+																							
+																							
+																							
+																							
+																							
+																							
+																							
+																							
+																							
+																							
+																							
+																							
+																							
+																							
+																							
+																							
+#---------------------------- BANK 1 ------------------------------#                                                                                                    																							
+EVENT_ENC	id=	101	hw_id=	1	fwd_id=RGBLED:2	type=CC	chn=	1	cc=	1			range=	0:127	fwd_to_lcd=1	rgbled_pattern=	1	hsv=	50:100:10 	lcd_pos=	1:1:8 		
+EVENT_ENC	id=	102	hw_id=	2	fwd_id=RGBLED:18	type=CC	chn=	1	cc=	2			range=	0:127	fwd_to_lcd=1	rgbled_pattern=	1	hsv=	90:100:10	lcd_pos=	1:1:8 		
+EVENT_ENC	id=	103	hw_id=	3	fwd_id=RGBLED:34	type=CC	chn=	1	cc=	3			range=	0:127	fwd_to_lcd=1	rgbled_pattern=	1	hsv=	130:100:10	lcd_pos=	1:1:8		
+EVENT_ENC	id=	104	hw_id=	4	fwd_id=RGBLED:50	type=CC	chn=	1	cc=	4			range=	0:127	fwd_to_lcd=1	rgbled_pattern=	1	hsv=	220:100:10	lcd_pos=	1:1:8		
+EVENT_ENC	id=	105	hw_id=	5	fwd_id=RGBLED:66	type=CC	chn=	1	cc=	5			range=	0:127	fwd_to_lcd=1	rgbled_pattern=	1	hsv=	50:100:10 	lcd_pos=	1:1:8		
+EVENT_ENC	id=	106	hw_id=	6	fwd_id=RGBLED:82	type=CC	chn=	1	cc=	6			range=	0:127	fwd_to_lcd=1	rgbled_pattern=	1	hsv=	90:100:10	lcd_pos=	1:1:8		
+EVENT_ENC	id=	107	hw_id=	7	fwd_id=RGBLED:98	type=CC	chn=	1	cc=	7			range=	0:127	fwd_to_lcd=1	rgbled_pattern=	1	hsv=	130:100:10	lcd_pos=	1:1:8		
+EVENT_ENC	id=	108	hw_id=	8	fwd_id=RGBLED:114	type=CC	chn=	1	cc=	8			range=	0:127	fwd_to_lcd=1	rgbled_pattern=	1	hsv=	220:100:10	lcd_pos=	1:1:8		
+																							
+EVENT_ENC	id=	109	hw_id=	9	fwd_id=RGBLED:130	type=CC	chn=	1	cc=	9			range=	0:127	fwd_to_lcd=1	rgbled_pattern=	1	hsv=	0:100:10	lcd_pos=	1:1:8		
+EVENT_ENC	id=	110	hw_id=	10	fwd_id=RGBLED:146	type=CC	chn=	1	cc=	10			range=	0:127	fwd_to_lcd=1	rgbled_pattern=	1	hsv=	25:100:10	lcd_pos=	1:1:8		
+EVENT_ENC	id=	111	hw_id=	11	fwd_id=RGBLED:162	type=CC	chn=	1	cc=	11			range=	0:127	fwd_to_lcd=1	rgbled_pattern=	1	hsv=	180:100:10	lcd_pos=	1:1:8		
+EVENT_ENC	id=	112	hw_id=	12	fwd_id=RGBLED:178	type=CC	chn=	1	cc=	12			range=	0:127	fwd_to_lcd=1	rgbled_pattern=	1	hsv=	300:100:10	lcd_pos=	1:1:8		
+EVENT_ENC	id=	113	hw_id=	13	fwd_id=RGBLED:194	type=CC	chn=	1	cc=	13			range=	0:127	fwd_to_lcd=1	rgbled_pattern=	1	hsv=	0:100:10	lcd_pos=	1:1:8		
+EVENT_ENC	id=	114	hw_id=	14	fwd_id=RGBLED:210	type=CC	chn=	1	cc=	14			range=	0:127	fwd_to_lcd=1	rgbled_pattern=	1	hsv=	25:100:10	lcd_pos=	1:1:8		
+EVENT_ENC	id=	115	hw_id=	15	fwd_id=RGBLED:226	type=CC	chn=	1	cc=	15			range=	0:127	fwd_to_lcd=1	rgbled_pattern=	1	hsv=	180:100:10	lcd_pos=	1:1:8		
+EVENT_ENC	id=	116	hw_id=	16	fwd_id=RGBLED:242	type=CC	chn=	1	cc=	16			range=	0:127	fwd_to_lcd=1	rgbled_pattern=	1	hsv=	300:100:10	lcd_pos=	1:1:8		
+																							
+#bouton_poussoir_encodeurs_1                                                                                                    																							
+EVENT_BUTTON	id=	117	hw_id=	17	fwd_id=RGBLED:1	type=CC	chn=	1	cc=	17	button_mode=	Toggle						hsv=	50:100:10 	lcd_pos=	1:1:8	label= 	"^std_btn" 
+EVENT_BUTTON	id=	118	hw_id=	18	fwd_id=RGBLED:17	type=CC	chn=	1	cc=	18	button_mode=	Toggle						hsv=	90:100:10	lcd_pos=	1:1:8	label= 	"^std_btn" 
+EVENT_BUTTON	id=	119	hw_id=	19	fwd_id=RGBLED:33	type=CC	chn=	1	cc=	19	button_mode=	Toggle						hsv=	130:100:10	lcd_pos=	1:1:8	label= 	"^std_btn" 
+EVENT_BUTTON	id=	120	hw_id=	20	fwd_id=RGBLED:49	type=CC	chn=	1	cc=	20	button_mode=	Toggle						hsv=	220:100:10	lcd_pos=	1:1:8	label= 	"^std_btn" 
+EVENT_BUTTON	id=	121	hw_id=	21	fwd_id=RGBLED:65	type=CC	chn=	1	cc=	21	button_mode=	Toggle						hsv=	50:100:10 	lcd_pos=	1:1:8	label= 	"^std_btn" 
+EVENT_BUTTON	id=	122	hw_id=	22	fwd_id=RGBLED:81	type=CC	chn=	1	cc=	22	button_mode=	Toggle						hsv=	90:100:10	lcd_pos=	1:1:8	label= 	"^std_btn" 
+EVENT_BUTTON	id=	123	hw_id=	23	fwd_id=RGBLED:97	type=CC	chn=	1	cc=	23	button_mode=	Toggle						hsv=	130:100:10	lcd_pos=	1:1:8	label= 	"^std_btn" 
+EVENT_BUTTON	id=	124	hw_id=	24	fwd_id=RGBLED:113	type=CC	chn=	1	cc=	24	button_mode=	Toggle						hsv=	220:100:10	lcd_pos=	1:1:8	label= 	"^std_btn" 
+																							
+EVENT_BUTTON	id=	125	hw_id=	25	fwd_id=RGBLED:129	type=CC	chn=	1	cc=	25	button_mode=	Toggle						hsv=	50:100:10 	lcd_pos=	1:1:8	label= 	"^std_btn" 
+EVENT_BUTTON	id=	126	hw_id=	26	fwd_id=RGBLED:145	type=CC	chn=	1	cc=	26	button_mode=	Toggle						hsv=	90:100:10	lcd_pos=	1:1:8	label= 	"^std_btn" 
+EVENT_BUTTON	id=	127	hw_id=	27	fwd_id=RGBLED:161	type=CC	chn=	1	cc=	27	button_mode=	Toggle						hsv=	130:100:10	lcd_pos=	1:1:8	label= 	"^std_btn" 
+EVENT_BUTTON	id=	128	hw_id=	28	fwd_id=RGBLED:177	type=CC	chn=	1	cc=	28	button_mode=	Toggle						hsv=	220:100:10	lcd_pos=	1:1:8	label= 	"^std_btn" 
+EVENT_BUTTON	id=	129	hw_id=	29	fwd_id=RGBLED:193	type=CC	chn=	1	cc=	29	button_mode=	Toggle						hsv=	50:100:10 	lcd_pos=	1:1:8	label= 	"^std_btn" 
+EVENT_BUTTON	id=	130	hw_id=	30	fwd_id=RGBLED:209	type=CC	chn=	1	cc=	30	button_mode=	Toggle						hsv=	90:100:10	lcd_pos=	1:1:8	label= 	"^std_btn" 
+EVENT_BUTTON	id=	131	hw_id=	31	fwd_id=RGBLED:225	type=CC	chn=	1	cc=	31	button_mode=	Toggle						hsv=	130:100:10	lcd_pos=	1:1:8	label= 	"^std_btn" 
+EVENT_BUTTON	id=	132	hw_id=	32	fwd_id=RGBLED:241	type=CC	chn=	1	cc=	32	button_mode=	Toggle						hsv=	220:100:10	lcd_pos=	1:1:8	label= 	"^std_btn" 
+																							
+																							
+																							
+																							
+																							
+																							
+																							
+																							
+																							
+																							
+																							
+																							
+																							
+																							
+																							
+																							
+																							
+																							
+																							
+																							
+																							
+																							
+																							
+																							
+																							
+																							
+																							
+																							
+																							
+																							
+																							
+																							
+																							
+																							
+																							
+																							
+																							
+																							
+																							
+																							
+																							
+																							
+																							
+																							
+																							
+																							
+																							
+																							
+																							
+																							
+																							
+																							

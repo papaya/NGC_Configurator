@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "name": "KSBOX Sample",
+    "createdAt": "2026-10-23T12:00:00.000Z"
+  },
+  "modules": [
+    {
+      "id": "core32f4-1",
+      "definitionId": "core32f4",
+      "name": "Core32F4 1",
+      "layout": { "x": 30, "y": 35 },
+      "chainOrder": 1
+    },
+    {
+      "id": "din4-1",
+      "definitionId": "din4",
+      "name": "DIN4_R5_KS 1",
+      "layout": { "x": 250, "y": 35 },
+      "chainOrder": 1
+    },
+    {
+      "id": "encoders-led-rgb-1",
+      "definitionId": "encoders-led-rgb",
+      "name": "Encodeurs 1",
+      "layout": { "x": 470, "y": 35 },
+      "chainOrder": 1
+    }
+  ],
+  "connections": [
+    { "from": "core32f4-1", "to": "din4-1", "bus": "DIN", "role": "chain", "fromPort": "J9", "toPort": "J1" },
+    { "from": "encoders-led-rgb-1", "to": "din4-1", "bus": "DIN", "role": "peripheral", "fromPort": "J11-J13", "toPort": "J3-J6" },
+    { "from": "core32f4-1", "to": "encoders-led-rgb-1", "bus": "WS2812", "role": "peripheral", "fromPort": "J4A/J4B", "toPort": "J4/J5" }
+  ],
+  "controls": [
+    { "id": "encoders-led-rgb-1-enc-1", "moduleId": "encoders-led-rgb-1", "name": "ENC 1", "kind": "encoder", "hwId": 1, "hwIdSource": "manual", "physical": { "connectors": ["J13"], "signals": ["C_ENC1A", "C_ENC1B"] }, "encoderConfig": { "n": 1, "sr": 1, "pins": "1:0", "type": "non_detented" } },
+    { "id": "encoders-led-rgb-1-enc-2", "moduleId": "encoders-led-rgb-1", "name": "ENC 2", "kind": "encoder", "hwId": 2, "hwIdSource": "manual", "physical": { "connectors": ["J13"], "signals": ["C_ENC2A", "C_ENC2B"] }, "encoderConfig": { "n": 2, "sr": 1, "pins": "3:2", "type": "non_detented" } },
+    { "id": "encoders-led-rgb-1-enc-3", "moduleId": "encoders-led-rgb-1", "name": "ENC 3", "kind": "encoder", "hwId": 3, "hwIdSource": "manual", "physical": { "connectors": ["J13"], "signals": ["C_ENC3A", "C_ENC3B"] }, "encoderConfig": { "n": 3, "sr": 1, "pins": "5:4", "type": "non_detented" } },
+    { "id": "encoders-led-rgb-1-enc-4", "moduleId": "encoders-led-rgb-1", "name": "ENC 4", "kind": "encoder", "hwId": 4, "hwIdSource": "manual", "physical": { "connectors": ["J13"], "signals": ["C_ENC4A", "C_ENC4B"] }, "encoderConfig": { "n": 4, "sr": 1, "pins": "7:6", "type": "non_detented" } },
+    { "id": "encoders-led-rgb-1-btn-1", "moduleId": "encoders-led-rgb-1", "name": "BTN 1", "kind": "button", "hwId": 17, "hwIdSource": "manual", "physical": { "connectors": ["J11"], "signals": ["C_SW1"] } },
+    { "id": "encoders-led-rgb-1-btn-2", "moduleId": "encoders-led-rgb-1", "name": "BTN 2", "kind": "button", "hwId": 18, "hwIdSource": "manual", "physical": { "connectors": ["J11"], "signals": ["C_SW2"] } },
+    { "id": "encoders-led-rgb-1-btn-3", "moduleId": "encoders-led-rgb-1", "name": "BTN 3", "kind": "button", "hwId": 19, "hwIdSource": "manual", "physical": { "connectors": ["J11"], "signals": ["C_SW3"] } },
+    { "id": "encoders-led-rgb-1-btn-4", "moduleId": "encoders-led-rgb-1", "name": "BTN 4", "kind": "button", "hwId": 20, "hwIdSource": "manual", "physical": { "connectors": ["J11"], "signals": ["C_SW4"] } }
+  ],
+  "banks": [
+    { "id": "bank-1", "name": "Kick / HH", "order": 1 },
+    { "id": "bank-2", "name": "Loops / Bass", "order": 2 }
+  ],
+  "assignments": {
+    "bank-1": {
+      "encoders-led-rgb-1-enc-1": { "eventId": null, "channel": 1, "cc": 1, "valueMin": 0, "valueMax": 127, "label": "Volume" },
+      "encoders-led-rgb-1-enc-2": { "eventId": null, "channel": 1, "cc": 2, "valueMin": 0, "valueMax": 127, "label": "Decay" },
+      "encoders-led-rgb-1-enc-3": { "eventId": null, "channel": 1, "cc": 3, "valueMin": 0, "valueMax": 127, "label": "Tone" },
+      "encoders-led-rgb-1-enc-4": { "eventId": null, "channel": 1, "cc": 4, "valueMin": 0, "valueMax": 127, "label": "Send" },
+      "encoders-led-rgb-1-btn-1": { "eventId": null, "channel": 1, "cc": 17, "valueMin": 0, "valueMax": 127, "buttonMode": "Toggle", "label": "Mute" },
+      "encoders-led-rgb-1-btn-2": { "eventId": null, "channel": 1, "cc": 18, "valueMin": 0, "valueMax": 127, "buttonMode": "Toggle", "label": "Solo" },
+      "encoders-led-rgb-1-btn-3": { "eventId": null, "channel": 1, "cc": 19, "valueMin": 0, "valueMax": 127, "buttonMode": "Toggle", "label": "Play" },
+      "encoders-led-rgb-1-btn-4": { "eventId": null, "channel": 1, "cc": 20, "valueMin": 0, "valueMax": 127, "buttonMode": "Toggle", "label": "Stop" }
+    },
+    "bank-2": {
+      "encoders-led-rgb-1-enc-1": { "eventId": null, "channel": 2, "cc": 21, "valueMin": 0, "valueMax": 127, "label": "Filter" },
+      "encoders-led-rgb-1-enc-2": { "eventId": null, "channel": 2, "cc": 22, "valueMin": 0, "valueMax": 127, "label": "Resonance" },
+      "encoders-led-rgb-1-enc-3": { "eventId": null, "channel": 2, "cc": 23, "valueMin": 0, "valueMax": 127, "label": "Reverb" },
+      "encoders-led-rgb-1-enc-4": { "eventId": null, "channel": 2, "cc": 24, "valueMin": 0, "valueMax": 127, "label": "Delay" },
+      "encoders-led-rgb-1-btn-1": { "eventId": null, "channel": 2, "cc": 37, "valueMin": 0, "valueMax": 127, "buttonMode": "Toggle", "label": "Mute" },
+      "encoders-led-rgb-1-btn-2": { "eventId": null, "channel": 2, "cc": 38, "valueMin": 0, "valueMax": 127, "buttonMode": "Toggle", "label": "Solo" },
+      "encoders-led-rgb-1-btn-3": { "eventId": null, "channel": 2, "cc": 39, "valueMin": 0, "valueMax": 127, "buttonMode": "Toggle", "label": "Play" },
+      "encoders-led-rgb-1-btn-4": { "eventId": null, "channel": 2, "cc": 40, "valueMin": 0, "valueMax": 127, "buttonMode": "Toggle", "label": "Stop" }
+    }
+  },
+  "advanced": {
+    "ngc": "",
+    "ngr": "",
+    "ngl": ""
+  }
+}

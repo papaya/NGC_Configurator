@@ -1,0 +1,141 @@
+
+
+if ^section == 0
+  log "Section is 0"
+
+set ^bank 8
+set_hsv RGBLED:129	 30:100:10
+set_hsv RGBLED:130	 20:100:10
+set_hsv RGBLED:131	 90:100:10
+set_hsv RGBLED:132	 120:100:10
+set_hsv RGBLED:133	 30:100:10
+set_hsv RGBLED:134	 20:100:10
+set_hsv RGBLED:135	 90:100:10
+set_hsv RGBLED:136	 120:100:10
+
+
+set_hsv RGBLED:265	 190:100:10
+set_hsv RGBLED:266	 230:100:10
+set_hsv RGBLED:267	 270:100:10
+set_hsv RGBLED:268	 300:100:10
+set_hsv RGBLED:269	 190:100:10
+set_hsv RGBLED:270	 230:100:10
+set_hsv RGBLED:271	 270:100:10
+set_hsv RGBLED:272	 300:100:10
+
+set_hsv RGBLED:273	 30:100:0
+set_hsv RGBLED:274	 90:100:0
+set_hsv RGBLED:275	 350:100:0
+set_hsv RGBLED:276	 350:100:0
+set_hsv RGBLED:277	 350:100:0
+set_hsv RGBLED:278	 350:100:0	
+set_hsv RGBLED:279	 350:100:0
+set_hsv RGBLED:280	 350:00:10
+
+
+endif
+
+
+if ^section == 1
+  log "Section is 1"
+set ^bank 1
+set_hsv RGBLED:273	 30:100:10
+set_hsv RGBLED:274	 90:100:0
+set_hsv RGBLED:275	 190:100:0
+set_hsv RGBLED:276	 270:100:0
+set_hsv RGBLED:277	 350:100:0
+set_hsv RGBLED:278	 350:100:0	
+set_hsv RGBLED:279	 350:100:0
+set_hsv RGBLED:280	 350:00:0
+endif
+
+if ^section == 2
+  log "Section is 2"
+set ^bank 2
+set_hsv RGBLED:273	 30:100:0
+set_hsv RGBLED:274	 90:100:10
+set_hsv RGBLED:275	 190:100:0
+set_hsv RGBLED:276	 270:100:0
+set_hsv RGBLED:277	 350:100:0
+set_hsv RGBLED:278	 350:100:0	
+set_hsv RGBLED:279	 350:100:0
+set_hsv RGBLED:280	 350:00:0
+endif
+
+if ^section == 3
+  log "Section is 3"
+set ^bank 3
+set_hsv RGBLED:273	 30:100:0
+set_hsv RGBLED:274	 90:100:0
+set_hsv RGBLED:275	 190:100:10
+set_hsv RGBLED:276	 270:100:0
+set_hsv RGBLED:277	 350:100:0
+set_hsv RGBLED:278	 350:100:0	
+set_hsv RGBLED:279	 350:100:0
+set_hsv RGBLED:280	 350:00:0
+endif
+
+if ^section == 4
+  log "Section is 4"
+set ^bank 4
+set_hsv RGBLED:273	 30:100:0
+set_hsv RGBLED:274	 90:100:0
+set_hsv RGBLED:275	 190:100:0
+set_hsv RGBLED:276	 270:100:10
+set_hsv RGBLED:277	 350:100:0
+set_hsv RGBLED:278	 350:100:0	
+set_hsv RGBLED:279	 350:100:0
+set_hsv RGBLED:280	 350:00:0
+endif
+
+if ^section == 5
+  log "Section is 5"
+set ^bank 5
+set_hsv RGBLED:273	 30:100:0
+set_hsv RGBLED:274	 90:100:0
+set_hsv RGBLED:275	 190:100:0
+set_hsv RGBLED:276	 270:100:0
+set_hsv RGBLED:277	 350:00:10
+set_hsv RGBLED:278	 350:100:0	
+set_hsv RGBLED:279	 350:100:0
+set_hsv RGBLED:280	 350:00:0
+endif
+
+if ^section == 6
+  log "Section is 6"
+set ^bank 6
+set_hsv RGBLED:273	 30:100:0
+set_hsv RGBLED:274	 90:100:0
+set_hsv RGBLED:275	 190:100:0
+set_hsv RGBLED:276	 270:100:0
+set_hsv RGBLED:277	 350:100:0
+set_hsv RGBLED:278	 350:00:10	
+set_hsv RGBLED:279	 350:00:0
+set_hsv RGBLED:280	 350:00:0
+endif
+
+if ^section == 7
+  log "Section is 7"
+set ^bank 7
+set_hsv RGBLED:273	 30:100:0
+set_hsv RGBLED:274	 90:100:0
+set_hsv RGBLED:275	 190:100:0
+set_hsv RGBLED:276	 270:100:0
+set_hsv RGBLED:277	 350:100:0
+set_hsv RGBLED:278	 350:100:0	
+set_hsv RGBLED:279	 350:00:10
+set_hsv RGBLED:280	 350:00:0
+endif
+
+if ^section == 8
+  log "Section is 8"
+set ^bank 8
+set_hsv RGBLED:273	 30:100:0
+set_hsv RGBLED:274	 90:100:0
+set_hsv RGBLED:275	 190:100:0
+set_hsv RGBLED:276	 270:100:0
+set_hsv RGBLED:277	 350:100:0
+set_hsv RGBLED:278	 350:100:0	
+set_hsv RGBLED:279	 350:100:0
+set_hsv RGBLED:280	 350:00:10
+endif

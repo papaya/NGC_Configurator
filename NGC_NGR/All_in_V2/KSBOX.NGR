@@ -1,0 +1,281 @@
+if ^section == 0			
+#log "Hello World!"			
+#	exec_meta RgbLedRainbow:5:10		
+#delay_ms 2000			
+	
+
+			
+set_hsv RGBLED:257	 60:100:10		
+set_hsv RGBLED:258	 100:100:10		
+set_hsv RGBLED:259	100:100:10		
+set_hsv RGBLED:260	 250:100:10		
+			
+set_hsv RGBLED:265	 30:100:10		
+set_hsv RGBLED:266	 0:100:10		
+set_hsv RGBLED:267	180:100:10		
+set_hsv RGBLED:268	 300:100:10
+
+
+
+exec_meta RunSection:8
+
+
+		
+  exit			
+endif			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+#################################################################################			
+if ^section == 1			
+  log "Section is 1"	
+
+LCD "@(1:1:2)%21s"  
+LCD "@(1:1:3)%21s"  
+LCD "@(1:1:4)%21s" 
+LCD "@(1:1:5)%21s" 
+LCD "@(1:1:6)%21s"
+LCD "@(1:1:7)%21s" 
+		
+LCD "@(1:1:2)Kick / HH          "
+set_hsv RGBLED:261	 60:100:10		
+set_hsv RGBLED:262	 100:100:1		
+set_hsv RGBLED:263	30:100:1		
+set_hsv RGBLED:264	 180:100:1		
+			
+set_hsv RGBLED:269	 0:0:1		
+set_hsv RGBLED:270	 180:100:1	
+set_hsv RGBLED:271	30:100:1		
+set_hsv RGBLED:272	 0:00:1		
+	
+set ^bank 1
+	
+exit
+endif
+
+
+
+if ^section == 2			
+  log "Section is 2"		
+
+LCD "@(1:1:2)%21s"  
+LCD "@(1:1:3)%21s"  
+LCD "@(1:1:4)%21s" 
+LCD "@(1:1:5)%21s" 
+LCD "@(1:1:6)%21s"
+LCD "@(1:1:7)%21s" 
+
+LCD "@(1:1:2)Loops / Bass   "
+set_hsv RGBLED:261	 60:100:1		
+set_hsv RGBLED:262	 100:100:10		
+set_hsv RGBLED:263	30:100:1		
+set_hsv RGBLED:264	 180:100:1		
+			
+set_hsv RGBLED:269	 0:0:1		
+set_hsv RGBLED:270	 180:100:1	
+set_hsv RGBLED:271	30:100:1		
+set_hsv RGBLED:272	 0:00:1		
+	
+set ^bank 2
+
+  endif
+
+
+if ^section == 3			
+  log "Section is 3"		
+
+LCD "@(1:1:2)%21s"  
+LCD "@(1:1:3)%21s"  
+LCD "@(1:1:4)%21s" 
+LCD "@(1:1:5)%21s" 
+LCD "@(1:1:6)%21s"
+LCD "@(1:1:7)%21s" 
+
+LCD "@(1:1:2)Synths 1/2         "
+set_hsv RGBLED:261	 60:100:1		
+set_hsv RGBLED:262	 100:100:1		
+set_hsv RGBLED:263	30:100:10		
+set_hsv RGBLED:264	 180:100:1		
+			
+set_hsv RGBLED:269	 0:0:1		
+set_hsv RGBLED:270	 180:100:1		
+set_hsv RGBLED:271	30:100:1		
+set_hsv RGBLED:272	 0:00:1		
+	
+set ^bank 3
+
+  endif
+
+
+
+if ^section == 4			
+  log "Section is 4"		
+LCD "@(1:1:2)Psylab / Voix     "
+set_hsv RGBLED:261	 60:100:1		
+set_hsv RGBLED:262	 100:100:1		
+set_hsv RGBLED:263	30:100:1		
+set_hsv RGBLED:264	 180:100:10		
+			
+set_hsv RGBLED:269	 0:0:1		
+set_hsv RGBLED:270	 180:100:1		
+set_hsv RGBLED:271	30:100:1			
+set_hsv RGBLED:272	 0:00:1		
+	
+set ^bank 4
+
+  endif
+
+
+if ^section == 5			
+  log "Section is 5"	
+
+LCD "@(1:1:2)%21s"  
+LCD "@(1:1:3)%21s"  
+LCD "@(1:1:4)%21s" 
+LCD "@(1:1:5)%21s" 
+LCD "@(1:1:6)%21s"
+LCD "@(1:1:7)%21s" 
+
+
+LCD "@(1:1:2)Send         "
+LCD "@(1:1:3)Send 1 : Distos"
+LCD "@(1:1:5)Send 2 : Delay Reverb"
+
+			
+set_hsv RGBLED:261	 60:100:1		
+set_hsv RGBLED:262	 100:100:1		
+set_hsv RGBLED:263	30:100:1		
+set_hsv RGBLED:264	 180:100:1		
+			
+set_hsv RGBLED:269	 0:0:10		
+set_hsv RGBLED:270	 180:100:1		
+set_hsv RGBLED:271	30:100:1	
+set_hsv RGBLED:272	 0:00:1		
+	
+			
+	set ^bank 5	
+
+
+exit
+endif
+
+
+if ^section == 6			
+  log "Section is 6"	
+
+
+LCD "@(1:1:2)%21s"  
+LCD "@(1:1:3)%21s"  
+LCD "@(1:1:4)%21s" 
+LCD "@(1:1:5)%21s" 
+LCD "@(1:1:6)%21s"
+LCD "@(1:1:7)%21s" 
+
+LCD "@(1:1:2)Send 1 Disto "
+
+LCD "@(1:1:3)&sDist01  Dist02  Dist03  Dist04"
+LCD "@(1:1:5)&sDist01  Dist02  Dist03  Dist04"
+			
+set_hsv RGBLED:261	 60:100:1		
+set_hsv RGBLED:262	 100:100:1		
+set_hsv RGBLED:263	30:100:1		
+set_hsv RGBLED:264	 180:100:1		
+			
+set_hsv RGBLED:269	 0:0:1		
+set_hsv RGBLED:270	 180:100:10		
+set_hsv RGBLED:271	30:100:1		
+set_hsv RGBLED:272	 0:00:1		
+	
+			
+set ^bank 6		
+
+
+exit
+endif
+
+
+if ^section == 7			
+  log "Section is 7"	
+
+LCD "@(1:1:2)%21s"  
+LCD "@(1:1:3)%21s"  
+LCD "@(1:1:4)%21s" 
+LCD "@(1:1:5)%21s" 
+LCD "@(1:1:6)%21s"
+LCD "@(1:1:7)%21s" 
+
+LCD "@(1:1:2)Send 2  Delay  Reverb"
+
+LCD "@(1:1:3)&s  Vol    time   Param3  param4"
+LCD "@(1:1:5)&sParam1  Param2  Param3  Param4"
+
+set_hsv RGBLED:261	 60:100:1		
+set_hsv RGBLED:262	 100:100:1		
+set_hsv RGBLED:263	30:100:1		
+set_hsv RGBLED:264	 180:100:1		
+			
+set_hsv RGBLED:269	 0:0:1		
+set_hsv RGBLED:270	 180:100:1		
+set_hsv RGBLED:271	30:100:10			
+set_hsv RGBLED:272	 0:00:1		
+	
+			
+	set ^bank 7	
+
+
+exit
+endif
+
+
+
+
+if ^section == 8			
+  log "Section is 8"	
+
+LCD "@(1:1:2)%21s"  
+LCD "@(1:1:3)%21s"  
+LCD "@(1:1:4)%21s" 
+LCD "@(1:1:5)%21s" 
+LCD "@(1:1:6)%21s"
+LCD "@(1:1:7)%21s" 
+
+
+LCD "@(1:1:2)Gross Beat   "
+			
+set_hsv RGBLED:261	 60:100:1		
+set_hsv RGBLED:262	 100:100:1		
+set_hsv RGBLED:263	30:100:1		
+set_hsv RGBLED:264	 180:100:1		
+			
+set_hsv RGBLED:269	 0:0:1		
+set_hsv RGBLED:270	 180:100:1		
+set_hsv RGBLED:271	30:100:1		
+set_hsv RGBLED:272	 0:00:10		
+	
+			
+set ^bank 8		
+
+
+exit
+endif
+
+
+
+#lcd_pos=	1:1:3	label= 	"&b%q &nSend"
+#lcd_pos=	1:1:3	label= 	"&b%q &nSend 1"
+#lcd_pos=	1:1:3	label= 	"&b%q &nSend 2"
+#lcd_pos=	1:1:3	label= 	"&b%q &nGross Beat"
+
+# imprimer le message sur le 1er ecran , sur le 2ieme caratere a la 3iem lignes
+#LCD "@(1:2:3) 2ieme caratere , 3ieme l"

@@ -1,0 +1,5 @@
+node_modules/
+._*
+.DS_Store
+NGC_NGR/AllIn/
+reference/MB_ModulBox_NG/
