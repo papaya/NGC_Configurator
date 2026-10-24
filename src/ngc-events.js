@@ -1,8 +1,8 @@
-const directives = { encoder: "EVENT_ENC", button: "EVENT_BUTTON", analog: "EVENT_AINSER" };
+const directives = { encoder: 'EVENT_ENC', button: 'EVENT_BUTTON', analog: 'EVENT_AINSER' };
 
 function manualEventIds(project) {
   const ids = new Set();
-  for (const line of (project.advanced?.ngc ?? "").split(/\r?\n/)) {
+  for (const line of (project.advanced?.ngc ?? '').split(/\r?\n/)) {
     if (!/^\s*EVENT_\w+\b/.test(line)) continue;
     const match = line.match(/\bid\s*=\s*["']?(\d+)/);
     if (match) ids.add(Number(match[1]));
@@ -18,7 +18,14 @@ export function planNgcEvents(project) {
   if (firstBank) {
     for (const control of controls) {
       const assignment = project.assignments?.[firstBank.id]?.[control.id];
-      if (assignment?.bankScoped === false) candidates.push({ control, assignment, bank: firstBank, directive: directives[control.kind] });
+      if (assignment?.bankScoped === false) {
+        candidates.push({
+          control,
+          assignment,
+          bank: firstBank,
+          directive: directives[control.kind],
+        });
+      }
     }
   }
   for (const bank of orderedBanks) {
@@ -30,8 +37,12 @@ export function planNgcEvents(project) {
     }
   }
 
-  const events = candidates.filter(event =>
-    event.directive && Number.isInteger(event.control.hwId) && event.control.hwId >= 1 && event.control.hwId <= 255
+  const events = candidates.filter(
+    (event) =>
+      event.directive &&
+      Number.isInteger(event.control.hwId) &&
+      event.control.hwId >= 1 &&
+      event.control.hwId <= 255
   );
   const occupied = manualEventIds(project);
   for (const led of project.ledEvents ?? []) {

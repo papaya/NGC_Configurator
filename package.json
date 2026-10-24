@@ -3,7 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
+  "description": "Configurateur local pour composer un contrôleur MIDIbox NG et produire des fichiers NGC/NGR/NGL.",
   "scripts": {
-    "test": "node --test"
+    "test": "node --test",
+    "lint": "eslint src tests",
+    "lint:fix": "eslint src tests --fix",
+    "format": "prettier --write \"src/**/*.js\" \"tests/**/*.js\" \"*.md\" \"*.html\" \"*.css\" \"*.json\"",
+    "format:check": "prettier --check \"src/**/*.js\" \"tests/**/*.js\" \"*.md\" \"*.html\" \"*.css\" \"*.json\""
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "prettier": "^3.3.3"
   }
 }

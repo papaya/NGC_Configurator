@@ -1,119 +1,350 @@
 <!doctype html>
 <html lang="fr">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#10131b">
-  <title>ModulBox NGC Configurator</title>
-  <link rel="stylesheet" href="./styles.css">
-</head>
-<body>
-  <div class="app-shell">
-    <aside class="sidebar">
-      <a class="brand" href="#" aria-label="ModulBox NGC Configurator">
-        <span class="brand-mark">M</span>
-        <span><strong>MODULBOX</strong><small>NGC CONFIGURATOR</small></span>
-      </a>
-      <div class="project-badge"><span class="eyebrow">PROJET ACTIF</span><strong id="sidebar-project-name">Nouveau contrôleur</strong><span id="save-state">Sauvegardé localement</span></div>
-      <nav aria-label="Navigation principale">
-        <button class="nav-item active" data-page="project"><span>◫</span> Projet</button>
-        <button class="nav-item" data-page="modules"><span>▦</span> Bibliothèque</button>
-        <button class="nav-item" data-page="hardware"><span>⌘</span> Connexions</button>
-        <button class="nav-item" data-page="controls"><span>◉</span> Contrôles MIDI</button>
-        <button class="nav-item" data-page="banks"><span>▤</span> Banques</button>
-        <button class="nav-item" data-page="generate"><span>⇧</span> Génération</button>
-        <button class="nav-item" data-page="files"><span>▱</span> Fichiers</button>
-      </nav>
-      <div class="sidebar-bottom">
-        <div class="reference-note"><span class="status-dot"></span><span>Bibliothèque documentée<br><small>MB_ModulBox_NG</small></span></div>
-        <a href="./docs/REPOSITORY_AUDIT.md">Audit matériel ↗</a>
-      </div>
-    </aside>
-
-    <main class="main-area">
-      <header class="topbar">
-        <div class="breadcrumbs"><span>Workspace</span><b>/</b><strong id="page-label">Projet</strong></div>
-        <div class="top-actions">
-          <button class="quiet-button" id="undo-button" title="Annuler (⌘Z)" disabled>↶</button>
-          <button class="quiet-button" id="redo-button" title="Rétablir (⌘⇧Z)" disabled>↷</button>
-          <button class="quiet-button" id="save-project">Enregistrer JSON</button>
-          <button class="primary-button" data-go="generate">Générer les fichiers <span>↗</span></button>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#10131b" />
+    <title>ModulBox NGC Configurator</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <a class="brand" href="#" aria-label="ModulBox NGC Configurator">
+          <span class="brand-mark">M</span>
+          <span><strong>MODULBOX</strong><small>NGC CONFIGURATOR</small></span>
+        </a>
+        <div class="project-badge">
+          <span class="eyebrow">PROJET ACTIF</span
+          ><strong id="sidebar-project-name">Nouveau contrôleur</strong
+          ><span id="save-state">Sauvegardé localement</span>
         </div>
-      </header>
-
-      <section class="page active" id="page-project">
-        <div class="page-heading">
-          <div><p class="eyebrow">ESPACE PROJET</p><h1>Votre contrôleur, <span>à la carte.</span></h1><p class="muted">Composez le matériel, associez les contrôles et préparez des fichiers MIDIbox NG vérifiables.</p></div>
-          <label class="project-name-field"><span>Nom du projet</span><input id="project-name" value="Nouveau contrôleur" maxlength="64"></label>
+        <nav aria-label="Navigation principale">
+          <button class="nav-item active" data-view="center"><span>◫</span> Plan & câblage</button>
+          <button class="nav-item" data-dock="left" data-tab="library"><span>▦</span> Bibliothèque (G)</button>
+          <button class="nav-item" data-dock="left" data-tab="controls"><span>◉</span> Contrôles MIDI (G)</button>
+          <button class="nav-item" data-dock="left" data-tab="banks"><span>▤</span> Banques (G)</button>
+          <button class="nav-item" data-dock="right" data-tab="library"><span>▦</span> Bibliothèque (D)</button>
+          <button class="nav-item" data-dock="right" data-tab="controls"><span>◉</span> Contrôles MIDI (D)</button>
+          <button class="nav-item" data-dock="right" data-tab="banks"><span>▤</span> Banques (D)</button>
+          <button class="nav-item" data-dock="right" data-tab="generate"><span>⇧</span> Génération (D)</button>
+          <button class="nav-item" data-dock="right" data-tab="files"><span>▱</span> Fichiers (D)</button>
+        </nav>
+        <div class="sidebar-bottom">
+          <div class="reference-note">
+            <span class="status-dot"></span
+            ><span>Bibliothèque documentée<br /><small>MB_ModulBox_NG</small></span>
+          </div>
+          <a href="./docs/REPOSITORY_AUDIT.md">Audit matériel ↗</a>
         </div>
-        <div class="metrics-row" id="project-metrics"></div>
-        <div class="workspace-grid">
-          <section class="panel composition-panel">
-            <div class="panel-heading"><div><p class="eyebrow">SURFACE DE CONTRÔLE</p><h2>Composition matérielle</h2></div><button class="small-button" data-go="modules">＋ Ajouter un module</button></div>
-            <div class="canvas-toolbar"><span><i class="tiny-dot"></i> Disposition visuelle uniquement</span><button id="arrange-modules">Réorganiser</button></div>
-            <div class="controller-canvas" id="controller-canvas">
-              <div class="canvas-empty"><span>▦</span><h3>Votre surface est vide</h3><p>Ajoutez le Core32F4 et les cartes documentées depuis la bibliothèque.</p><button class="primary-button" data-go="modules">Parcourir les modules</button></div>
+      </aside>
+
+      <div class="dock-container">
+        <!-- Panneau dockable GAUCHE (repliable) -->
+        <aside class="dock left dock-open" id="dock-left">
+          <div class="dock-header">
+            <button class="dock-toggle" id="toggle-dock-left" aria-label="Replier le panneau gauche">⟨</button>
+            <div class="dock-tabs">
+              <button class="dock-tab active" data-dock="left" data-tab="library">Bibliothèque</button>
+              <button class="dock-tab" data-dock="left" data-tab="controls">Contrôles MIDI</button>
+              <button class="dock-tab" data-dock="left" data-tab="banks">Banques</button>
             </div>
-            <div class="panel-foot"><span>Glissez les cartes pour les disposer. Le déplacement ne change pas le câblage.</span><span id="module-count-foot">0 modules</span></div>
+          </div>
+          <div class="dock-content">
+            <div class="dock-panel active" id="dock-left-library">
+              <div class="panel-heading">
+                <div>
+                  <p class="eyebrow">BIBLIOTHÈQUE DE MODULES</p>
+                  <h2>Ajouter du matériel</h2>
+                </div>
+                <div class="library-toolbar">
+                  <div class="filter-pills" id="module-filters-left"></div>
+                  <div class="library-search">
+                    <label>Rechercher<span class="search-count" id="module-search-count-left"></span></label>
+                    <input id="module-search-left" placeholder="Nom, catégorie, bus…" />
+                  </div>
+                </div>
+              </div>
+              <div id="module-library-left"></div>
+              <p id="module-library-empty-left" class="muted small" hidden>Aucun module ne correspond à cette recherche.</p>
+            </div>
+
+            <div class="dock-panel" id="dock-left-controls">
+              <div class="panel-heading">
+                <div>
+                  <p class="eyebrow">CONTRÔLES MIDI</p>
+                  <h2>Affectations par contrôle</h2>
+                </div>
+                <div class="controls-toolbar">
+                  <label>Banque<select id="control-bank-left"></select></label>
+                  <span id="control-count-left">0 contrôle</span>
+                  <button class="small-button" id="assign-all-auto-left">Attribuer les hw_id automatiquement</button>
+                  <button class="small-button" id="clear-all-hwids-left">Effacer tous les hw_id</button>
+                </div>
+                <div class="control-list" id="control-list-left"></div>
+                <div id="control-inspector-left"></div>
+              </div>
+            </div>
+
+            <div class="dock-panel" id="dock-left-banks">
+              <div class="panel-heading">
+                <div>
+                  <p class="eyebrow">BANQUES</p>
+                  <h2>Matrice d’affectation</h2>
+                </div>
+                <div class="bank-toolbar">
+                  <button class="small-button" id="add-bank-left">＋ Ajouter une banque</button>
+                </div>
+                <div id="bank-tabs-left"></div>
+                <div id="bank-matrix-left"></div>
+                <div id="bank-editor-left"></div>
+                <div id="bank-name-left"></div>
+              </div>
+            </div>
+          </div>
+        </aside>
+        <- Alimentation : Zone CENTRALE : plan de câblage / composition matérielle (unifiés) -->
+        <main class="main-area center">
+          <header class="topbar">
+            <div class="breadcrumbs"><span>Workspace</span><b>/</b><strong id="page-label">Plan & câblage</strong></div>
+            <div class="top-actions">
+              <button class="quiet-button" id="undo-button" title="Annuler (⌘Z)" disabled>↶</button>
+              <button class="quiet-button" id="redo-button" title="Rétablir (⌘⇧Z)" disabled>↷</button>
+              <button class="quiet-button" id="save-project">Enregistrer JSON</button>
+              <button class="primary-button" data-dock="right" data-tab="generate">Générer les fichiers <span>↗</span></button>
+            </div>
+          </header>
+
+          <section class="page active" id="page-center">
+            <div class="page-heading">
+              <div>
+                <p class="eyebrow">ESPACE PROJET</p>
+                <h1>Composition & câblage <span>unifiés.</span></h1>
+                <p class="muted">Surface de contrôle et plan de câblage physique sur la même aire.</p>
+              </div>
+              <label class="project-name-field"><span>Nom du projet</span><input id="project-name" value="Nouveau contrôleur" maxlength="64" /></label>
+            </div>
+            <div class="metrics-row" id="project-metrics"></div>
+            <div class="workspace-grid">
+              <section class="panel composition-panel">
+                <div class="panel-heading">
+                  <div>
+                    <p class="eyebrow">SURFACE DE CONTRÔLE</p>
+                    <h2>Composition matérielle</h2>
+                  </div>
+                  <button class="small-button" data-dock="left" data-tab="library">＋ Ajouter un module</button>
+                </div>
+                <div class="canvas-toolbar">
+                  <span><i class="tiny-dot"></i> Disposition visuelle uniquement</span
+                  ><button id="arrange-modules">Réorganiser</button>
+                </div>
+                <div class="controller-canvas" id="controller-canvas">
+                  <div class="canvas-empty">
+                    <span>▦</span>
+                    <h3>Votre surface est vide</h3>
+                    <p>Ajoutez le Core32F4 et les cartes documentées depuis la bibliothèque.</p>
+                    <button class="primary-button" data-dock="left" data-tab="library">Parcourir la bibliothèque</button>
+                  </div>
+                </div>
+                <div class="panel-foot">
+                  <span>Glissez les cartes pour les disposer. Le déplacement ne change pas le câblage.</span
+                  ><span id="module-count-foot">0 modules</span>
+                </div>
+              </section>
+              <aside class="panel summary-panel">
+                <div class="panel-heading">
+                  <div>
+                    <p class="eyebrow">ÉTAT DU PROJET</p>
+                    <h2>À vérifier</h2>
+                  </div>
+                  <span class="status-pill" id="overall-status">Incomplet</span>
+                </div>
+                <div id="summary-issues" class="issue-list"></div>
+                <div class="divider"></div>
+                <p class="eyebrow">DERNIÈRE VALIDATION</p>
+                <p class="muted small" id="validation-time">Pas encore validé</p>
+                <button class="text-button" data-dock="right" data-tab="generate">Ouvrir le rapport complet <span>→</span></button>
+              </aside>
+            </div>
+
+            <section class="panel hardware-panel">
+              <div class="panel-heading">
+                <div>
+                  <p class="eyebrow">PLAN DE CÂBLAGE</p>
+                  <h2>Connexions physiques</h2>
+                </div>
+                <div class="hardware-toolbar">
+                  <label>Interface<select id="connection-interface"><option>DIN</option><option>DOUT</option><option>LED-data</option><option>SPI/AIN</option></select></label>
+                  <button class="small-button" id="cancel-connection">Annuler la sélection</button>
+                  <button class="small-button" id="build-din-chain">Créer la chaîne DIN documentée</button>
+                </div>
+                <div class="hardware-layout">
+                  <div class="diagram-panel" id="diagram-panel">
+                    <div class="panel-heading">
+                      <div>
+                        <p class="eyebrow">PLAN DE CÂBLAGE</p>
+                        <h2>Cartes et extrémités</h2>
+                      </div>
+                      <div class="zoom-controls">
+                        <button id="zoom-out">−</button><span id="zoom-label">100%</span><button id="zoom-in">＋</button>
+                      </div>
+                    </div>
+                    <svg class="hardware-diagram" id="hardware-diagram"></svg>
+                  </div>
+                  <aside class="connector-panel">
+                    <div class="panel-heading"><div><p class="eyebrow">INVENTOIRE DE CONNECTEURS</p><h2>Ports disponibles</h2></div></div>
+                    <div id="connector-inventory"></div>
+                    <div id="connector-inspector"></div>
+                  </aside>
+                </div>
+                <div class="connection-list">
+                  <div class="panel-heading"><div><p class="eyebrow">LIAISONS DÉCLARÉES</p><h2>Câblage</h2></div></div>
+                  <div id="connection-list"></div>
+                </div>
+              </div>
+            </section>
           </section>
-          <aside class="panel summary-panel">
-            <div class="panel-heading"><div><p class="eyebrow">ÉTAT DU PROJET</p><h2>À vérifier</h2></div><span class="status-pill" id="overall-status">Incomplet</span></div>
-            <div id="summary-issues" class="issue-list"></div>
-            <div class="divider"></div>
-            <p class="eyebrow">DERNIÈRE VALIDATION</p><p class="muted small" id="validation-time">Pas encore validé</p>
-            <button class="text-button" data-go="generate">Ouvrir le rapport complet <span>→</span></button>
-          </aside>
-        </div>
-        <section class="panel recent-panel"><div class="panel-heading"><div><p class="eyebrow">ACCÈS RAPIDE</p><h2>Continuer la configuration</h2></div></div><div class="quick-grid">
-          <button class="quick-card" data-go="hardware"><span class="quick-icon">⌘</span><strong>Architecture matérielle</strong><small>Core, chaînes et bus</small><b>→</b></button>
-          <button class="quick-card" data-go="controls"><span class="quick-icon">◉</span><strong>Contrôles & MIDI</strong><small>Événements et ressources</small><b>→</b></button>
-          <button class="quick-card" data-go="banks"><span class="quick-icon">▤</span><strong>Banques</strong><small>Affectations par banque</small><b>→</b></button>
-        </div></section>
-      </section>
+        </main>
 
-      <section class="page" id="page-modules">
-        <div class="page-heading"><div><p class="eyebrow">BIBLIOTHÈQUE MATÉRIELLE</p><h1>Modules <span>documentés.</span></h1><p class="muted">Les cartes proviennent du dépôt MB_ModulBox_NG. Les inconnues restent signalées.</p></div></div>
-        <div class="library-toolbar"><label class="search-field">⌕ <input id="module-search" placeholder="Rechercher un module…" type="search"></label><div class="filter-pills" id="module-filters"></div></div>
-        <div class="module-grid" id="module-library"></div>
-      </section>
+        <- Alimentation : Panneau dockable DROIT (repliable) -->
+        <aside class="dock right dock-open" id="dock-right">
+          <div class="dock-header">
+            <button class="dock-toggle" id="toggle-dock-right" aria-label="Replier le panneau droit">⟩</button>
+            <div class="dock-tabs">
+              <button class="dock-tab active" data-dock="right" data-tab="library">Bibliothèque</button>
+              <button class="dock-tab" data-dock="right" data-tab="controls">Contrôles MIDI</button>
+              <button class="dock-tab" data-dock="right" data-tab="banks">Banques</button>
+              <button class="dock-tab" data-dock="right" data-tab="generate">Génération</button>
+              <button class="dock-tab" data-dock="right" data-tab="files">Fichiers</button>
+            </div>
+          </div>
+          <div class="dock-content">
+            <div class="dock-panel active" id="dock-right-library">
+              <div class="panel-heading">
+                <div>
+                  <p class="eyebrow">BIBLIOTHÈQUE DE MODULES</p>
+                  <h2>Ajouter du matériel</h2>
+                </div>
+                <div class="library-toolbar">
+                  <div class="filter-pills" id="module-filters-right"></div>
+                  <div class="library-search">
+                    <label>Rechercher<span class="search-count" id="module-search-count-right"></span></label>
+                    <input id="module-search-right" placeholder="Nom, catégorie, bus…" />
+                  </div>
+                </div>
+              </div>
+              <div id="module-library-right"></div>
+              <p id="module-library-empty-right" class="muted small" hidden>Aucun module ne correspond à cette recherche.</p>
+            </div>
 
-      <section class="page" id="page-hardware">
-        <div class="page-heading"><div><p class="eyebrow">ARCHITECTURE MATÉRIELLE</p><h1>Connexions <span>et chaînes.</span></h1><p class="muted">Décrivez les liaisons présentes sur votre projet ; le configurateur ne remplace pas une vérification électrique.</p></div><button class="small-button" id="build-din-chain">Créer la chaîne DIN documentée</button></div>
-        <div class="notice warning"><strong>Vue schématique</strong><span>Les aperçus ne sont pas à l’échelle. Les connecteurs sans position documentée apparaissent en ports schématiques sous la carte : les fils y sont attachés pour montrer la liaison, sans prétendre indiquer leur emplacement physique. Les cartes se déplacent librement et leurs câbles restent attachés. Cette vue ne certifie ni brochage, ni compatibilité électrique, ni sécurité avant mise sous tension.</span></div>
-        <div class="hardware-layout">
-          <section class="panel diagram-panel"><div class="panel-heading"><div><p class="eyebrow">PLAN DE CÂBLAGE</p><h2>Cartes et extrémités</h2></div><div class="zoom-controls"><button id="zoom-out">−</button><span id="zoom-label">100%</span><button id="zoom-in">＋</button></div></div><div class="wire-legend"><span><i style="--legend-color:#34d399"></i>DIN</span><span><i style="--legend-color:#22d3ee"></i>Contrôles DIN</span><span><i style="--legend-color:#a78bfa"></i>DOUT</span><span><i style="--legend-color:#e879f9"></i>Contrôles DOUT</span><span><i style="--legend-color:#fbbf24"></i>Données LED</span><span><i style="--legend-color:#60a5fa"></i>SPI/AIN</span><span><i class="unknown-key"></i>Port à position inconnue</span></div><div id="hardware-diagram" class="hardware-diagram"></div><div id="connector-inventory" class="connector-inventory-group"></div><div class="connector-inspector-wrap"><p class="eyebrow">INSPECTION DU CONNECTEUR</p><div id="connector-inspector"><p class="muted small">Sélectionnez un connecteur pour inspecter ses caractéristiques documentées.</p></div></div></section>
-          <aside class="panel connection-panel"><div class="panel-heading"><div><p class="eyebrow">LIAISONS PERSISTANTES</p><h2>Connexions définies</h2></div></div><div id="connection-list"></div><div class="divider"></div><h3>Ajouter une liaison</h3><p class="muted small">Sélectionnez deux connecteurs sur les cartes ou dans leur inventaire. Les couples documentés choisissent automatiquement l’interface; les autres sont refusés.</p><label>Interface<select id="connection-interface"><option>DIN</option><option>DOUT</option><option>DIN-control</option><option>DOUT-control</option><option>LED-data</option></select></label><button class="small-button full-width" id="cancel-connection" disabled>Annuler la sélection</button><button class="primary-button full-width" id="build-din-chain">Créer la chaîne DIN documentée</button><p class="help-text">Les emplacements sur le plan sont indépendants des connecteurs référencés par la liaison.</p></aside>
-        </div>
-      </section>
+            <div class="dock-panel" id="dock-right-controls">
+              <div class="panel-heading">
+                <div>
+                  <p class="eyebrow">CONTRÔLES MIDI</p>
+                  <h2>Affectations par contrôle</h2>
+                </div>
+                <div class="controls-toolbar">
+                  <label>Banque<select id="control-bank-right"></select></label>
+                  <span id="control-count-right">0 contrôle</span>
+                  <button class="small-button" id="assign-all-auto-right">Attribuer les hw_id automatiquement</button>
+                  <button class="small-button" id="clear-all-hwids-right">Effacer tous les hw_id</button>
+                </div>
+                <div class="control-list" id="control-list-right"></div>
+                <div id="control-inspector-right"></div>
+              </div>
+            </div>
 
-      <section class="page" id="page-controls">
-        <div class="page-heading"><div><p class="eyebrow">AFFECTATIONS LOGIQUES</p><h1>Contrôles <span>MIDI.</span></h1><p class="muted">Les identifiants stables relient chaque commande physique aux événements des banques.</p></div><label class="inline-select">Banque active<select id="control-bank"></select></label></div>
-        <div class="controls-layout"><section class="panel control-list-panel"><div class="panel-heading"><div><p class="eyebrow">CONTRÔLES PHYSIQUES</p><h2 id="control-count">0 contrôles</h2></div></div><div id="control-list" class="control-list"></div></section><aside class="panel inspector-panel" id="control-inspector"><div class="inspector-empty"><span>◉</span><h3>Sélectionnez un contrôle</h3><p>Ses paramètres MIDI et sa ressource physique apparaîtront ici.</p></div></aside></div>
-        <section class="panel led-event-panel"><div class="panel-heading"><div><p class="eyebrow">DÉCLARATIONS NGC</p><h2>Événements EVENT_RGBLED</h2></div></div><p class="muted small">Déclarez les identifiants RGBLED utilisés par les affectations structurées. Les IDs de fwd_id restent séparés.</p><div id="led-event-list" class="connection-list"></div><div class="form-grid"><label>Identifiant<input id="led-event-id" type="number" min="1"></label><label>Valeur dimmed<input id="led-event-dimmed" type="number" min="0" max="127" value="1"></label><label>Range min<input id="led-event-range-min" type="number" min="0" max="127" value="0"></label><label>Range max<input id="led-event-range-max" type="number" min="0" max="127" value="10"></label></div><button class="small-button" id="add-led-event">＋ Déclarer EVENT_RGBLED</button></section>
-      </section>
+            <div class="dock-panel" id="dock-right-banks">
+              <div class="panel-heading">
+                <div>
+                  <p class="eyebrow">BANQUES</p>
+                  <h2>Matrice d’affectation</h2>
+                </div>
+                <div class="bank-toolbar">
+                  <button class="small-button" id="add-bank-right">＋ Ajouter une banque</button>
+                </div>
+                <div id="bank-tabs-right"></div>
+                <div id="bank-matrix-right"></div>
+                <div id="bank-editor-right"></div>
+                <div id="bank-name-right"></div>
+              </div>
+            </div>
 
-      <section class="page" id="page-banks">
-        <div class="page-heading"><div><p class="eyebrow">ORGANISATION DES ÉVÉNEMENTS</p><h1>Banques <span>d’affectations.</span></h1><p class="muted">Les valeurs des banques sont indépendantes ; les déclarations générées suivent le motif observé dans KSBOX.</p></div><button class="small-button" id="add-bank">＋ Nouvelle banque</button></div>
-        <div id="bank-tabs" class="bank-tabs"></div>
-        <section class="panel bank-matrix-panel"><div class="panel-heading"><div><p class="eyebrow">VUE MATRICIELLE</p><h2>Comparaison des CC</h2></div></div><div class="table-scroll"><table id="bank-matrix"></table></div></section>
-        <div id="bank-editor" class="panel bank-editor"></div>
-      </section>
+            <div class="dock-panel" id="dock-right-generate">
+              <div class="panel-heading">
+                <div>
+                  <p class="eyebrow">GÉNÉRATION</p>
+                  <h2>Fichiers NGC / NGR / NGL</h2>
+                </div>
+              </div>
+              <div class="generation-toolbar">
+                <button class="primary-button" id="validate-button">Valider le projet</button>
+                <button class="primary-button" id="run-generation">Générer et prévisualiser</button>
+              </div>
+              <div id="generation-summary"></div>
+              <div id="generation-issues"></div>
+              <div class="advanced-blocks">
+                <div class="panel">
+                  <div class="panel-heading">
+                    <div>
+                      <p class="eyebrow">DIRECTIVES AVANCÉES NGC</p>
+                      <h2>Texte brut préservé</h2>
+                    </div>
+                  </div>
+                  <textarea id="advanced-ngc" placeholder="Directives NGC brutes (EVENT_*, ENC, …)"></textarea>
+                </div>
+                <div class="panel">
+                  <div class="panel-heading">
+                    <div>
+                      <p class="eyebrow">DIRECTIVES AVANCÉES NGR</p>
+                      <h2>Script NGR préservé</h2>
+                    </div>
+                  </div>
+                  <textarea id="advanced-ngr" placeholder="Directives NGR brutes (if ^section, set_hsv, …)"></textarea>
+                </div>
+                <div class="panel">
+                  <div class="panel-heading">
+                    <div>
+                      <p class="eyebrow">DIRECTIVES AVANCÉES NGL</p>
+                      <h2>Labels préservés</h2>
+                    </div>
+                  </div>
+                  <textarea id="advanced-ngl" placeholder="Labels NGL bruts"></textarea>
+                </div>
+              </div>
+              <div id="hardware-summary"></div>
+              <div id="generated-files"></div>
+              <div id="download-buttons"></div>
+              <details class="generation-diff"><summary>Diff avant téléchargement</summary><pre id="generation-diff"></pre></details>
+            </div>
 
-      <section class="page" id="page-generate">
-        <div class="page-heading"><div><p class="eyebrow">EXPORT MIDIbox NG</p><h1>Génération <span>contrôlée.</span></h1><p class="muted">Vérifiez le rapport et les aperçus avant de télécharger les fichiers.</p></div><button class="primary-button" id="run-generation">Valider et générer</button></div>
-        <div class="generation-layout"><div class="generation-main">
-          <section class="panel"><div class="panel-heading"><div><p class="eyebrow">RAPPORT DE VALIDATION</p><h2 id="generation-summary">En attente de validation</h2></div><button class="quiet-button" id="validate-button">Vérifier</button></div><div id="generation-issues" class="issue-list"></div></section>
-          <section class="panel"><div class="panel-heading"><div><p class="eyebrow">DIRECTIVES AVANCÉES</p><h2>Préserver les blocs existants</h2></div></div><p class="muted small">Les directives ajoutées ici sont reprises telles quelles. Vérifiez les doublons avec les événements générés.</p><label class="code-field">NGC<textarea id="advanced-ngc" rows="7" spellcheck="false" placeholder="ENC n=1 sr=1 pins=1:0 type=non_detented"></textarea></label><label class="code-field">NGR<textarea id="advanced-ngr" rows="7" spellcheck="false" placeholder="Collez ici les sections et scripts NGR existants à préserver."></textarea></label><label class="code-field">NGL<textarea id="advanced-ngl" rows="5" spellcheck="false" placeholder="LABEL std_btn ..."></textarea></label></section>
-        </div><aside class="generation-side"><section class="panel"><div class="panel-heading"><div><p class="eyebrow">FICHIERS PRODUITS</p><h2>Prévisualisation</h2></div></div><div id="generated-files" class="generated-files"><p class="muted small">Lancez la validation pour afficher les fichiers.</p></div><details class="generation-diff"><summary>Diff avant téléchargement</summary><pre id="generation-diff"></pre></details><div id="download-buttons"></div></section><section class="panel"><p class="eyebrow">RÉSUMÉ MATÉRIEL</p><div id="hardware-summary" class="hardware-summary"></div></section></aside></div>
-      </section>
-
-      <section class="page" id="page-files">
-        <div class="page-heading"><div><p class="eyebrow">PERSISTANCE DU PROJET</p><h1>Fichiers <span>& historique.</span></h1><p class="muted">Sauvegardez le projet en JSON, rechargez une configuration et comparez les dernières générations.</p></div><button class="primary-button" id="load-project-button">Ouvrir un projet JSON</button><input type="file" id="load-project-input" accept=".json,application/json" hidden></div>
-        <div class="files-layout"><section class="panel"><div class="panel-heading"><div><p class="eyebrow">PROJET</p><h2>État local</h2></div></div><p class="muted">Une copie de travail est automatiquement conservée dans le stockage local de ce navigateur.</p><button class="small-button" id="save-project-secondary">Télécharger le projet JSON</button><div class="divider"></div><p class="eyebrow">IMPORT DE DIRECTIVES</p><p class="muted small">Les fichiers NGC/NGR/NGL sont ajoutés tels quels aux directives avancées. Un NGC permet aussi de reconstruire les cartes Core/DIN et les liaisons dont les adresses matérielles sont déductibles (ENC/sr, hw_id); les positions non documentées restent inconnues.</p><button class="small-button" id="import-config-button">Importer NGC / NGR / NGL</button><input type="file" id="import-config-input" accept=".ngc,.ngr,.ngl" multiple hidden></section><section class="panel"><div class="panel-heading"><div><p class="eyebrow">GÉNÉRATIONS</p><h2>Dernière sortie</h2></div></div><div id="generation-history"><p class="muted small">Aucune génération effectuée dans cette session.</p></div></section></div>
-      </section>
-    </main>
-  </div>
-  <div id="toast" role="status" aria-live="polite"></div>
-  <script type="module" src="./src/app.js"></script>
-</body>
+            <div class="dock-panel" id="dock-right-files">
+              <div class="panel-heading">
+                <div>
+                  <p class="eyebrow">PERSISTANCE</p>
+                  <h2>Fichiers & historique</h2>
+                </div>
+              </div>
+              <button class="primary-button" id="load-project-button">Ouvrir un projet JSON</button
+              ><input type="file" id="load-project-input" accept=".json,application/json" hidden />
+              <button class="small-button" id="save-project-secondary">Télécharger le projet JSON</button>
+              <div class="divider"></div>
+              <p class="eyebrow">IMPORT DE DIRECTIVES</p>
+              <p class="muted small">
+                Les fichiers NGC/NGR/NGL sont ajoutés tels quels aux directives avancées. Un NGC
+                permet aussi de reconstruire les cartes Core/DIN et les liaisons dont les adresses
+                matérielles sont déductibles (ENC/sr, hw_id); les positions non documentées restent
+                inconnues.
+              </p>
+              <button class="small-button" id="import-config-button">Importer NGC / NGR / NGL</button>
+              <input type="file" id="import-config-input" accept=".ngc,.ngr,.ngl" multiple hidden />
+              <div id="generation-history"></div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+    <div id="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="./src/app.js"></script>
+  </body>
 </html>
